@@ -1,15 +1,19 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// the compiled file.
-//
-// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
-// GO AFTER THE REQUIRES BELOW.
-//
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require libs/jquery-1.8.3.min
+//= require libs/jquery.mousewheel.min
+//= require libs/jquery.placeholder.min
+//= require custom-plugins/fileinput
+//= require jui/js/jquery-ui-1.9.2.min
+//= require jui/jquery-ui.custom.min
+//= require jui/js/jquery.ui.touch-punch
+//= require plugins/datatables/jquery.dataTables.min
+//= require plugins/flot/jquery.flot.min
+//= require plugins/flot/plugins/jquery.flot.tooltip.min
+//= require plugins/flot/plugins/jquery.flot.pie.min
+//= require plugins/flot/plugins/jquery.flot.stack.min
+//= require plugins/flot/plugins/jquery.flot.resize.min
+//= require plugins/colorpicker/colorpicker-min
+//= require plugins/validate/jquery.validate-min
+//= require custom-plugins/wizard/wizard.min
+//= require bootstrap/js/bootstrap.min
+//= require core/mws
+//= require demo/demo.dashboard

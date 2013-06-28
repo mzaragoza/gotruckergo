@@ -1,0 +1,131 @@
+!!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    %title 
+      = yield :page_title
+      | Go Trucker Go
+    %meta{:charset => "utf-8"}/
+    / Viewport Metatag
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+  %body
+    / Header
+    #mws-header.clearfix
+      / Logo Container
+      #mws-logo-container
+        / Logo Wrapper, images put within this wrapper will always be vertically centered
+        #mws-logo-wrap
+          = image_tag 'mws-logo.png', :alt => t(:company_name)
+      / User Tools (notifications, logout, profile, change password)
+      #mws-user-tools.clearfix
+        / Notifications
+        #mws-user-info.mws-inset
+          / User Photo
+          #mws-user-photo
+            = image_tag 'example/profile.jpg', :alt => t(:company_name)
+          / Username and Functions
+          #mws-user-functions
+            #mws-username
+              Hello, John Doe
+            %ul
+              %li
+                = link_to 'Profile', '#'
+              %li
+                = link_to 'Change Password', '#'
+              %li
+                = link_to 'Logout', '#'
+    / Start Main Wrapper
+    #mws-wrapper
+      / Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      / Sidebar Wrapper
+      #mws-sidebar
+        / Hidden Nav Collapse Button
+        #mws-nav-collapse
+          %span
+          %span
+          %span
+        / Searchbox
+        / Main Navigation
+        #mws-navigation
+          %ul
+            %li{:class => "#{'active' if params[:controller] == 'pages' }"}
+              = link_to root_path do
+                %i.icon-home
+                Dashboard
+            %li{:class => "#{'active' if params[:controller] == 'Admins' }"}
+              = link_to root_path do
+                %i.icon-user
+                Admins
+            %li{:class => "#{'active' if params[:controller] == 'Drivers' }"}
+              = link_to root_path do
+                %i.icon-home
+                Drivers
+            %li{:class => "#{'active' if params[:controller] == 'Trucks' }"}
+              = link_to root_path do
+                %i.icon-home
+                Trucks
+            %li{:class => "#{'active' if params[:controller] == 'Trailers' }"}
+              = link_to root_path do
+                %i.icon-home
+                Trailers
+            %li{:class => "#{'active' if params[:controller] == 'Brokers' }"}
+              = link_to root_path do
+                %i.icon-home
+                Brokers 
+            %li{:class => "#{'active' if params[:controller] == 'loads' }"}
+              = link_to root_path do
+                %i.icon-home
+                loads
+            %li{:class => "#{'active' if params[:controller] == 'Receipts' }"}
+              = link_to root_path do
+                %i.icon-home
+                Receipts
+      / Main Container Start
+      #mws-container.clearfix
+        / Inner Container Start
+        .container
+          / Statistics Button Container
+          .mws-stat-container.clearfix
+            / Statistic Item
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-truck
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Trucks
+                %span.mws-stat-value 9
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-brokers
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Total Brokers
+                %span.mws-stat-value.down 100
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-credit-card
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Weelly Receipts
+                %span.mws-stat-value $14531
+        = yield
+        / Footer
+        #mws-footer
+          Copyright 
+          = t(:company_name) 
+          2013
+          All Rights Reserved.
+      / Main Container End
+    / JavaScript Plugins
+    /[if lt IE 9]
+      <script src="js/libs/excanvas.min.js"></script>
+    = javascript_include_tag "application"
+    = yield :page_footer
