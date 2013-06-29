@@ -39,7 +39,7 @@
               %li
                 = link_to 'Change Password', '#'
               %li
-                = link_to 'Logout', '#'
+                = link_to 'Logout', destroy_admin_session_path, :method => :delete
     / Start Main Wrapper
     #mws-wrapper
       / Necessary markup, do not remove

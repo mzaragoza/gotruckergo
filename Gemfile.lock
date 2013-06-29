@@ -132,6 +132,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hashie (2.0.5)
     hike (1.2.3)
     hirb (0.7.1)
     i18n (0.6.1)
@@ -185,6 +186,9 @@ GEM
     numbers_and_words (0.9.0)
       activesupport
       i18n
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
     orm_adapter (0.4.0)
     pg (0.15.1)
     polyamorous (0.5.0)
@@ -376,6 +380,7 @@ DEPENDENCIES
   launchy
   letter_opener
   numbers_and_words
+  omniauth
   pg
   populator
   pry

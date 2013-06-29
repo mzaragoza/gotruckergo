@@ -41,6 +41,7 @@ gem 'uuid'
 gem "reveal_rails"
 gem 'browser'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'omniauth'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

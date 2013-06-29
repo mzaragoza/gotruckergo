@@ -1,3 +1,5 @@
+//= require jquery
+//= require jquery_ujs
 //= require libs/jquery-1.8.3.min
 //= require libs/jquery.mousewheel.min
 //= require libs/jquery.placeholder.min
