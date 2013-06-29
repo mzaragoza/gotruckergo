@@ -10,8 +10,8 @@ Gotruckergo::Application.routes.draw do
 #     resources :ui
       resources :admins
       resources :drivers
-#     resources :profile, :only => [:edit, :update]
-#     resources :Trucks
+      resources :profile, :only => [:edit, :update]
+      resources :trucks
 #     resources :Trailers
 #     resources :Brokers
 #     resources :loads

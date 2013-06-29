@@ -19,3 +19,4 @@
 //= require bootstrap/js/bootstrap.min
 //= require core/mws
 //= require demo/demo.dashboard
+$( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});

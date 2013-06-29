@@ -1,0 +1,22 @@
+= link_to t(:add_truck), new_admins_truck_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Trucks
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:trailer)
+          %th
+      %tbody
+        - trucks.each do |t|
+          %tr
+            %td= link_to t.id, admins_truck_path(t)
+            %td= link_to t.name, admins_truck_path(t)
+            %td TRAILER
+            %td= link_to 'Edit', edit_admins_truck_path(t), :class => 'btn btn-small btn-info'
+
+

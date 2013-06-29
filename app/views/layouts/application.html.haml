@@ -32,12 +32,11 @@
           / Username and Functions
           #mws-user-functions
             #mws-username
-              Hello, John Doe
+              Hello,
+              = current_admin.full_name
             %ul
               %li
-                = link_to 'Profile', '#'
-              %li
-                = link_to 'Change Password', '#'
+                = link_to 'Profile', edit_admins_profile_path(current_admin)
               %li
                 = link_to 'Logout', destroy_admin_session_path, :method => :delete
     / Start Main Wrapper
@@ -69,7 +68,7 @@
                 %i.icol32-drivers
                 Drivers
             %li{:class => "#{'active' if params[:controller] == 'admins/trucks' }"}
-              = link_to root_path do
+              = link_to admins_trucks_path do
                 %i.icol32-truck
                 Trucks
             %li{:class => "#{'active' if params[:controller] == 'admins/trailers' }"}

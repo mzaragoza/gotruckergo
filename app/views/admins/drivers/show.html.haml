@@ -17,6 +17,16 @@
           %span.text-nowrap= driver.full_name
       %li
         %span.key
+          = t(:truck)
+        %span.val
+          %span.text-nowrap= driver.truck.name if driver.truck
+      %li
+        %span.key
+          = t(:trailer)
+        %span.val
+          %span.text-nowrap trailer
+      %li
+        %span.key
           = t(:address)
         %span.val
           %span.text-nowrap
