@@ -21,7 +21,7 @@
             %td= link_to d.id, admins_driver_path(d)
             %td= link_to d.full_name, admins_driver_path(d)
             %td= d.truck.name if d.truck
-            %td trailer
+            %td= d.truck.trailer.name if d.truck and d.truck.trailer
             %td= d.cell
             %td= mail_to d.email
             %td photo

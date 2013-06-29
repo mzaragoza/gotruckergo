@@ -72,7 +72,7 @@
                 %i.icol32-truck
                 Trucks
             %li{:class => "#{'active' if params[:controller] == 'admins/trailers' }"}
-              = link_to root_path do
+              = link_to admins_trailers_path do
                 %i.icol32-trailers
                 Trailers
             %li{:class => "#{'active' if params[:controller] == 'admins/brokers' }"}
@@ -94,21 +94,22 @@
           / Statistics Button Container
           .mws-stat-container.clearfix
             / Statistic Item
-            %a.mws-stat{:href => "#"}
+            = link_to admins_trucks_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-truck
               / Statistic Content
               %span.mws-stat-content
                 %span.mws-stat-title Trucks
-                %span.mws-stat-value 9
-            %a.mws-stat{:href => "#"}
+                %span.mws-stat-value
+                  = Truck.count
+            = link_to '#', :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-brokers
               / Statistic Content
               %span.mws-stat-content
                 %span.mws-stat-title Total Brokers
                 %span.mws-stat-value.down 100
-            %a.mws-stat{:href => "#"}
+            = link_to '#', :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-credit-card
               / Statistic Content

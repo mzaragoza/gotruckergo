@@ -24,7 +24,7 @@
         %span.key
           = t(:trailer)
         %span.val
-          %span.text-nowrap trailer
+          %span.text-nowrap= driver.truck.trailer.name if driver.truck and driver.truck.trailer
       %li
         %span.key
           = t(:address)

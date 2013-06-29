@@ -19,7 +19,7 @@
         %span.key
           = t(:trailer)
         %span.val
-          %span.text-nowrap trailer
+          %span.text-nowrap= truck.trailer.name if truck.trailer
       %li
         %span.key
           = t(:annual_inspection_date)

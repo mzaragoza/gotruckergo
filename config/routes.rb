@@ -7,12 +7,12 @@ Gotruckergo::Application.routes.draw do
 
  authenticate :admin do
    namespace :admins do
-#     resources :ui
+      resources :ui
       resources :admins
       resources :drivers
       resources :profile, :only => [:edit, :update]
       resources :trucks
-#     resources :Trailers
+      resources :trailers
 #     resources :Brokers
 #     resources :loads
 #     resources :receipts

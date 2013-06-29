@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629191812) do
+ActiveRecord::Schema.define(:version => 20130629222740) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "",   :null => false
@@ -74,6 +74,22 @@ ActiveRecord::Schema.define(:version => 20130629191812) do
     t.boolean  "combination_of_tank_vehicle_and_hazardous_materials", :default => false
     t.datetime "created_at",                                                             :null => false
     t.datetime "updated_at",                                                             :null => false
+  end
+
+  create_table "trailers", :force => true do |t|
+    t.string   "name",                        :default => "", :null => false
+    t.string   "length",                      :default => "", :null => false
+    t.string   "width",                       :default => "", :null => false
+    t.string   "height",                      :default => "", :null => false
+    t.string   "gross_vehicle_weight_rating", :default => "", :null => false
+    t.string   "suspension",                  :default => "", :null => false
+    t.string   "axle_capacity",               :default => "", :null => false
+    t.string   "wheels",                      :default => "", :null => false
+    t.string   "tires",                       :default => "", :null => false
+    t.string   "vim",                         :default => "", :null => false
+    t.string   "tag",                         :default => "", :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   create_table "trucks", :force => true do |t|
