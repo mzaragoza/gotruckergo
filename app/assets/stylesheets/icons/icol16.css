@@ -23,7 +23,7 @@
 [class^="icol-"], 
 [class*=" icol-"]
 {
-	background-image: url(icol16/sprite.png);
+	background-image: url(/assets/icons/icol16/sprite.png);
 }
 
 /* Icon Definitions
@@ -542,6 +542,6 @@
 .icol-zones{background-position:-480px -240px;}
 .icol-zone-money{background-position:-496px -240px;}
 
-.icol-truck{background-image:url(icol16/truck.png);}
-.icol-brokers{background-image:url(icol16/brokers.png);}
-.icol-credit-card{background-image:url(icol16/credit-card.png);}
+.icol-truck{background-image:url(/assets/icons/icol16/truck.png);}
+.icol-brokers{background-image:url(/assets/icons/icol16/brokers.png);}
+.icol-credit-card{background-image:url(/assets/icons/icol16/credit-card.png);}
