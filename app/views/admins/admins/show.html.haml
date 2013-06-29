@@ -1,0 +1,62 @@
+.mws-panel.grid_12
+  .mws-panel-header
+    = link_to 'Edit', edit_admins_admin_path(admin), :class => 'btn btn-info pull-right'
+    %span
+      = admin.full_name.titleize
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          = t(:id)
+        %span.val
+          %span.text-nowrap= admin.id
+      %li
+        %span.key
+          = t(:email)
+        %span.val
+          %span.text-nowrap= admin.email 
+      %li
+        %span.key
+          = t(:name)
+        %span.val
+          %span.text-nowrap= admin.full_name
+      %li
+        %span.key
+          = t(:photo)
+        %span.val
+          %span.text-nowrap= admin.photo
+      %li
+        %span.key
+          = t(:phone)
+        %span.val
+          %span.text-nowrap= admin.phone
+      %li
+        %span.key
+          = t(:active)
+        %span.val
+          %span.text-nowrap= admin.active
+      %li
+        %span.key
+          = t(:sign_in_count)
+        %span.val
+          %span.text-nowrap= admin.sign_in_count
+      %li
+        %span.key
+          = t(:current_sign_in_at)
+        %span.val
+          %span.text-nowrap= admin.current_sign_in_at
+      %li
+        %span.key
+          = t(:last_sign_in_at)
+        %span.val
+          %span.text-nowrap= admin.last_sign_in_at
+      %li
+        %span.key
+          = t(:current_sign_in_ip)
+        %span.val
+          %span.text-nowrap= admin.current_sign_in_ip
+      %li
+        %span.key
+          = t(:last_sign_in_ip)
+        %span.val
+          %span.text-nowrap= admin.last_sign_in_ip

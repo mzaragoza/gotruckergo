@@ -56,35 +56,35 @@
         / Main Navigation
         #mws-navigation
           %ul
-            %li{:class => "#{'active' if params[:controller] == 'pages' }"}
+            %li{:class => "#{'active' if params[:controller] == 'admins/dashboards' }"}
               = link_to root_path do
                 %i.icol32-dashboard
                 Dashboard
-            %li{:class => "#{'active' if params[:controller] == 'Admins' }"}
-              = link_to root_path do
+            %li{:class => "#{'active' if params[:controller] == 'admins/admins' }"}
+              = link_to admins_admins_path do
                 %i.icol32-admins
                 Admins
-            %li{:class => "#{'active' if params[:controller] == 'Drivers' }"}
+            %li{:class => "#{'active' if params[:controller] == 'admins/drivers' }"}
               = link_to root_path do
                 %i.icol32-drivers
                 Drivers
-            %li{:class => "#{'active' if params[:controller] == 'Trucks' }"}
+            %li{:class => "#{'active' if params[:controller] == 'admins/trucks' }"}
               = link_to root_path do
                 %i.icol32-truck
                 Trucks
-            %li{:class => "#{'active' if params[:controller] == 'Trailers' }"}
+            %li{:class => "#{'active' if params[:controller] == 'admins/trailers' }"}
               = link_to root_path do
                 %i.icol32-trailers
                 Trailers
-            %li{:class => "#{'active' if params[:controller] == 'Brokers' }"}
+            %li{:class => "#{'active' if params[:controller] == 'admins/brokers' }"}
               = link_to root_path do
                 %i.icol32-brokers
                 Brokers 
-            %li{:class => "#{'active' if params[:controller] == 'loads' }"}
+            %li{:class => "#{'active' if params[:controller] == 'admins/loads' }"}
               = link_to root_path do
                 %i.icol32-shipments
-                loads
-            %li{:class => "#{'active' if params[:controller] == 'Receipts' }"}
+                Loads
+            %li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
               = link_to root_path do
                 %i.icol32-credit-card
                 Receipts
@@ -116,7 +116,9 @@
               %span.mws-stat-content
                 %span.mws-stat-title Weelly Receipts
                 %span.mws-stat-value $14531
-        = yield
+        .container
+          = params
+          = yield
         / Footer
         #mws-footer
           Copyright 

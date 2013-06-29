@@ -1,0 +1,30 @@
+=link_to t(:add_admins), new_admins_admin_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Admins
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:admin_id)
+          %th=t(:admin_name)
+          %th=t(:active)
+          %th=t(:email)
+          %th
+      %tbody
+        - admins.each do |a|
+          %tr
+            %td= link_to a.id, admins_admin_path(a)
+            %td= link_to a.full_name, admins_admin_path(a)
+            %td
+              - if a.active
+                %span{:class=> 'label label-success'}
+                  yes
+              - else
+                %span{:class=> 'label label-important'}
+                  no
+            %td= mail_to a.email
+            %td
+              = link_to 'Edit', edit_admins_admin_path(a), :class => 'btn btn-small btn-info'
+

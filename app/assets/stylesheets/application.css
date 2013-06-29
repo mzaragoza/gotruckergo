@@ -24,5 +24,6 @@
   * *= require jui/jquery-ui.custom
   * *= require mws-theme
   * *= require themer
+  * *= require my_css
   * *= require_self
 */
