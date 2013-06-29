@@ -2,9 +2,6 @@ class Admins::AdminsController < AdminController
   before_filter :check_password_submitted, :only => :update
   expose(:admins){ Admin.order("id DESC").scoped{} }
   expose(:admin)
-  expose(:paginated_admins){
-    admins.page(params[:page]).per(50)
-  }
 
   def create
     if admin.save

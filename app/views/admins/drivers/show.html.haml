@@ -1,0 +1,87 @@
+.mws-panel.grid_12
+  .mws-panel-header
+    = link_to 'Edit', edit_admins_driver_path(driver), :class => 'btn btn-info pull-right'
+    %span
+      = driver.full_name.titleize
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          = t(:id)
+        %span.val
+          %span.text-nowrap= driver.id
+      %li
+        %span.key
+          = t(:name)
+        %span.val
+          %span.text-nowrap= driver.full_name
+      %li
+        %span.key
+          = t(:address)
+        %span.val
+          %span.text-nowrap
+            = driver.address
+            = driver.address2
+            = driver.city
+            = driver.state
+            = driver.zip
+      %li
+        %span.key
+          = t(:email)
+        %span.val
+          %span.text-nowrap= driver.email
+      %li
+        %span.key
+          = t(:ssn)
+        %span.val
+          %span.text-nowrap= driver.ssn
+      %li
+        %span.key
+          = t(:drivers_license)
+        %span.val
+          %span.text-nowrap= driver.drivers_license
+      %li
+        %span.key
+          = t(:pay_rate)
+        %span.val
+          %span.text-nowrap= driver.pay_rate
+      %li
+        %span.key
+          = t(:hire_date)
+        %span.val
+          %span.text-nowrap= driver.hire_date
+      %li
+        %span.key
+          = t(:active)
+        %span.val
+          %span.text-nowrap= driver.active
+      %li
+        %span.key
+          = t(:bank_name)
+        %span.val
+          %span.text-nowrap= driver.bank_name
+      %li
+        %span.key
+          = t(:bank_account_number)
+        %span.val
+          %span.text-nowrap= driver.bank_account_number
+      %li
+        %span.key
+          = t(:bank_rauting_number)
+        %span.val
+          %span.text-nowrap= driver.bank_rauting_number
+      %li
+        %span.key
+          = t(:license)
+        %span.val
+          %span.text-nowrap
+            - if driver.double_triple_trailers
+              = t(:double_triple_trailers)
+            - if driver.passenger
+              = t(:passenger)
+            - if driver.tank_vehicle
+              = t(:tank_vehicle)
+            - if driver.hazardous_materials
+              = t(:hazardous_materials)
+            - if driver.combination_of_tank_vehicle_and_hazardous_materials
+              = t(:combination_of_tank_vehicle_and_hazardous_materials)

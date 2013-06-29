@@ -1,0 +1,30 @@
+= link_to t(:add_driver), new_admins_driver_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Drivers
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:truck)
+          %th=t(:trailer)
+          %th=t(:cell)
+          %th=t(:email)
+          %th
+          %th
+      %tbody
+        - drivers.each do |d|
+          %tr
+            %td= link_to d.id, admins_driver_path(d)
+            %td= link_to d.full_name, admins_driver_path(d)
+            %td truck
+            %td trailer
+            %td= d.cell
+            %td= mail_to d.email
+            %td photo
+            %td= link_to 'Edit', edit_admins_driver_path(d), :class => 'btn btn-small btn-info'
+
+
