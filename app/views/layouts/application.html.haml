@@ -21,7 +21,7 @@
       #mws-logo-container
         / Logo Wrapper, images put within this wrapper will always be vertically centered
         #mws-logo-wrap
-          = image_tag 'mws-logo.png', :alt => t(:company_name)
+          = image_tag 'logo.png', :alt => t(:company_name)
       / User Tools (notifications, logout, profile, change password)
       #mws-user-tools.clearfix
         / Notifications
@@ -58,35 +58,35 @@
           %ul
             %li{:class => "#{'active' if params[:controller] == 'pages' }"}
               = link_to root_path do
-                %i.icon-home
+                %i.icol32-dashboard
                 Dashboard
             %li{:class => "#{'active' if params[:controller] == 'Admins' }"}
               = link_to root_path do
-                %i.icon-user
+                %i.icol32-admins
                 Admins
             %li{:class => "#{'active' if params[:controller] == 'Drivers' }"}
               = link_to root_path do
-                %i.icon-home
+                %i.icol32-drivers
                 Drivers
             %li{:class => "#{'active' if params[:controller] == 'Trucks' }"}
               = link_to root_path do
-                %i.icon-home
+                %i.icol32-truck
                 Trucks
             %li{:class => "#{'active' if params[:controller] == 'Trailers' }"}
               = link_to root_path do
-                %i.icon-home
+                %i.icol32-trailers
                 Trailers
             %li{:class => "#{'active' if params[:controller] == 'Brokers' }"}
               = link_to root_path do
-                %i.icon-home
+                %i.icol32-brokers
                 Brokers 
             %li{:class => "#{'active' if params[:controller] == 'loads' }"}
               = link_to root_path do
-                %i.icon-home
+                %i.icol32-shipments
                 loads
             %li{:class => "#{'active' if params[:controller] == 'Receipts' }"}
               = link_to root_path do
-                %i.icon-home
+                %i.icol32-credit-card
                 Receipts
       / Main Container Start
       #mws-container.clearfix
