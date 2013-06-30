@@ -79,8 +79,8 @@
               = link_to admins_brokers_path do
                 %i.icol32-brokers
                 Brokers 
-            %li{:class => "#{'active' if params[:controller] == 'admins/loads' }"}
-              = link_to root_path do
+            %li{:class => "#{'active' if params[:controller] == 'admins/shipments' }"}
+              = link_to admins_shipments_path do
                 %i.icol32-shipments
                 Loads
             %li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}

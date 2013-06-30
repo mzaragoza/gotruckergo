@@ -14,7 +14,7 @@ Gotruckergo::Application.routes.draw do
       resources :trucks
       resources :trailers
       resources :brokers
-#     resources :loads
+      resources :shipments
 #     resources :receipts
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'

@@ -10,6 +10,7 @@ class CreateTrailers < ActiveRecord::Migration
       t.string :axle_capacity, :null => false, :default => ""
       t.string :wheels, :null => false, :default => ""
       t.string :tires, :null => false, :default => ""
+      t.string :type, :null => false, :default => ""
       t.string :vim, :null => false, :default => ""
       t.string :tag, :null => false, :default => ""
 
