@@ -20,8 +20,8 @@
           %tr
             %td= link_to d.id, admins_driver_path(d)
             %td= link_to d.full_name, admins_driver_path(d)
-            %td= d.truck.name if d.truck
-            %td= d.truck.trailer.name if d.truck and d.truck.trailer
+            %td= link_to d.truck.name, admins_truck_path(d.truck) if d.truck
+            %td= link_to d.truck.trailer.name, admins_trailer_path(d.truck.trailer) if d.truck and d.truck.trailer
             %td= d.cell
             %td= mail_to d.email
             %td photo

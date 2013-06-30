@@ -94,6 +94,14 @@
           / Statistics Button Container
           .mws-stat-container.clearfix
             / Statistic Item
+            = link_to admins_drivers_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-drivers
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Drivers
+                %span.mws-stat-value
+                  = Driver.count
             = link_to admins_trucks_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-truck
@@ -102,6 +110,14 @@
                 %span.mws-stat-title Trucks
                 %span.mws-stat-value
                   = Truck.count
+            = link_to admins_trailers_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-trailers
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Trailer
+                %span.mws-stat-value
+                  = Trailer.count
             = link_to admins_brokers_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-brokers

@@ -3,10 +3,10 @@
     %label.mws-form-label= t(:name)
     .mws-form-item
     = f.input :name, :label => false
-  -#.mws-form-row
-    %label.mws-form-label= t(:trailer_id)
+  .mws-form-row
+    %label.mws-form-label= t(:trailer)
     .mws-form-item
-    = f.input :trailer_id, :label => false
+    = f.association :trailer, :label => false
   .mws-form-row
     %label.mws-form-label= t(:annual_inspection_date)
     .mws-form-item
