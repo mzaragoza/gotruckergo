@@ -14,6 +14,8 @@ Fabricator(:truck) do
   odometer {rand(1000000)}
   vim { (0...18).map{(65+rand(26)).chr}.join }
   tag {(0...8).map{(65+rand(26)).chr}.join}
-
-  # trailer_id
+  
+  after_build do |t|
+    t.trailer ||= Trailer.last || Fabricate(:trailer)
+  end  
 end

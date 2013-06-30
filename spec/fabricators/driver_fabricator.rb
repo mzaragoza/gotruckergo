@@ -22,6 +22,8 @@ Fabricator(:driver) do
   hazardous_materials { true }
   combination_of_tank_vehicle_and_hazardous_materials { true }
   
-  #truck_id
+  after_build do |d|
+    d.truck ||= Truck.last || Fabricate(:truck)
+  end  
 end
 
