@@ -50,6 +50,11 @@
             = shipment.pick_up_location_zip
       %li
         %span.key
+          = t(:pick_up_location_phone)
+        %span.val
+          %span.text-nowrap= shipment.pick_up_location_phone
+      %li
+        %span.key
           = t(:delivery_location_address)
         %span.val
           %span.text-nowrap
@@ -58,6 +63,16 @@
             = shipment.delivery_location_city
             = shipment.delivery_location_state
             = shipment.delivery_location_zip
+      %li
+        %span.key
+          = t(:delivery_location_phone)
+        %span.val
+          %span.text-nowrap= shipment.delivery_location_phone
+      %li
+        %span.key
+          = t(:number_of_stops)
+        %span.val
+          %span.text-nowrap= shipment.number_of_stops
       %li
         %span.key
           = t(:notes)
@@ -111,4 +126,84 @@
               = t(:tank_vehicle)
             - if shipment.hazardous_materials
               = t(:hazardous_materials)
+      %li
+        %span.key
+          = t(:suspension)
+        %span.val
+          %span.text-nowrap= shipment.suspension
+      %li
+        %span.key
+          = t(:paid_status)
+        %span.val
+          %span.text-nowrap= shipment.paid_status
+      %li
+        %span.key
+          = t(:paid_date)
+        %span.val
+          %span.text-nowrap= shipment.paid_date
+      %li
+        %span.key
+          = t(:load_conformation)
+        %span.val
+          %span.text-nowrap= shipment.load_conformation
+      %li
+        %span.key
+          = t(:equipment_type)
+        %span.val
+          %span.text-nowrap= shipment.equipment_type
+      %li
+        %span.key
+          = t(:size_of_trailer)
+        %span.val
+          %span.text-nowrap= shipment.size_of_trailer
+      %li
+        %span.key
+          = t(:pallets_pisses)
+        %span.val
+          %span.text-nowrap= shipment.pallets_pisses
+      %li
+        %span.key
+          = t(:pick_up_number)
+        %span.val
+          %span.text-nowrap= shipment.pick_up_number
+      %li
+        %span.key
+          = t(:delivery_number)
+        %span.val
+          %span.text-nowrap= shipment.delivery_number
+      %li
+        %span.key
+          = t(:pick_up_earlier_time)
+        %span.val
+          %span.text-nowrap= shipment.pick_up_earlier_time
+      %li
+        %span.key
+          = t(:pick_up_lateest_time)
+        %span.val
+          %span.text-nowrap= shipment.pick_up_lateest_time
+      %li
+        %span.key
+          = t(:pick_up_appointment)
+        %span.val
+          %span.text-nowrap= shipment.pick_up_appointment
+      %li
+        %span.key
+          = t(:delivery_earlier_time)
+        %span.val
+          %span.text-nowrap= shipment.delivery_earlier_time
+      %li
+        %span.key
+          = t(:delivery_lateest_time)
+        %span.val
+          %span.text-nowrap= shipment.delivery_lateest_time
+      %li
+        %span.key
+          = t(:trailer_type)
+        %span.val
+          %span.text-nowrap= shipment.trailer_type
+      %li
+        %span.key
+          = t(:delivery_appointment)
+        %span.val
+          %span.text-nowrap= shipment.delivery_appointment
 
