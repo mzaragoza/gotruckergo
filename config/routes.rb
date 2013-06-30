@@ -13,7 +13,7 @@ Gotruckergo::Application.routes.draw do
       resources :profile, :only => [:edit, :update]
       resources :trucks
       resources :trailers
-#     resources :Brokers
+      resources :brokers
 #     resources :loads
 #     resources :receipts
       get '/dashboard' => 'dashboards#index', as: :dashboard
