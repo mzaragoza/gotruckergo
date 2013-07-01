@@ -59,10 +59,11 @@
               = link_to root_path do
                 %i.icol32-dashboard
                 Dashboard
-            %li{:class => "#{'active' if params[:controller] == 'admins/admins' }"}
-              = link_to admins_admins_path do
-                %i.icol32-admins
-                Admins
+            - if Rails.env != "production" or current_admin.email.down == 'mzaragoza@circletechfl.com'
+              %li{:class => "#{'active' if params[:controller] == 'admins/admins' }"}
+                = link_to admins_admins_path do
+                  %i.icol32-admins
+                  Admins
             %li{:class => "#{'active' if params[:controller] == 'admins/drivers' }"}
               = link_to admins_drivers_path do
                 %i.icol32-drivers
