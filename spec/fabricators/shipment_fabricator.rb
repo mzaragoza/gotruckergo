@@ -44,5 +44,8 @@ Fabricator(:shipment) do
   delivery_appointment { false }
   trailer_type {'Any'}
   
-  #:broker_id, :truck_id,
+  after_build do |s|
+    s.broker ||= Broker.last || Fabricate(:broker)
+    s.truck ||= Truck.last || Fabricate(:truck)
+  end  
 end
