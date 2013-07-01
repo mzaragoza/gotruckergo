@@ -4,3 +4,4 @@ tail -f log/development.log
 heroku logs -t -a gotruckergo-prod
 heroku run console -a gotruckergo-prod
 
+heroku run rake db:seed -a gotruckergo-prod
