@@ -33,7 +33,7 @@
   .mws-form-row
     %label.mws-form-label= t(:pick_up_location_state)
     .mws-form-item
-    = f.input :pick_up_location_state, :label => false
+    = f.input :pick_up_location_state, :collection => us_states,  :as => :select, include_blank: true, :label => false
   .mws-form-row
     %label.mws-form-label= t(:pick_up_location_zip)
     .mws-form-item
@@ -57,7 +57,7 @@
   .mws-form-row
     %label.mws-form-label= t(:delivery_location_state)
     .mws-form-item
-    = f.input :delivery_location_state, :label => false
+    = f.input :delivery_location_state, :collection => us_states,  :as => :select, include_blank: true, :label => false
   .mws-form-row
     %label.mws-form-label= t(:delivery_location_zip)
     .mws-form-item
@@ -77,11 +77,11 @@
   .mws-form-row
     %label.mws-form-label= t(:pick_up_date)
     .mws-form-item
-    = f.input :pick_up_date, :label => false
+    = f.input :pick_up_date, :label => false, :input_html => { :class => 'datepicker'}
   .mws-form-row
     %label.mws-form-label= t(:deliver_date)
     .mws-form-item
-    = f.input :deliver_date, :label => false
+    = f.input :deliver_date, :label => false, :input_html => { :class => 'datepicker'}
   .mws-form-row
     %label.mws-form-label= t(:status)
     .mws-form-item
@@ -129,7 +129,7 @@
   .mws-form-row
     %label.mws-form-label= t(:paid_date)
     .mws-form-item
-    = f.input :paid_date, :label => false
+    = f.input :paid_date, :label => false, :input_html => { :class => 'datepicker'}
   .mws-form-row
     %label.mws-form-label= t(:load_conformation)
     .mws-form-item
