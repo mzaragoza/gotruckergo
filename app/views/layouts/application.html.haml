@@ -59,7 +59,7 @@
               = link_to root_path do
                 %i.icol32-dashboard
                 Dashboard
-            - if Rails.env != "production" or current_admin.email.down == 'mzaragoza@circletechfl.com'
+            - if Rails.env != "production" or current_admin.email.downcase == 'mzaragoza@circletechfl.com'
               %li{:class => "#{'active' if params[:controller] == 'admins/admins' }"}
                 = link_to admins_admins_path do
                   %i.icol32-admins
