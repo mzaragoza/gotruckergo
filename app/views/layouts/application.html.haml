@@ -83,7 +83,7 @@
               = link_to admins_shipments_path do
                 %i.icol32-shipments
                 Loads
-            %li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
+            -#%li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
               = link_to root_path do
                 %i.icol32-credit-card
                 Receipts
@@ -126,7 +126,7 @@
                 %span.mws-stat-title Total Brokers
                 %span.mws-stat-value.down
                   = Broker.count
-            = link_to '#', :class => 'mws-stat' do
+            -#= link_to '#', :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-credit-card
               / Statistic Content
