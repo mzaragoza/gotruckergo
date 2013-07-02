@@ -142,6 +142,10 @@ Then /^the "([^"]*)" field(?: within (.*))? should not contain "([^"]*)"$/ do |f
   end
 end
 
+Then /^the "([^"]*)" checkbox should be checked$/ do |id|
+  find_field(id)[:value].should eq "true" 
+end
+
 Then /^the "([^"]*)" checkbox(?: within (.*))? should be checked$/ do |label, parent|
   with_scope(parent) do
     field_checked = find_field(label)['checked']
