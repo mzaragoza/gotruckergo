@@ -138,6 +138,7 @@
           - unless flash[:notice].blank?
             #notice
               %h3= flash[:notice]
+            %br
           - unless flash[:error].blank?
             #error
               = content_tag :div, flash[:error]
