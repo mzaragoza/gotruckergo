@@ -142,9 +142,11 @@
           - unless flash[:error].blank?
             #error
               = content_tag :div, flash[:error]
+            %br
           - unless flash[:alert].blank?
             #alert
               = content_tag :div, flash[:alert]
+            %br
           = yield :pageheader
         .container
           = yield

@@ -16,5 +16,18 @@
       = t(:company_name)
       | Login Page
   %body
+    .container
+      - unless flash[:notice].blank?
+        #notice
+          %h3= flash[:notice]
+        %br
+      - unless flash[:error].blank?
+        #error
+          = content_tag :div, flash[:error]
+        %br
+      - unless flash[:alert].blank?
+        #alert
+          = content_tag :div, flash[:alert]
+        %br
     = yield
     = javascript_include_tag "application_login"
