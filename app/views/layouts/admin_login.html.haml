@@ -23,11 +23,11 @@
         %br
       - unless flash[:error].blank?
         #error
-          = content_tag :div, flash[:error]
+          %h3= flash[:error]
         %br
       - unless flash[:alert].blank?
         #alert
-          = content_tag :div, flash[:alert]
+          %h3= flash[:alert]
         %br
     = yield
     = javascript_include_tag "application_login"
