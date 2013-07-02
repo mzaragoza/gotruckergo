@@ -55,6 +55,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
+  gem 'spreewald'
   gem 'database_cleaner'
   gem "rspec-rails"
   gem 'debugger'
