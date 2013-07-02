@@ -84,8 +84,8 @@
               = link_to admins_shipments_path do
                 %i.icol32-shipments
                 Loads
-            -#%li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
-              = link_to root_path do
+            %li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
+              = link_to admins_receipts_path do
                 %i.icol32-credit-card
                 Receipts
       / Main Container Start
