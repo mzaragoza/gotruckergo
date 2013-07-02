@@ -148,9 +148,9 @@ input[type="color"] {
     -webkit-border-radius: 4px;
     border-radius: 4px;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box !important;
+    -ms-box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
     -webkit-box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
     -moz-box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
     box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
