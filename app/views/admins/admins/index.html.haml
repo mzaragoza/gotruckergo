@@ -4,7 +4,7 @@
     %span
       Admins
   .mws-panel-body.no-padding
-    %table.mws-datatable-fn.mws-table
+    %table.mws-datatable.mws-table
       %thead
         %tr
           %th=t(:admin_id)
@@ -27,4 +27,3 @@
             %td= mail_to a.email
             %td
               = link_to 'Edit', edit_admins_admin_path(a), :class => 'btn btn-small btn-info'
-

@@ -1,5 +1,5 @@
-//= require jquery
-//= require jquery_ujs
+//=# require jquery
+//=# require jquery_ujs
 //= require libs/jquery-1.8.3.min
 //= require libs/jquery.mousewheel.min
 //= require libs/jquery.placeholder.min
@@ -21,4 +21,8 @@
 //= require demo/demo.dashboard
 //= require demo/demo.table
 //= require demo/demo.widget
-$( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+
+
+
+

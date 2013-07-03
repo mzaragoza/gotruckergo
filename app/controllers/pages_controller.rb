@@ -10,6 +10,10 @@ class PagesController < ApplicationController
   def error
     render :layout => 'login'
   end
+  
+  def test
+    render :layout => false
+  end
   private
 #  def redirect_if_logged_in
 #    if user_signed_in?

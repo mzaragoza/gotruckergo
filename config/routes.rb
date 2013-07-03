@@ -20,5 +20,6 @@ Gotruckergo::Application.routes.draw do
       get '/' => 'dashboards#index'
    end
  end
+  match "/test" => "pages#test", :as => :test
   root :to => 'pages#index'
 end
