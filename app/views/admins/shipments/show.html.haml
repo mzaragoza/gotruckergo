@@ -25,6 +25,11 @@
           %span.text-nowrap= shipment.truck.name if shipment.truck
       %li
         %span.key
+          = t(:trailer)
+        %span.val
+          %span.text-nowrap= shipment.trailer.name if shipment.trailer
+      %li
+        %span.key
           = t(:load_number)
         %span.val
           %span.text-nowrap= shipment.load_number

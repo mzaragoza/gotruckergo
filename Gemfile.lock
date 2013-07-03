@@ -387,6 +387,7 @@ DEPENDENCIES
   kaminari-bootstrap
   launchy
   letter_opener
+  nokogiri
   numbers_and_words
   omniauth
   pg

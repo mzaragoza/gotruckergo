@@ -5,6 +5,7 @@ ruby "1.9.3"
 gem 'pg'
 
 gem 'thin'
+gem 'nokogiri'
 gem 'awesome_print'
 gem 'decent_exposure'
 gem 'haml-rails'

@@ -47,5 +47,6 @@ Fabricator(:shipment) do
   after_build do |s|
     s.broker ||= Broker.last || Fabricate(:broker)
     s.truck ||= Truck.last || Fabricate(:truck)
+    s.trailer ||= Trailer.last || Fabricate(:trailer)
   end  
 end

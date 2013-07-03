@@ -11,7 +11,7 @@ class CreateTrailers < ActiveRecord::Migration
       t.string :wheels, :null => false, :default => ""
       t.string :tires, :null => false, :default => ""
       t.string :type, :null => false, :default => ""
-      t.string :vim, :null => false, :default => ""
+      t.string :vin, :null => false, :default => ""
       t.string :tag, :null => false, :default => ""
 
       t.timestamps

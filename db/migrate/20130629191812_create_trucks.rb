@@ -15,7 +15,7 @@ class CreateTrucks < ActiveRecord::Migration
       t.string :wheels
       t.string :tires
       t.string :odometer
-      t.string :vim
+      t.string :vin
       t.string :tag
 
       t.timestamps

@@ -8,7 +8,7 @@ Fabricator(:trailer) do
   axle_capacity {4}
   wheels {'Steel' }
   tires {'22.5 '}
-  vim { (0...18).map{(65+rand(26)).chr}.join }
+  vin { (0...18).map{(65+rand(26)).chr}.join }
   tag {(0...8).map{(65+rand(26)).chr}.join}
 
 

@@ -4,7 +4,7 @@ class CreateReceipts < ActiveRecord::Migration
       t.integer :truck_id
       t.integer :driver_id
       t.string :receipt_date, :null => false, :default => ""
-      t.string :galons, :null => false, :default => ""
+      t.string :gallons, :null => false, :default => ""
       t.string :state, :null => false, :default => ""
       t.string :cost, :null => false, :default => ""
       t.string :odometer, :null => false, :default => ""

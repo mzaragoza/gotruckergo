@@ -3,6 +3,7 @@ class CreateLoads < ActiveRecord::Migration
     create_table :shipments do |t|
       t.integer :broker_id
       t.integer :truck_id
+      t.integer :trailer_id
       t.string :load_number, :null => false, :default => ""
       t.string :price, :null => false, :default => ""
       t.string :miles, :null => false, :default => ""
