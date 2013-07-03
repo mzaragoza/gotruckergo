@@ -9,7 +9,6 @@ Feature: Admins should be able to create a driver
       | Blue Moon  |
       | Big Red  |
       | Stan  |
-    Then I should see 'Signed in successfully.'
 
   Scenario: Admin should be able to create a driver
     When I follow "Drivers"

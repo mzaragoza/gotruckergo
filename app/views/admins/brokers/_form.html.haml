@@ -30,7 +30,7 @@
   .mws-form-row
     %label.mws-form-label= t(:state)
     .mws-form-item
-    = f.input :state, :label => false
+    = f.input :state, :collection => us_states,  :as => :select, include_blank: true, :label => false
   .mws-form-row
     %label.mws-form-label= t(:zip)
     .mws-form-item

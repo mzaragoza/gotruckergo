@@ -2,7 +2,6 @@ class Admins::ProfileController < AdminController
   before_filter :check_password_submitted, :only => :update
   expose(:admin){ current_admin }
   def update
-    debugger
     if admin.update_attributes(params[:admin])
       sign_in(current_admin, :bypass => true)
       flash[:notice] = t(:profile_was_successfully_updated)
