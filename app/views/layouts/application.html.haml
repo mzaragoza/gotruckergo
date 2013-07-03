@@ -28,7 +28,10 @@
         #mws-user-info.mws-inset
           / User Photo
           #mws-user-photo
-            = image_tag 'example/profile.jpg', :alt => t(:company_name)
+            - if current_admin.photo_url
+              = image_tag current_admin.photo_url, :alt => t(:company_name)
+            - else
+              = image_tag 'example/profile.jpg', :alt => t(:company_name)
           / Username and Functions
           #mws-user-functions
             #mws-username

@@ -1,4 +1,4 @@
-= simple_form_for([:admins, admin], :html => {:class => 'form-horizontal' }) do |f|
+= simple_form_for(admin, :url => admins_profile_path(admin), :html => {:class => 'form-horizontal' }) do |f|
   .mws-form-row
     %label.mws-form-label= t(:first_name)
     .mws-form-item
@@ -19,6 +19,10 @@
     %label.mws-form-label= t(:active)
     .mws-form-item
     = f.input :active, :label => false
+  -#.mws-form-row
+    %label.mws-form-label= t(:photo)
+    .mws-form-item
+    = f.input :photo, :label => false
   .mws-form-row
     %label.mws-form-label= t(:password)
     .mws-form-item
