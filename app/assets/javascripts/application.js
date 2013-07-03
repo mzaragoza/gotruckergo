@@ -19,4 +19,6 @@
 //= require bootstrap/js/bootstrap.min
 //= require core/mws
 //= require demo/demo.dashboard
+//= require demo/demo.table
+//= require demo/demo.widget
 $( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
