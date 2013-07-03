@@ -18,4 +18,6 @@ Feature: Admins should be able to create a broker
     Then I fill in "broker_email" with "lilian@morar.com"
     Then I fill in "broker_website" with "http://streich.com/"
     Then I fill in "broker_motor_carrier_number" with "14372596"
+    And I press "Create Broker"
+    Then I should see "Broker was successfully created"
 

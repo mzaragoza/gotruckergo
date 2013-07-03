@@ -59,3 +59,5 @@ Feature: Admins should be able to create a shipment
     And I fill in "shipment_size_of_trailer" with "53"
     And I fill in "shipment_pallets_pisses" with "44"
     And I fill in "shipment_pick_up_number" with "182870063"
+    And I press "Create Shipment"
+    Then I should see "Shipment was successfully created"

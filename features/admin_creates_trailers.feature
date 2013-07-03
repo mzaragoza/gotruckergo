@@ -19,4 +19,5 @@ Feature: Admins should be able to create a trailer
     #Then I fill in "trailer_type" with ""
     Then I fill in "trailer_vin" with "BYRYFDAOEYCUHZWSOU"
     Then I fill in "trailer_tag" with "ORCEUTTA"
-
+    And I press "Create Trailer"
+    Then I should see "Trailer was successfully created"
