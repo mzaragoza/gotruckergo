@@ -18,11 +18,17 @@
 //= require custom-plugins/wizard/wizard.min
 //= require bootstrap/js/bootstrap.min
 //= require core/mws
-//= require demo/demo.dashboard
+//= require libs/jquery-1.8.3.min
+//= require libs/jquery.mousewheel.min
+//= require libs/jquery.placeholder.min
+//= require custom-plugins/fileinput
+//= require jui/js/jquery-ui-1.9.2.min
+//= require jui/jquery-ui.custom.min
+//= require jui/js/jquery.ui.touch-punch
+//= require plugins/datatables/jquery.dataTables.min
+//= require plugins/colorpicker/colorpicker-min
+//= require bootstrap/js/bootstrap.min
+//= require core/mws
+//= require core/themer
 //= require demo/demo.table
-//= require demo/demo.widget
-( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
-
-
-
-
+( ".datepicker" ).datepickes({dateFormat: "yy-mm-dd"});
