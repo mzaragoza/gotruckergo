@@ -17,6 +17,7 @@
           %th=t(:paid_status)
           %th=t(:paid_date)
           %th=t(:equipment_type)
+          %th=t(:load_conformation)
           %th
       %tbody
         - shipments.each do |s|
@@ -31,5 +32,11 @@
             %td= s.paid_status
             %td= s.paid_date
             %td= s.equipment_type
+            %td
+              - unless s.load_conformation_pdf.blank?
+                = link_to t(:load_conformation_pdf), s.load_conformation_pdf_url, :target => '_blanl'
+                = s.load_conformation_pdf
+              - else
+                %span{:style => 'color:#F00'}= t(:load_conformation)
 
             %td= link_to 'Edit', edit_admins_shipment_path(s), :class => 'btn btn-small btn-info'

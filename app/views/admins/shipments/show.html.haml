@@ -15,6 +15,16 @@
           %span.text-nowrap= shipment.id
       %li
         %span.key
+          = t(:load_conformation_pdf)
+        %span.val
+          %span.text-nowrap
+            - unless shipment.load_conformation_pdf.blank?
+              = link_to t(:load_conformation_pdf), broker.load_conformation_pdf_url, :target => '_blanl'
+              = shipment.load_conformation_pdf
+            - else
+              %span{:style => 'color:#F00'}= t(:load_conformation)
+      %li
+        %span.key
           = t(:broker)
         %span.val
           %span.text-nowrap= shipment.broker.name if shipment.broker

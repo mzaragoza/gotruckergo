@@ -4,6 +4,10 @@
       = image_tag driver.photo, :width => '500', :class => 'img-polaroid'
     - else
       = image_tag 'driver-icon.png', :width => '500', :class => 'img-polaroid'
+    - if driver.drivers_license_photo?
+      = image_tag driver.drivers_license_photo, :width => '500', :class => 'img-polaroid'
+    - else
+      = image_tag 'drivers-license-icon.png', :width => '500', :class => 'img-polaroid'
   .mws-panel.grid_6
     .mws-panel-header
       = link_to 'Edit', edit_admins_driver_path(driver), :class => 'btn btn-info pull-right'

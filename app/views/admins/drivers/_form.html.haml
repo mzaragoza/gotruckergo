@@ -92,6 +92,14 @@
     .mws-form-item
     = f.input :combination_of_tank_vehicle_and_hazardous_materials, :label => false
   .mws-form-row
+    %label.mws-form-label= t(:photo)
+    .mws-form-item
+    = f.input :photo, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:drivers_license_photo)
+    .mws-form-item
+    = f.input :drivers_license_photo, :label => false
+  .mws-form-row
     .mws-form-item
     = f.button :submit, :class => 'pull-right btn btn-info'
 

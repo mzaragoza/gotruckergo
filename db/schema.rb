@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704064558) do
+ActiveRecord::Schema.define(:version => 20130704145940) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "",   :null => false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20130704064558) do
     t.string   "motor_carrier_number", :default => "", :null => false
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
+    t.string   "carreir_packet_pdf",   :default => ""
   end
 
   create_table "drivers", :force => true do |t|
@@ -90,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20130704064558) do
     t.boolean  "combination_of_tank_vehicle_and_hazardous_materials", :default => false
     t.datetime "created_at",                                                             :null => false
     t.datetime "updated_at",                                                             :null => false
+    t.string   "drivers_license_photo",                               :default => ""
   end
 
   create_table "receipts", :force => true do |t|
@@ -180,6 +182,7 @@ ActiveRecord::Schema.define(:version => 20130704064558) do
     t.boolean  "delivery_appointment",       :default => false
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
+    t.string   "load_conformation_pdf",      :default => ""
   end
 
   create_table "trailers", :force => true do |t|
