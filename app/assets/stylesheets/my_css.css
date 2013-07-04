@@ -45,3 +45,10 @@ table a {color:#000000;}
     -moz-box-shadow:    0 0 5px black;
     box-shadow:         0 0 5px black;
 }
+
+.pull-right{
+  float: right;
+}
+.row-fluid [class*="span"]:nth-child(3n+1) {
+   margin-left: 0;
+ }
