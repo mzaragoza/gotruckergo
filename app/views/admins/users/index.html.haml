@@ -11,6 +11,8 @@
           %th=t(:name)
           %th=t(:email)
           %th=t(:phone)
+          %th=t(:is_owner)
+          %th=t(:is_primary)
           %th=t(:active)
           %th
           %th
@@ -22,11 +24,20 @@
             %td= u.email
             %td= number_to_phone(u.phone)
             %td
+              -if u.is_owner
+                .badge.badge-success Owner
+              -else
+                .badge.badge-important User
+            %td
+              -if u.is_primary
+                .badge.badge-success Primary
+              -else
+                .badge.badge-important Regular
+            %td
               -if u.active
                 .badge.badge-success Active
               -else
                 .badge.badge-important Inactive
-
             %td
               - if u.photo?
                 = image_tag u.photo, :width => '50'

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name, :photo, :phone, :active
+  attr_accessible :first_name, :last_name, :photo, :phone, :active, :is_owner, :is_primary
 
   attr_accessor :updating_password
   mount_uploader :photo, PhotoUploader

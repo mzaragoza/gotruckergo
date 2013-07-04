@@ -9,6 +9,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :photo,              :null => false, :default => ""
       t.string :phone,              :null => false, :default => ""
       t.boolean :active,            :null => false, :default => true
+      t.boolean :is_owner,          :null => false, :default => false
+      t.boolean :is_primary,        :null => false, :default => false
 
       ## Recoverable
       t.string   :reset_password_token

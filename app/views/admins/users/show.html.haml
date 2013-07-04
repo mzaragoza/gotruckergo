@@ -28,6 +28,24 @@
             %span.text-nowrap= user.full_name
         %li
           %span.key
+            = t(:owner)
+          %span.val
+            %span.text-nowrap
+              -if user.is_owner
+                .badge.badge-success Owner
+              -else
+                .badge.badge-important User
+        %li
+          %span.key
+            = t(:primary)
+          %span.val
+            %span.text-nowrap
+            -if user.is_primary
+              .badge.badge-success Primary
+            -else
+              .badge.badge-important Regular
+        %li
+          %span.key
             = t(:phone)
           %span.val
             %span.text-nowrap= user.phone
