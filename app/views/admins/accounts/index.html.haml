@@ -1,0 +1,34 @@
+= link_to t(:add_account), new_admins_account_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Accounts
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:primary_user)
+          %th=t(:phone)
+          %th=t(:users)
+          %th=t(:created_at)
+          %th
+          %th
+      %tbody
+        - accounts.each do |a|
+          %tr
+            %td= link_to a.id, admins_account_path(a)
+            %td= link_to a.name, admins_account_path(a)
+            %td
+              = a.users.where(:is_primary => true).first.full_name if a.users.where(:is_primary => true).first
+            %td= number_to_phone(a.phone)
+            %td= a.users.count
+            %td= a.created_at
+            %td
+              - if a.photo?
+                = image_tag a.photo, :width => '50'
+              - else
+                = image_tag 'icons/icol32/accounts.png', :width => '50'
+            %td= link_to 'Edit', edit_admins_account_path(a), :class => 'btn btn-small btn-info'
+

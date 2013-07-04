@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.boolean :active,            :null => false, :default => true
       t.boolean :is_owner,          :null => false, :default => false
       t.boolean :is_primary,        :null => false, :default => false
+      t.integer :account_id
 
       ## Recoverable
       t.string   :reset_password_token

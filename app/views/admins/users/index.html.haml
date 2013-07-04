@@ -13,6 +13,7 @@
           %th=t(:phone)
           %th=t(:is_owner)
           %th=t(:is_primary)
+          %th=t(:account)
           %th=t(:active)
           %th
           %th
@@ -23,6 +24,8 @@
             %td= link_to u.full_name, admins_user_path(u)
             %td= u.email
             %td= number_to_phone(u.phone)
+            %td
+              = link_to u.account.name, admins_account_path(u.account) if u.account
             %td
               -if u.is_owner
                 .badge.badge-success Owner

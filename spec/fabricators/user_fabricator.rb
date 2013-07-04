@@ -12,5 +12,8 @@ Fabricator(:user) do
   #    :filename => File.basename(File.new(Rails.root.join("app/assets/images/admin.png")))
   #  )
   #}
+  after_build do |u|
+    u.account ||= Account.last || Fabricate(:account)
+  end
 end
 

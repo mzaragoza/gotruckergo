@@ -18,6 +18,12 @@
             %span.text-nowrap= user.id
         %li
           %span.key
+            = t(:account)
+          %span.val
+            %span.text-nowrap
+              = user.account.name if user.account
+        %li
+          %span.key
             = t(:email)
           %span.val
             %span.text-nowrap= user.email 

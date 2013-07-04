@@ -84,6 +84,10 @@
                 = link_to admins_admins_path do
                   %i.icol32-admins
                   Admins
+            %li{:class => "#{'active' if params[:controller] == 'admins/accounts' }"}
+              = link_to admins_accounts_path do
+                %i.icol32-accounts
+                Accounts
             %li{:class => "#{'active' if params[:controller] == 'admins/users' }"}
               = link_to admins_users_path do
                 %i.icol32-user
@@ -121,6 +125,16 @@
         / Inner Container Start
         .container
           / Statistics Button Container
+          .mws-stat-container.clearfix
+            / Statistic Item
+            = link_to admins_accounts_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-accounts
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Accounts
+                %span.mws-stat-value
+                  = Account.count
           .mws-stat-container.clearfix
             / Statistic Item
             = link_to admins_users_path, :class => 'mws-stat' do
