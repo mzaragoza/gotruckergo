@@ -108,6 +108,10 @@
               = link_to admins_receipts_path do
                 %i.icol32-credit-card
                 Receipts
+            %li{:class => "#{'active' if params[:controller] == 'admins/repairs' }"}
+              = link_to admins_repairs_path do
+                %i.icol32-repairs
+                Repairs
       / Main Container Start
       #mws-container.clearfix
         / Inner Container Start

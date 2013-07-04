@@ -1,0 +1,37 @@
+= link_to t(:add_repair), new_admins_repair_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Repairs
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:service_provider_name)
+          %th=t(:truck)
+          %th=t(:trailer)
+          %th=t(:city)
+          %th=t(:state)
+          %th=t(:phone)
+          %th=t(:invoice_date)
+          %th=t(:delivery_date)
+          %th=t(:return_date)
+          %th=t(:total)
+          %th
+      %tbody
+        - repairs.each do |r|
+          %tr
+            %td= link_to r.id, admins_repair_path(r)
+            %td= link_to r.service_provider_name, admins_repair_path(r)
+            %td= link_to r.truck.name, admins_truck_path(r.truck) if r.truck
+            %td= link_to r.trailer.name, admins_trailer_path(r.trailer) if  r.trailer
+            %td= r.service_provider_city
+            %td= r.service_provider_state
+            %td= r.service_provider_phone
+            %td= r.invoice_date
+            %td= r.delivery_date
+            %td= r.return_date
+            %td= r.total
+            %td= link_to 'Edit', edit_admins_repair_path(r), :class => 'btn btn-small btn-info'
+

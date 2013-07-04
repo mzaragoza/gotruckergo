@@ -1,0 +1,13 @@
+.mws-panel.grid_12
+  .mws-panel-header
+    = link_to 'Edit', edit_admins_receipt_path(receipt), :class => 'btn btn-info pull-right'
+    %span
+      = receipt.id
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          = t(:id)
+        %span.val
+          %span.text-nowrap= receipt.id
+

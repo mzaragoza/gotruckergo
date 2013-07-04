@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702023415) do
+ActiveRecord::Schema.define(:version => 20130704020956) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "",   :null => false
@@ -103,6 +103,31 @@ ActiveRecord::Schema.define(:version => 20130702023415) do
     t.string   "credit_card_number", :default => "", :null => false
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+  end
+
+  create_table "repairs", :force => true do |t|
+    t.integer  "truck_id"
+    t.integer  "trailer_id"
+    t.string   "service_provider_name",     :default => "", :null => false
+    t.string   "service_provider_address",  :default => "", :null => false
+    t.string   "service_provider_address2", :default => "", :null => false
+    t.string   "service_provider_city",     :default => "", :null => false
+    t.string   "service_provider_state",    :default => "", :null => false
+    t.string   "service_provider_zip",      :default => "", :null => false
+    t.string   "service_provider_fax",      :default => "", :null => false
+    t.string   "service_provider_phone",    :default => "", :null => false
+    t.string   "delivery_date",             :default => "", :null => false
+    t.string   "return_date",               :default => "", :null => false
+    t.string   "payment_info",              :default => "", :null => false
+    t.string   "invoice_date",              :default => "", :null => false
+    t.string   "invoice_number",            :default => "", :null => false
+    t.text     "details",                   :default => "", :null => false
+    t.string   "labor",                     :default => "", :null => false
+    t.string   "parts",                     :default => "", :null => false
+    t.string   "tax",                       :default => "", :null => false
+    t.string   "total",                     :default => "", :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "shipments", :force => true do |t|

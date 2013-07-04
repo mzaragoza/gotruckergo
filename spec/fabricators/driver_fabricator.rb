@@ -5,8 +5,8 @@ Fabricator(:driver) do
   address2 { Faker::Address.secondary_address}
   city { Faker::Address.city}
   state { Faker::Address.state_abbr}
-  zip { Faker::Address.zip_code }
-  cell { Faker::PhoneNumber.cell_phone }
+  zip { Faker::Address.zip_code.to_s.gsub(/[^0-9]/, "").to_s }
+  cell { Faker::PhoneNumber.cell_phone.to_s.gsub(/[^0-9]/, "").to_s }
   email { Faker::Internet.email}
   ssn {rand(999999999) }
   drivers_license {rand(999999999)}
