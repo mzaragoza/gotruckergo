@@ -57,7 +57,7 @@
         %span.key
           = t(:pick_up_location_phone)
         %span.val
-          %span.text-nowrap= shipment.pick_up_location_phone
+          %span.text-nowrap= number_to_phone(shipment.pick_up_location_phone)
       %li
         %span.key
           = t(:delivery_location_address)
@@ -72,7 +72,7 @@
         %span.key
           = t(:delivery_location_phone)
         %span.val
-          %span.text-nowrap= shipment.delivery_location_phone
+          %span.text-nowrap= number_to_phone(shipment.delivery_location_phone)
       %li
         %span.key
           = t(:number_of_stops)

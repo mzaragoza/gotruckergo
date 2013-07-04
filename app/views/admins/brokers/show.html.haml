@@ -19,12 +19,12 @@
         %span.key
           = t(:phone)
         %span.val
-          %span.text-nowrap= broker.phone
+          %span.text-nowrap= number_to_phone(broker.phone)
       %li
         %span.key
           = t(:fax)
         %span.val
-          %span.text-nowrap= broker.fax
+          %span.text-nowrap= number_to_phone(broker.fax)
       %li
         %span.key
           = t(:email)

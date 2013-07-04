@@ -20,10 +20,10 @@
           %tr
             %td= link_to b.id, admins_broker_path(b)
             %td= link_to b.name, admins_broker_path(b)
-            %td= b.phone
-            %td= b.fax
-            %td= b.email
-            %td= b.website
+            %td= number_to_phone(b.phone)
+            %td= number_to_phone(b.fax)
+            %td= mail_to b.email
+            %td= link_to b.website, b.website , :target => '_blank'
             %td= b.motor_carrier_number
             %td= link_to 'Edit', edit_admins_broker_path(b), :class => 'btn btn-small btn-info'
 

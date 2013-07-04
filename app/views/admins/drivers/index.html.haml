@@ -20,11 +20,14 @@
           %tr
             %td= link_to d.id, admins_driver_path(d)
             %td= link_to d.full_name, admins_driver_path(d)
-            %td= link_to d.truck.name, admins_truck_path(d.truck) if d.truck
-            %td= link_to d.truck.trailer.name, admins_trailer_path(d.truck.trailer) if d.truck and d.truck.trailer
-            %td= d.cell
+            %td
+              = link_to d.truck.name, admins_truck_path(d.truck) if d.truck
+            %td
+              = link_to d.truck.trailer.name, admins_trailer_path(d.truck.trailer) if d.truck and d.truck.trailer
+            %td= number_to_phone(d.cell)
             %td= mail_to d.email
-            %td= #photo
+            %td
+              = d.photo if d.photo?
             %td= link_to 'Edit', edit_admins_driver_path(d), :class => 'btn btn-small btn-info'
 
 

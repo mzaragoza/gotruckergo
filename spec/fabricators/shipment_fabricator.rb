@@ -6,14 +6,14 @@ Fabricator(:shipment) do
   pick_up_location_address2 { Faker::Address.secondary_address}
   pick_up_location_city { Faker::Address.city}
   pick_up_location_state { Faker::Address.state_abbr}
-  pick_up_location_zip { Faker::Address.zip_code.to_s.gsub(/[^0-9]/, "").to_s }
-  pick_up_location_phone { Faker::PhoneNumber.cell_phone.to_s.gsub(/[^0-9]/, "").to_s }
+  pick_up_location_zip { Faker::Address.zip_code.to_s.gsub(/[^0-9]/, "").to_s[0...5] }
+  pick_up_location_phone { Faker::PhoneNumber.cell_phone.to_s.gsub(/[^0-9]/, "").to_s[0...10] }
   delivery_location_address { Faker::Address.street_name }
   delivery_location_address2 { Faker::Address.secondary_address}
   delivery_location_city { Faker::Address.city}
   delivery_location_state{ Faker::Address.state_abbr}
-  delivery_location_zip { Faker::Address.zip_code.to_s.gsub(/[^0-9]/, "").to_s }
-  delivery_location_phone { Faker::PhoneNumber.cell_phone.to_s.gsub(/[^0-9]/, "").to_s }
+  delivery_location_zip { Faker::Address.zip_code.to_s.gsub(/[^0-9]/, "").to_s[0...5] }
+  delivery_location_phone { Faker::PhoneNumber.cell_phone.to_s.gsub(/[^0-9]/, "").to_s[0...10] }
   number_of_stops {rand(10)}
   notes { Faker::Lorem.sentence }
   pick_up_date {DateTime.now}

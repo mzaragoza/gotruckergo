@@ -42,6 +42,11 @@
           %span.text-nowrap= driver.email
       %li
         %span.key
+          = t(:cell)
+        %span.val
+          %span.text-nowrap= number_to_phone(driver.cell)
+      %li
+        %span.key
           = t(:ssn)
         %span.val
           %span.text-nowrap= driver.ssn
