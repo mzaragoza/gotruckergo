@@ -1,0 +1,31 @@
+= link_to t(:add_broker), new_admins_broker_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Brokers
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th= t(:id)
+          %th= t(:name)
+          %th= t(:phone)
+          %th= t(:fax)
+          %th= t(:email)
+          %th= t(:website)
+          %th= t(:motor_carrier_number)
+          %th
+      %tbody
+        - brokers.each do |b|
+          %tr
+            %td= link_to b.id, admins_broker_path(b)
+            %td= link_to b.name, admins_broker_path(b)
+            %td= number_to_phone(b.phone)
+            %td= number_to_phone(b.fax)
+            %td= mail_to b.email
+            %td= link_to b.website, b.website , :target => '_blank'
+            %td= b.motor_carrier_number
+            %td= link_to 'Edit', edit_admins_broker_path(b), :class => 'btn btn-small btn-info'
+
+
+

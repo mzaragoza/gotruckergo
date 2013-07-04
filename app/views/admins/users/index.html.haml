@@ -1,0 +1,36 @@
+= link_to t(:add_user), new_admins_user_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Users
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:email)
+          %th=t(:phone)
+          %th=t(:active)
+          %th
+          %th
+      %tbody
+        - users.each do |u|
+          %tr
+            %td= link_to u.id, admins_user_path(u)
+            %td= link_to u.full_name, admins_user_path(u)
+            %td= u.email
+            %td= number_to_phone(u.phone)
+            %td
+              -if u.active
+                .badge.badge-success Active
+              -else
+                .badge.badge-important Inactive
+
+            %td
+              - if u.photo?
+                = image_tag u.photo, :width => '50'
+              - else
+                = image_tag 'icons/icol32/user.png', :width => '50'
+            %td= link_to 'Edit', edit_admins_user_path(u), :class => 'btn btn-small btn-info'
+

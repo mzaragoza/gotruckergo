@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
   #before_filter :redirect_if_logged_in
   def index
-    redirect_to "/admins"
+    redirect_to "/users"
   end
   def login
-    render :layout => 'admin_login'
+    render :layout => 'user_login'
   end
 
   def error

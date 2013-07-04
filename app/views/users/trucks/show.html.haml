@@ -1,0 +1,99 @@
+.row-fluid
+  .mws-panel.grid_2.pull-right
+    - unless truck.photo.blank?
+      = image_tag truck.photo, :width => '500', :class => 'img-polaroid'
+    - else
+      = image_tag 'truck-icon.png', :width => '500', :class => 'img-polaroid'
+  .mws-panel.grid_6
+    .mws-panel-header
+      = link_to 'Edit', edit_admins_truck_path(truck), :class => 'btn btn-info pull-right'
+      %span
+        = truck.name.titleize
+    .mws-panel-body.no-padding
+      %ul.mws-summary.clearfix
+        %li
+          %span.key
+            = t(:id)
+          %span.val
+            %span.text-nowrap= truck.id
+        %li
+          %span.key
+            = t(:name)
+          %span.val
+            %span.text-nowrap= truck.name
+        %li
+          %span.key
+            = t(:trailer)
+          %span.val
+            %span.text-nowrap= truck.trailer.name if truck.trailer
+        %li
+          %span.key
+            = t(:annual_inspection_date)
+          %span.val
+            %span.text-nowrap= truck.annual_inspection_date
+        %li
+          %span.key
+            = t(:engine)
+          %span.val
+            %span.text-nowrap= truck.engine
+        %li
+          %span.key
+            = t(:sleeper)
+          %span.val
+            %span.text-nowrap= truck.sleeper
+        %li
+          %span.key
+            = t(:transmission)
+          %span.val
+            %span.text-nowrap= truck.transmission
+        %li
+          %span.key
+            = t(:suspension)
+          %span.val
+            %span.text-nowrap= truck.suspension
+        %li
+          %span.key
+            = t(:front_axel_capacity)
+          %span.val
+            %span.text-nowrap= truck.front_axel_capacity
+        %li
+          %span.key
+            = t(:rear_axle_capacity)
+          %span.val
+            %span.text-nowrap= truck.rear_axle_capacity
+        %li
+          %span.key
+            = t(:rear_end_ratio)
+          %span.val
+            %span.text-nowrap= truck.rear_end_ratio
+        %li
+          %span.key
+            = t(:wheelbase)
+          %span.val
+            %span.text-nowrap= truck.wheelbase
+        %li
+          %span.key
+            = t(:wheels)
+          %span.val
+            %span.text-nowrap= truck.wheels
+        %li
+          %span.key
+            = t(:tires)
+          %span.val
+            %span.text-nowrap= truck.tires
+        %li
+          %span.key
+            = t(:odometer)
+          %span.val
+            %span.text-nowrap= truck.odometer
+        %li
+          %span.key
+            = t(:vin)
+          %span.val
+            %span.text-nowrap= truck.vin
+        %li
+          %span.key
+            = t(:tag)
+          %span.val
+            %span.text-nowrap= truck.tag
+

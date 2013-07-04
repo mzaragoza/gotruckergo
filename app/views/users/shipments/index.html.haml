@@ -1,0 +1,42 @@
+= link_to t(:add_shipment), new_admins_shipment_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Shipments
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:broker)
+          %th=t(:truck)
+          %th=t(:trailer)
+          %th=t(:pick_up_date)
+          %th=t(:deliver_date)
+          %th=t(:number_of_stops)
+          %th=t(:paid_status)
+          %th=t(:paid_date)
+          %th=t(:equipment_type)
+          %th=t(:load_conformation)
+          %th
+      %tbody
+        - shipments.each do |s|
+          %tr
+            %td= link_to s.id, admins_shipment_path(s)
+            %td= link_to s.broker.name, admins_broker_path(s.broker) if s.broker
+            %td= link_to s.truck.name, admins_truck_path(s.truck) if s.truck
+            %td= link_to s.trailer.name, admins_truck_path(s.trailer) if s.trailer
+            %td= s.pick_up_date
+            %td= s.deliver_date
+            %td= s.number_of_stops
+            %td= s.paid_status
+            %td= s.paid_date
+            %td= s.equipment_type
+            %td
+              - unless s.load_conformation_pdf.blank?
+                = link_to t(:load_conformation_pdf), s.load_conformation_pdf_url, :target => '_blanl'
+                = s.load_conformation_pdf
+              - else
+                %span{:style => 'color:#F00'}= t(:load_conformation)
+
+            %td= link_to 'Edit', edit_admins_shipment_path(s), :class => 'btn btn-small btn-info'

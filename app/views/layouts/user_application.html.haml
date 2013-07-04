@@ -45,20 +45,22 @@
         #mws-user-info.mws-inset
           / User Photo
           #mws-user-photo
-            - if current_admin.photo_url
-              = image_tag current_admin.photo_url, :alt => t(:company_name)
-            - else
+            -# if current_user.photo_url
+              = image_tag current_user.photo_url, :alt => t(:company_name)
+            -# else
               = image_tag 'example/profile.jpg', :alt => t(:company_name)
+            = image_tag 'example/profile.jpg', :alt => t(:company_name)
+
           / Username and Functions
           #mws-user-functions
             #mws-username
               Hello,
-              = current_admin.full_name
+              = current_user.full_name
             %ul
               %li
-                = link_to 'Profile', edit_admins_profile_path(current_admin)
+                = link_to 'Profile', edit_users_profile_path(current_user)
               %li
-                = link_to 'Logout', destroy_admin_session_path, :method => :delete
+                = link_to 'Logout', destroy_user_session_path, :method => :delete
     / Start Main Wrapper
     #mws-wrapper
       / Necessary markup, do not remove
@@ -75,45 +77,36 @@
         / Main Navigation
         #mws-navigation
           %ul
-            %li{:class => "#{'active' if params[:controller] == 'admins/dashboards' }"}
+            %li{:class => "#{'active' if params[:controller] == 'users/dashboards' }"}
               = link_to root_path do
                 %i.icol32-dashboard
                 Dashboard
-            - if Rails.env != "production" or current_admin.email.downcase == 'mzaragoza@circletechfl.com' or current_admin.email.downcase == 'admin@test.com'
-              %li{:class => "#{'active' if params[:controller] == 'admins/admins' }"}
-                = link_to admins_admins_path do
-                  %i.icol32-admins
-                  Admins
-            %li{:class => "#{'active' if params[:controller] == 'admins/users' }"}
-              = link_to admins_users_path do
-                %i.icol32-user
-                Users
-            %li{:class => "#{'active' if params[:controller] == 'admins/drivers' }"}
-              = link_to admins_drivers_path do
+            %li{:class => "#{'active' if params[:controller] == 'users/drivers' }"}
+              = link_to users_drivers_path do
                 %i.icol32-drivers
                 Drivers
-            %li{:class => "#{'active' if params[:controller] == 'admins/trucks' }"}
-              = link_to admins_trucks_path do
+            %li{:class => "#{'active' if params[:controller] == 'users/trucks' }"}
+              = link_to users_trucks_path do
                 %i.icol32-truck
                 Trucks
-            %li{:class => "#{'active' if params[:controller] == 'admins/trailers' }"}
-              = link_to admins_trailers_path do
+            %li{:class => "#{'active' if params[:controller] == 'users/trailers' }"}
+              = link_to users_trailers_path do
                 %i.icol32-trailers
                 Trailers
-            %li{:class => "#{'active' if params[:controller] == 'admins/brokers' }"}
-              = link_to admins_brokers_path do
+            %li{:class => "#{'active' if params[:controller] == 'users/brokers' }"}
+              = link_to users_brokers_path do
                 %i.icol32-brokers
                 Brokers 
-            %li{:class => "#{'active' if params[:controller] == 'admins/shipments' }"}
-              = link_to admins_shipments_path do
+            %li{:class => "#{'active' if params[:controller] == 'users/shipments' }"}
+              = link_to users_shipments_path do
                 %i.icol32-shipments
                 Shipments
-            %li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
-              = link_to admins_receipts_path do
+            %li{:class => "#{'active' if params[:controller] == 'users/receipts' }"}
+              = link_to users_receipts_path do
                 %i.icol32-credit-card
                 Receipts
-            %li{:class => "#{'active' if params[:controller] == 'admins/repairs' }"}
-              = link_to admins_repairs_path do
+            %li{:class => "#{'active' if params[:controller] == 'users/repairs' }"}
+              = link_to users_repairs_path do
                 %i.icol32-repairs
                 Repairs
       / Main Container Start
@@ -123,15 +116,7 @@
           / Statistics Button Container
           .mws-stat-container.clearfix
             / Statistic Item
-            = link_to admins_users_path, :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-user
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Users
-                %span.mws-stat-value
-                  = User.count
-            = link_to admins_drivers_path, :class => 'mws-stat' do
+            = link_to users_drivers_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-drivers
               / Statistic Content
@@ -139,7 +124,7 @@
                 %span.mws-stat-title Drivers
                 %span.mws-stat-value
                   = Driver.count
-            = link_to admins_trucks_path, :class => 'mws-stat' do
+            = link_to users_trucks_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-truck
               / Statistic Content
@@ -147,7 +132,7 @@
                 %span.mws-stat-title Trucks
                 %span.mws-stat-value
                   = Truck.count
-            = link_to admins_trailers_path, :class => 'mws-stat' do
+            = link_to users_trailers_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-trailers
               / Statistic Content
@@ -155,7 +140,7 @@
                 %span.mws-stat-title Trailer
                 %span.mws-stat-value
                   = Trailer.count
-            = link_to admins_brokers_path, :class => 'mws-stat' do
+            = link_to users_brokers_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-brokers
               / Statistic Content
@@ -198,3 +183,4 @@
       <script src="js/libs/excanvas.min.js"></script>
     = javascript_include_tag "application"
     = yield :page_footer
+

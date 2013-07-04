@@ -1,0 +1,42 @@
+!!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html{:lang => "en"}
+  = csrf_meta_tags
+  =# stylesheet_link_tag "application_login", :media => "all"
+  = stylesheet_link_tag 'bootstrap/css/bootstrap'
+  = stylesheet_link_tag 'fonts/ptsans/stylesheet'
+  = stylesheet_link_tag 'fonts/icomoon/style'
+  = stylesheet_link_tag 'form'
+  = stylesheet_link_tag 'button'
+  = stylesheet_link_tag 'login'
+  = stylesheet_link_tag 'mws-theme'
+  = stylesheet_link_tag 'my_css'
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}/
+    / Viewport Metatag
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    / Required Stylesheets
+    %title 
+      = t(:company_name)
+      | Login Page
+    = render '/shared/analytics'
+  %body
+    .container
+      - unless flash[:notice].blank?
+        #notice
+          %h3= flash[:notice]
+        %br
+      - unless flash[:error].blank?
+        #error
+          %h3= flash[:error]
+        %br
+      - unless flash[:alert].blank?
+        #alert
+          %h3= flash[:alert]
+        %br
+    = yield
+    = javascript_include_tag "application_login"
