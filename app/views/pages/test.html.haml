@@ -1,385 +1,796 @@
 !!!
-/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
-/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
-/[if IE 8] <html class="lt-ie9" lang="en">
-/ [if gt IE 8]><!
 %html{:lang => "en"}
   / <![endif]
   %head
     %meta{:charset => "utf-8"}/
-    = stylesheet_link_tag "application", :media => "all"
-    
-    %title MWS Admin - Table
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    =# stylesheet_link_tag 'plugins/colorpicker/colorpicker'
+    <!-- Plugin Stylesheets first to ease overrides -->
+    <link rel="stylesheet" type="text/css" href="/css/plugins/colorpicker/colorpicker.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/plugins/imgareaselect/css/imgareaselect-default.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/plugins/jgrowl/jquery.jgrowl.css" media="screen">
+
+    <!-- Required Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/fonts/ptsans/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/fonts/icomoon/style.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="/css/mws-style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/icons/icol16.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/icons/icol32.css" media="screen">
+
+    <!-- Demo Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/demo.css" media="screen">
+
+    <!-- jQuery-UI Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/jui/css/jquery.ui.all.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/jui/css/jquery.ui.timepicker.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/jui/jquery-ui.custom.css" media="screen">
+
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/mws-theme.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/themer.css" media="screen">
+    %title MWS Admin - Widgets
   %body
-    / Main Container Start
-    #mws-container.clearfix
-      / Inner Container Start
-      .container
-        .mws-panel.grid_8
-          .mws-panel-header
-            %span
-              %i.icon-table
-              Data Table with Numbered Pagination
-          .mws-panel-body.no-padding
-            %table.mws-datatable-fn.mws-table
-              %thead
-                %tr
-                  %th Rendering engine
-                  %th Browser
-                  %th Platform(s)
-                  %th Engine version
-                  %th CSS grade
-              %tbody
-                %tr
-                  %td Trident
-                  %td
-                    Internet
-                    Explorer 4.0
-                  %td Win 95+
-                  %td 4
-                  %td X
-                %tr
-                  %td Trident
-                  %td
-                    Internet
-                    Explorer 5.0
-                  %td Win 95+
-                  %td 5
-                  %td C
-                %tr
-                  %td Trident
-                  %td
-                    Internet
-                    Explorer 5.5
-                  %td Win 95+
-                  %td 5.5
-                  %td A
-                %tr
-                  %td Trident
-                  %td
-                    Internet
-                    Explorer 6
-                  %td Win 98+
-                  %td 6
-                  %td A
-                %tr
-                  %td Trident
-                  %td Internet Explorer 7
-                  %td Win XP SP2+
-                  %td 7
-                  %td A
-                %tr
-                  %td Trident
-                  %td AOL browser (AOL desktop)
-                  %td Win XP
-                  %td 6
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Firefox 1.0
-                  %td Win 98+ / OSX.2+
-                  %td 1.7
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Firefox 1.5
-                  %td Win 98+ / OSX.2+
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Firefox 2.0
-                  %td Win 98+ / OSX.2+
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Firefox 3.0
-                  %td Win 2k+ / OSX.3+
-                  %td 1.9
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Camino 1.0
-                  %td OSX.2+
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Camino 1.5
-                  %td OSX.3+
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Netscape 7.2
-                  %td Win 95+ / Mac OS 8.6-9.2
-                  %td 1.7
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Netscape Browser 8
-                  %td Win 98SE+
-                  %td 1.7
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Netscape Navigator 9
-                  %td Win 98+ / OSX.2+
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.0
-                  %td Win 95+ / OSX.1+
-                  %td 1
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.1
-                  %td Win 95+ / OSX.1+
-                  %td 1.1
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.2
-                  %td Win 95+ / OSX.1+
-                  %td 1.2
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.3
-                  %td Win 95+ / OSX.1+
-                  %td 1.3
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.4
-                  %td Win 95+ / OSX.1+
-                  %td 1.4
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.5
-                  %td Win 95+ / OSX.1+
-                  %td 1.5
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.6
-                  %td Win 95+ / OSX.1+
-                  %td 1.6
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.7
-                  %td Win 98+ / OSX.1+
-                  %td 1.7
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Mozilla 1.8
-                  %td Win 98+ / OSX.1+
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Seamonkey 1.1
-                  %td Win 98+ / OSX.2+
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Gecko
-                  %td Epiphany 2.20
-                  %td Gnome
-                  %td 1.8
-                  %td A
-                %tr
-                  %td Webkit
-                  %td Safari 1.2
-                  %td OSX.3
-                  %td 125.5
-                  %td A
-                %tr
-                  %td Webkit
-                  %td Safari 1.3
-                  %td OSX.3
-                  %td 312.8
-                  %td A
-                %tr
-                  %td Webkit
-                  %td Safari 2.0
-                  %td OSX.4+
-                  %td 419.3
-                  %td A
-                %tr
-                  %td Webkit
-                  %td Safari 3.0
-                  %td OSX.4+
-                  %td 522.1
-                  %td A
-                %tr
-                  %td Webkit
-                  %td OmniWeb 5.5
-                  %td OSX.4+
-                  %td 420
-                  %td A
-                %tr
-                  %td Webkit
-                  %td iPod Touch / iPhone
-                  %td iPod
-                  %td 420.1
-                  %td A
-                %tr
-                  %td Webkit
-                  %td S60
-                  %td S60
-                  %td 413
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera 7.0
-                  %td Win 95+ / OSX.1+
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera 7.5
-                  %td Win 95+ / OSX.2+
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera 8.0
-                  %td Win 95+ / OSX.2+
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera 8.5
-                  %td Win 95+ / OSX.2+
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera 9.0
-                  %td Win 95+ / OSX.3+
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera 9.2
-                  %td Win 88+ / OSX.3+
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera 9.5
-                  %td Win 88+ / OSX.3+
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Opera for Wii
-                  %td Wii
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Nokia N800
-                  %td N800
-                  %td -
-                  %td A
-                %tr
-                  %td Presto
-                  %td Nintendo DS browser
-                  %td Nintendo DS
-                  %td 8.5
-                  %td
-                    C/A
-                    %sup 1
-                %tr
-                  %td KHTML
-                  %td Konqureror 3.1
-                  %td KDE 3.1
-                  %td 3.1
-                  %td C
-                %tr
-                  %td KHTML
-                  %td Konqureror 3.3
-                  %td KDE 3.3
-                  %td 3.3
-                  %td A
-                %tr
-                  %td KHTML
-                  %td Konqureror 3.5
-                  %td KDE 3.5
-                  %td 3.5
-                  %td A
-                %tr
-                  %td Tasman
-                  %td Internet Explorer 4.5
-                  %td Mac OS 8-9
-                  %td -
-                  %td X
-                %tr
-                  %td Tasman
-                  %td Internet Explorer 5.1
-                  %td Mac OS 7.6-9
-                  %td 1
-                  %td C
-                %tr
-                  %td Tasman
-                  %td Internet Explorer 5.2
-                  %td Mac OS 8-X
-                  %td 1
-                  %td C
-                %tr
-                  %td Misc
-                  %td NetFront 3.1
-                  %td Embedded devices
-                  %td -
-                  %td C
-                %tr
-                  %td Misc
-                  %td NetFront 3.4
-                  %td Embedded devices
-                  %td -
-                  %td A
-                %tr
-                  %td Misc
-                  %td Dillo 0.8
-                  %td Embedded devices
-                  %td -
-                  %td X
-                %tr
-                  %td Misc
-                  %td Links
-                  %td Text only
-                  %td -
-                  %td X
-                %tr
-                  %td Misc
-                  %td Lynx
-                  %td Text only
-                  %td -
-                  %td X
-                %tr
-                  %td Misc
-                  %td IE Mobile
-                  %td Windows Mobile 6
-                  %td -
-                  %td C
-                %tr
-                  %td Misc
-                  %td PSP browser
-                  %td PSP
-                  %td -
-                  %td C
-                %tr
-                  %td Other browsers
-                  %td All others
-                  %td -
-                  %td -
-                  %td U
-    = javascript_include_tag "application"
+    / Themer (Remove if not needed)
+    #mws-themer
+      #mws-themer-content
+        #mws-themer-ribbon
+        #mws-themer-toggle
+          %i.icon-bended-arrow-left
+          %i.icon-bended-arrow-right
+        #mws-theme-presets-container.mws-themer-section
+          %label{:for => "mws-theme-presets"} Color Presets
+        .mws-themer-separator
+        #mws-theme-pattern-container.mws-themer-section
+          %label{:for => "mws-theme-patterns"} Background
+        .mws-themer-separator
+        .mws-themer-section
+          %ul
+            %li.clearfix
+              %span Base Color
+              #mws-base-cp.mws-cp-trigger
+            %li.clearfix
+              %span Highlight Color
+              #mws-highlight-cp.mws-cp-trigger
+            %li.clearfix
+              %span Text Color
+              #mws-text-cp.mws-cp-trigger
+            %li.clearfix
+              %span Text Glow Color
+              #mws-textglow-cp.mws-cp-trigger
+            %li.clearfix
+              %span Text Glow Opacity
+              #mws-textglow-op
+        .mws-themer-separator
+        .mws-themer-section
+          %button#mws-themer-getcss.btn.btn-danger.small Get CSS
+      #mws-themer-css-dialog
+        %form.mws-form
+          .mws-form-row
+            .mws-form-item
+              %textarea{:cols => "auto", :readonly => "readonly", :rows => "auto"}
+    / Themer End
+    / Header
+    #mws-header.clearfix
+      / Logo Container
+      #mws-logo-container
+        / Logo Wrapper, images put within this wrapper will always be vertically centered
+        #mws-logo-wrap
+          %img{:alt => "mws admin", :src => "images/mws-logo.png"}/
+      / User Tools (notifications, logout, profile, change password)
+      #mws-user-tools.clearfix
+        / Notifications
+        #mws-user-notif.mws-dropdown-menu
+          %a.mws-dropdown-trigger{"data-toggle" => "dropdown", :href => "#"}
+            %i.icon-exclamation-sign
+          / Unread notification count
+          %span.mws-dropdown-notif 35
+          / Notifications dropdown
+          .mws-dropdown-box
+            .mws-dropdown-content
+              %ul.mws-notifications
+                %li.read
+                  %a{:href => "#"}
+                    %span.message
+                      Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                    %span.time
+                      January 21, 2012
+                %li.read
+                  %a{:href => "#"}
+                    %span.message
+                      Lorem ipsum dolor sit amet
+                    %span.time
+                      January 21, 2012
+                %li.unread
+                  %a{:href => "#"}
+                    %span.message
+                      Lorem ipsum dolor sit amet
+                    %span.time
+                      January 21, 2012
+                %li.unread
+                  %a{:href => "#"}
+                    %span.message
+                      Lorem ipsum dolor sit amet
+                    %span.time
+                      January 21, 2012
+              .mws-dropdown-viewall
+                %a{:href => "#"} View All Notifications
+        / Messages
+        #mws-user-message.mws-dropdown-menu
+          %a.mws-dropdown-trigger{"data-toggle" => "dropdown", :href => "#"}
+            %i.icon-envelope
+          / Unred messages count
+          %span.mws-dropdown-notif 35
+          / Messages dropdown
+          .mws-dropdown-box
+            .mws-dropdown-content
+              %ul.mws-messages
+                %li.read
+                  %a{:href => "#"}
+                    %span.sender John Doe
+                    %span.message
+                      Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                    %span.time
+                      January 21, 2012
+                %li.read
+                  %a{:href => "#"}
+                    %span.sender John Doe
+                    %span.message
+                      Lorem ipsum dolor sit amet
+                    %span.time
+                      January 21, 2012
+                %li.unread
+                  %a{:href => "#"}
+                    %span.sender John Doe
+                    %span.message
+                      Lorem ipsum dolor sit amet
+                    %span.time
+                      January 21, 2012
+                %li.unread
+                  %a{:href => "#"}
+                    %span.sender John Doe
+                    %span.message
+                      Lorem ipsum dolor sit amet
+                    %span.time
+                      January 21, 2012
+              .mws-dropdown-viewall
+                %a{:href => "#"} View All Messages
+        / User Information and functions section
+        #mws-user-info.mws-inset
+          / User Photo
+          #mws-user-photo
+            %img{:alt => "User Photo", :src => "example/profile.jpg"}/
+          / Username and Functions
+          #mws-user-functions
+            #mws-username
+              Hello, John Doe
+            %ul
+              %li
+                %a{:href => "#"} Profile
+              %li
+                %a{:href => "#"} Change Password
+              %li
+                %a{:href => "index.html"} Logout
+    / Start Main Wrapper
+    #mws-wrapper
+      / Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      / Sidebar Wrapper
+      #mws-sidebar
+        / Hidden Nav Collapse Button
+        #mws-nav-collapse
+          %span
+          %span
+          %span
+        / Searchbox
+        #mws-searchbox.mws-inset
+          %form{:action => "typography.html"}
+            %input.mws-search-input{:placeholder => "Search...", :type => "text"}/
+            %button.mws-search-submit{:type => "submit"}
+              %i.icon-search
+        / Main Navigation
+        #mws-navigation
+          %ul
+            %li
+              %a{:href => "dashboard.html"}
+                %i.icon-home
+                Dashboard
+            %li
+              %a{:href => "charts.html"}
+                %i.icon-graph
+                Charts
+            %li
+              %a{:href => "calendar.html"}
+                %i.icon-calendar
+                Calendar
+            %li
+              %a{:href => "files.html"}
+                %i.icon-folder-closed
+                File Manager
+            %li
+              %a{:href => "table.html"}
+                %i.icon-table
+                Table
+            %li
+              %a{:href => "#"}
+                %i.icon-list
+                Forms
+              %ul
+                %li
+                  %a{:href => "form_layouts.html"} Layouts
+                %li
+                  %a{:href => "form_elements.html"} Elements
+                %li
+                  %a{:href => "form_wizard.html"} Wizard
+            %li.active
+              %a{:href => "widgets.html"}
+                %i.icon-cogs
+                Widgets
+            %li
+              %a{:href => "typography.html"}
+                %i.icon-font
+                Typography
+            %li
+              %a{:href => "grids.html"}
+                %i.icon-th
+                Grids & Panels
+            %li
+              %a{:href => "gallery.html"}
+                %i.icon-pictures
+                Gallery
+            %li
+              %a{:href => "error.html"}
+                %i.icon-warning-sign
+                Error Page
+            %li
+              %a{:href => "icons.html"}
+                %i.icon-pacman
+                Icons
+                %span.mws-nav-tooltip 2000+
+      / Main Container Start
+      #mws-container.clearfix
+        / Inner Container Start
+        .container
+          / Statistics Button Container
+          .mws-stat-container.clearfix
+            / Statistic Item
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-building
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Floors Climbed
+                %span.mws-stat-value 324
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-sport
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Calories Burned
+                %span.mws-stat-value.down 74%
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-walk
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Kilometers Walked
+                %span.mws-stat-value 14
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-bug
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Bugs Fixed
+                %span.mws-stat-value.up 22%
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-car
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Cars Repaired
+                %span.mws-stat-value 77
+          / Panels Start
+          .mws-panel.grid_8
+            .mws-panel-header
+              %span
+                %i.icon-settings
+                Sliders
+            .mws-panel-body.no-padding
+              %form.mws-form{:action => "widgets.html"}
+                .mws-form-inline
+                  .mws-form-row
+                    %label.mws-form-label Default Slider
+                    .mws-form-item
+                      .mws-slider
+                  .mws-form-row
+                    %label.mws-form-label Range Slider
+                    .mws-form-item
+                      .mws-range-slider
+                  .mws-form-row
+                    %label.mws-form-label Tooltip Slider
+                    .mws-form-item
+                      .mws-tooltip-slider
+                  .mws-form-row
+                    %label.mws-form-label Slider with Ticks
+                    .mws-form-item
+                      .mws-ticks-slider
+                  .mws-form-row
+                    %label.mws-form-label Vertical Sliders
+                    .mws-form-item
+                      #eq.clearfix
+                        %span 88
+                        %span 77
+                        %span 55
+                        %span 33
+                        %span 40
+                        %span 45
+                        %span 70
+          .mws-panel.grid_8
+            .mws-panel-header
+              %span
+                %i.icon-loading
+                Progress Bar
+            .mws-panel-body.no-padding
+              %form.mws-form{:action => "widgets.html"}
+                .mws-form-inline
+                  .mws-form-row
+                    %label.mws-form-label Default Progress Bar
+                    .mws-form-item
+                      .mws-progressbar
+                  .mws-form-row
+                    %label.mws-form-label Progress Bar With Value
+                    .mws-form-item
+                      .mws-progressbar-val
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span jQuery-UI Buttons
+            .mws-panel-body.no-padding
+              %form.mws-form
+                .mws-form-row
+                  %label.mws-form-label UI Buttons
+                  .mws-form-item
+                    %button.mws-ui-button A button element
+                    %input.mws-ui-button{:type => "submit", :value => "A submit button"}/
+                    %a.mws-ui-button{:href => "#"} An anchor
+                .mws-form-row
+                  %label.mws-form-label Radio UI Buttons
+                  .mws-form-item
+                    #mws-ui-button-radio
+                      %input#radio1{:name => "radio", :type => "radio"}/
+                      %label{:for => "radio1"} Choice 1
+                      %input#radio2{:checked => "checked", :name => "radio", :type => "radio"}/
+                      %label{:for => "radio2"} Choice 2
+                      %input#radio3{:name => "radio", :type => "radio"}/
+                      %label{:for => "radio3"} Choice 3
+                .mws-form-row
+                  %label.mws-form-label Checkbox UI Buttons
+                  .mws-form-item
+                    #mws-ui-button-cb
+                      %input#check1{:type => "checkbox"}/
+                      %label{:for => "check1"} B
+                      %input#check2{:type => "checkbox"}/
+                      %label{:for => "check2"} I
+                      %input#check3{:type => "checkbox"}/
+                      %label{:for => "check3"} U
+                .mws-form-row
+                  %label.mws-form-label Icon UI Buttons
+                  .mws-form-item
+                    #mws-ui-button-icon
+                      %button Button with icon only
+                      %button Button with icon on the left
+                      %button Button with two icons
+                      %button Button with two icons and no text
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span Default Buttons (Bootstrap)
+            .mws-panel-body
+              .mws-panel-content
+                %div{:style => "margin-bottom:16px;"}
+                  %p{:style => "margin:0;"} Small Buttons
+                  .btn-toolbar
+                    %button.btn.btn-success.btn-small{:type => "button"} Green
+                    %button.btn.btn-danger.btn-small{:type => "button"} Red
+                    %button.btn.btn-primary.btn-small{:type => "button"} Blue
+                    %button.btn.btn-small{:type => "button"} Gray
+                    %button.btn.btn-inverse.btn-small{:type => "button"} Black
+                    %button.btn.btn-warning.btn-small{:type => "button"} Orange
+                    %button.btn.btn-small{:disabled => "disabled", :type => "button"} Disabled
+                %div{:style => "margin-bottom:16px;"}
+                  %p{:style => "margin:0;"} Default Buttons
+                  .btn-toolbar
+                    %button.btn.btn-success{:type => "button"} Green
+                    %button.btn.btn-danger{:type => "button"} Red
+                    %button.btn.btn-primary{:type => "button"} Blue
+                    %button.btn{:type => "button"} Gray
+                    %button.btn.btn-inverse{:type => "button"} Black
+                    %button.btn.btn-warning{:type => "button"} Orange
+                    %button.btn{:disabled => "disabled", :type => "button"} Disabled
+                %div{:style => "margin-bottom:16px;"}
+                  %p{:style => "margin:0;"} Large Buttons
+                  .btn-toolbar
+                    %button.btn.btn-success.btn-large{:type => "button"} Green
+                    %button.btn.btn-danger.btn-large{:type => "button"} Red
+                    %button.btn.btn-primary.btn-large{:type => "button"} Blue
+                    %button.btn.btn-large{:type => "button"} Gray
+                    %button.btn.btn-inverse.btn-large{:type => "button"} Black
+                    %button.btn.btn-warning.btn-large{:type => "button"} Orange
+                    %button.btn.btn-large{:disabled => "disabled", :type => "button"} Disabled
+                %div{:style => "margin-bottom:16px;"}
+                  %p{:style => "margin:0;"} With Icons
+                  .btn-toolbar
+                    %button.btn.btn-success{:type => "button"}
+                      %i.icon-cyclop
+                      Green
+                    %button.btn.btn-danger{:type => "button"}
+                      %i.icon-pacman
+                      Red
+                    %button.btn.btn-primary{:type => "button"}
+                      %i.icon-support
+                      Blue
+                    %button.btn{:type => "button"}
+                      %i.icon-road
+                      Gray
+                    %button.btn.btn-inverse{:type => "button"}
+                      %i.icon-music
+                      Black
+                    %button.btn.btn-warning{:type => "button"}
+                      %i.icon-search
+                      Orange
+                    %button.btn{:disabled => "disabled", :type => "button"}
+                      %i.icon-cogs
+                      Disabled
+                %div{:style => "margin-bottom:16px;"}
+                  %p{:style => "margin:0;"} Button Group
+                  .btn-toolbar
+                    .btn-group
+                      %button.btn{:type => "button"}
+                        %i.icol-text-align-left
+                      %button.btn{:type => "button"}
+                        %i.icol-text-align-center
+                      %button.btn{:type => "button"}
+                        %i.icol-text-align-right
+                    .btn-group
+                      %button.btn{:type => "button"} Button
+                      %button.btn{:disabled => "disabled", :type => "button"} Disabled
+                    .btn-group
+                      %button.btn{:type => "button"}
+                        %i.icon-fast-backward
+                      %button.btn{:type => "button"}
+                        %i.icon-play
+                      %button.btn{:type => "button"}
+                        %i.icon-fast-forward
+                      %button.btn{:type => "button"}
+                        %i.icon-stop
+                      %button.btn.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+                        %span.caret
+                      %ul.dropdown-menu.pull-right
+                        %li
+                          %a{:href => "#"} Search Music Online
+                        %li
+                          %a{:href => "#"} Music News
+                        %li
+                          %a{:href => "#"} Exit Media Player
+          .clear
+          .mws-panel.grid_4
+            .mws-accordion
+              %h3
+                %a{:href => "#"} Section 1
+              %div
+                %p
+                  Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                  ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                  amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                  odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+              %h3
+                %a{:href => "#"} Section 2
+              %div
+                %p
+                  Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                  purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                  velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                  suscipit faucibus urna.
+              %h3
+                %a{:href => "#"} Section 3
+              %div
+                %p
+                  Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                  Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                  ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                  lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                %ul
+                  %li List item one
+                  %li List item two
+                  %li List item three
+              %h3
+                %a{:href => "#"} Section 4
+              %div
+                %p
+                  Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                  et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                  faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                  mauris vel est.
+                %p
+                  Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                  inceptos himenaeos.
+          .mws-panel.grid_4
+            .mws-tabs
+              %ul
+                %li
+                  %a{:href => "#tab-1"} Tab 1
+                %li
+                  %a{:href => "#tab-2"} Tab 2
+                %li
+                  %a{:href => "#tab-3"} Tab 3
+              #tab-1
+                %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices tempus tortor eget malesuada. Nunc ac euismod nisi. Pellentesque interdum bibendum enim ut accumsan. Cras fermentum tincidunt aliquet. Fusce pretium bibendum justo, et tristique risus sagittis id. Vivamus posuere, velit sit amet blandit tincidunt, leo felis porttitor diam, a vulputate ante lectus sed ipsum. In consequat, orci quis auctor viverra, dolor nisl lacinia lectus, ac placerat sapien erat volutpat sapien. Aliquam vel purus augue, et ultrices ante. Vestibulum eget mi lacus. Suspendisse vel erat elit. Quisque nibh orci, auctor vitae consectetur ornare, vestibulum eget urna. Vivamus lacinia molestie urna non posuere. Nam ipsum dui, pulvinar tincidunt convallis eget, facilisis ut felis.
+              #tab-2
+                %p Praesent eu mauris ac felis molestie dictum. Sed volutpat ullamcorper iaculis. Praesent sed accumsan massa. Donec molestie vulputate massa vitae viverra. Nulla vitae hendrerit urna. Ut sit amet lectus non nunc venenatis vehicula et ut justo. Phasellus varius quam eu felis feugiat non consequat magna fermentum. Pellentesque consequat risus non est aliquam eu consectetur dui laoreet. Aliquam turpis est, aliquam non pellentesque ac, volutpat id nisi.
+              #tab-3
+                %p Suspendisse lacinia euismod ligula. Nullam sed est sem, nec sodales erat. Phasellus ipsum orci, scelerisque non faucibus ac, hendrerit ut massa. Praesent ornare justo non turpis convallis sit amet porta urna adipiscing. Donec ac neque non risus tristique commodo non et neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris tincidunt augue vitae risus lacinia sed tempor ligula dapibus. Proin et turpis lacus, eget convallis risus.
+          .clear
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-calendar
+                Datetime Pickers
+            .mws-panel-body.no-padding
+              %form.mws-form{:action => "widgets.html"}
+                .mws-form-inline
+                  .mws-form-row
+                    %label.mws-form-label Basic Datepicker
+                    .mws-form-item
+                      %input.mws-datepicker.large{:readonly => "readonly", :type => "text"}/
+                  .mws-form-row
+                    %label.mws-form-label Inline datepicker
+                    .mws-form-item
+                      .mws-datepicker
+                  .mws-form-row
+                    %label.mws-form-label Datetime Picker
+                    .mws-form-item
+                      %input.mws-dtpicker.large{:readonly => "readonly", :type => "text"}/
+                  .mws-form-row
+                    %label.mws-form-label Time Picker
+                    .mws-form-item
+                      %input.mws-tpicker.large{:readonly => "readonly", :type => "text"}/
+                  .mws-form-row
+                    %label.mws-form-label Datepicker with Week
+                    .mws-form-item
+                      %input.mws-datepicker-wk.large{:readonly => "readonly", :type => "text"}/
+                  .mws-form-row
+                    %label.mws-form-label Daterange Picker
+                    .mws-form-item
+                      .mws-form-cols
+                        .mws-form-col-4-8
+                          .mws-form-item
+                            %input#mws-datepicker-from{:readonly => "readonly", :type => "text"}/
+                        .mws-form-col-4-8
+                          .mws-form-item
+                            %input#mws-datepicker-to{:readonly => "readonly", :type => "text"}/
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-picture
+                Image Cropper
+            .mws-panel-body.no-padding
+              %form.mws-form{:action => "widgets.html"}
+                .mws-form-block
+                  .mws-form-row
+                    %label.mws-form-label Image
+                    #mws-crop-parent.mws-form-item
+                      %img.mws-crop-target{:alt => "Crop", :src => "example/scottwills_squirrel.jpg"}/
+                  .mws-form-row
+                    .mws-form-cols
+                      .mws-form-col-2-8
+                        %label.mws-form-label X1
+                        .mws-form-item
+                          %input#crop_x1{:readonly => "readonly", :type => "text", :value => "32"}/
+                      .mws-form-col-2-8
+                        %label.mws-form-label Y1
+                        .mws-form-item
+                          %input#crop_y1{:readonly => "readonly", :type => "text", :value => "32"}/
+                      .mws-form-col-2-8
+                        %label.mws-form-label X2
+                        .mws-form-item
+                          %input#crop_x2{:readonly => "readonly", :type => "text", :value => "132"}/
+                      .mws-form-col-2-8
+                        %label.mws-form-label Y2
+                        .mws-form-item
+                          %input#crop_y2{:readonly => "readonly", :type => "text", :value => "132"}/
+                .mws-button-row
+                  %input.btn.btn-success{:type => "submit", :value => "Crop"}/
+                  %input.btn{:type => "reset", :value => "Reset"}/
+          .clear
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-warning-sign
+                jQuery-UI Dialog
+            .mws-panel-body{:style => "text-align: center"}
+              .mws-panel-content
+                %input#mws-jui-dialog-btn.btn.btn-danger{:type => "button", :value => "Show Dialog"}/
+                %input#mws-jui-dialog-mdl-btn.btn.btn-primary{:type => "button", :value => "Show Modal Dialog"}/
+                %input#mws-form-dialog-mdl-btn.btn.btn-success{:type => "button", :value => "Show Modal Form"}/
+                #mws-jui-dialog
+                  .mws-dialog-inner
+                    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisi tellus, faucibus tristique faucibus sit amet, lacinia at velit. Proin pretium vulputate orci, nec luctus odio volutpat ac. Curabitur semper adipiscing tellus sed venenatis. Integer vitae diam dui. Ut ut quam ac ante eleifend aliquam. Cras tincidunt pulvinar sollicitudin. Nullam mattis justo nec nisl adipiscing ullamcorper. Curabitur fermentum egestas massa, eu dictum ligula accumsan id. Duis elit arcu, adipiscing vel consectetur ac, fermentum ac nisl. Quisque varius ipsum vitae mauris cursus eu tristique velit dapibus. Cras eu viverra neque.
+                #mws-form-dialog
+                  %form#mws-validate.mws-form{:action => "form_elements.html"}
+                    #mws-validate-error.mws-form-message.error{:style => "display:none;"}
+                    .mws-form-inline
+                      .mws-form-row
+                        %label.mws-form-label Required Validation
+                        .mws-form-item
+                          %input.required{:name => "reqField", :type => "text"}/
+                      .mws-form-row
+                        %label.mws-form-label Email Validation
+                        .mws-form-item
+                          %input.required.email{:name => "emailField", :type => "text"}/
+                      .mws-form-row
+                        %label.mws-form-label URL Validation
+                        .mws-form-item
+                          %input.required.url{:name => "urlField", :type => "text"}/
+                      .mws-form-row
+                        %label.mws-form-label Date Validation
+                        .mws-form-item
+                          %input.mws-datepicker.required.date{:readonly => "readonly", :type => "text"}/
+                      .mws-form-row
+                        %label.mws-form-label Select Box Validation
+                        .mws-form-item
+                          %select.required{:name => "selectBox"}
+                            %option
+                            %option Option 1
+                            %option Option 3
+                            %option Option 4
+                            %option Option 5
+                      .mws-form-row
+                        %label.mws-form-label File Input Validation
+                        .mws-form-item
+                          %input.required{:name => "picture", :type => "file"}/
+                          %label.error{:for => "picture", :generated => "true", :style => "display:none"}
+                      .mws-form-row
+                        %label.mws-form-label Spinner Validation
+                        .mws-form-item
+                          %input#s1.required.mws-spinner{:name => "spinner", :type => "text", :value => "10.5"}/
+                          %label.error{:for => "s1", :generated => "true", :style => "display:none"}
+                      .mws-form-row
+                        %label.mws-form-label Radiobutton Validation
+                        .mws-form-item
+                          %ul.mws-form-list
+                            %li
+                              %input#gender_male.required{:name => "gender", :type => "radio"}/
+                              %label{:for => "gender_male"} Male
+                            %li
+                              %input#gender_female{:name => "gender", :type => "radio"}/
+                              %label{:for => "gender_female"} Female
+                          %label.error.plain{:for => "gender", :generated => "true", :style => "display:none"}
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-comments
+                Growl Notifications
+            .mws-panel-body{:style => "text-align: center"}
+              .mws-panel-content
+                %input#mws-growl-btn.btn.btn-primary{:type => "button", :value => "Basic Notification"}/
+                %input#mws-growl-btn-1.btn.btn-danger{:type => "button", :value => "Sticky Notification"}/
+                %input#mws-growl-btn-2.btn.btn-success{:type => "button", :value => "Notification with Header"}/
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-comment
+                Tooltips
+            .mws-panel-body{:style => "text-align: center"}
+              .mws-panel-content
+                .btn{"data-placement" => "top", :rel => "tooltip", :title => "This is a tooltip", :value => "Top"} Top
+                .btn{"data-placement" => "right", :rel => "tooltip", :title => "This is a tooltip", :value => "Right"} Left
+                .btn{"data-placement" => "bottom", :rel => "tooltip", :title => "This is a tooltip", :value => "Bottom"} Right
+                .btn{"data-placement" => "left", :rel => "tooltip", :title => "This is a tooltip", :value => "Left"} Bottom
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-comment
+                Popovers
+            .mws-panel-body{:style => "text-align: center"}
+              .mws-panel-content
+                .btn{"data-content" => "Euphoria (semantically opposite of dysphoria) is medically recognized as a mental and emotional condition in which a person experiences intense feelings of well-being, elation, happiness, ecstasy, excitement, and joy.", "data-original-title" => "Euphoria", "data-placement" => "top", "data-trigger" => "hover", :rel => "popover"} Top
+                .btn{"data-content" => "Asthma is the common chronic inflammatory disease of the airways characterized by variable and recurring symptoms, reversible airflow obstruction, and bronchospasm.", "data-original-title" => "Asthma", "data-placement" => "left", "data-trigger" => "hover", :rel => "popover"} Left
+                .btn{"data-content" => "A wing is an appendage with a surface that produces lift for flight or propulsion through the atmosphere, or through another gaseous or liquid fluid. A wing is an airfoil, which has a streamlined cross-sectional shape producing a useful lift to drag ratio.", "data-original-title" => "Wing", "data-placement" => "right", "data-trigger" => "hover", :rel => "popover"} Right
+                .btn{"data-content" => "Silicones are inert, synthetic compounds with a variety of forms and uses. Typically heat-resistant and rubber-like, they are used in sealants, adhesives, lubricants, medical applications (e.g., breast implants), cookware, and insulation.", "data-original-title" => "Sillicone", "data-placement" => "bottom", "data-trigger" => "hover", :rel => "popover"} Bottom
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-cogs
+                Toolbar (Top)
+            .mws-panel-toolbar
+              .btn-toolbar
+                .btn-group
+                  %a.btn{:href => "#"}
+                    %i.icol-accept
+                    Accept
+                  %a.btn{:href => "#"}
+                    %i.icol-cross
+                    Reject
+                  %a.btn{:href => "#"}
+                    %i.icol-printer
+                    Print
+                  %a.btn{:href => "#"}
+                    %i.icol-arrow-refresh
+                    Renew
+                  %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    %span.caret
+                  %ul.dropdown-menu.pull-right
+                    %li
+                      %a{:href => "#"}
+                        %i.icol-disconnect
+                        Disconnect From Server
+                    %li.divider
+                    %li.dropdown-submenu
+                      %a{:href => "#"} More Options
+                      %ul.dropdown-menu
+                        %li
+                          %a{:href => "#"} Contact Administrator
+                        %li
+                          %a{:href => "#"} Destroy Table
+            .mws-panel-body
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisi tellus, faucibus tristique faucibus sit amet, lacinia at velit. Proin pretium vulputate orci, nec luctus odio volutpat ac. Curabitur semper adipiscing tellus sed venenatis. Integer vitae diam dui. Ut ut quam ac ante eleifend aliquam. Cras tincidunt pulvinar sollicitudin. Nullam mattis justo nec nisl adipiscing ullamcorper. Curabitur fermentum egestas massa, eu dictum ligula accumsan id. Duis elit arcu, adipiscing vel consectetur ac, fermentum ac nisl. Quisque varius ipsum vitae mauris cursus eu tristique velit dapibus. Cras eu viverra neque.
+          .mws-panel.grid_4
+            .mws-panel-header
+              %span
+                %i.icon-cogs
+                Toolbar (Bottom)
+            .mws-panel-body
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisi tellus, faucibus tristique faucibus sit amet, lacinia at velit. Proin pretium vulputate orci, nec luctus odio volutpat ac. Curabitur semper adipiscing tellus sed venenatis. Integer vitae diam dui. Ut ut quam ac ante eleifend aliquam. Cras tincidunt pulvinar sollicitudin. Nullam mattis justo nec nisl adipiscing ullamcorper. Curabitur fermentum egestas massa, eu dictum ligula accumsan id. Duis elit arcu, adipiscing vel consectetur ac, fermentum ac nisl. Quisque varius ipsum vitae mauris cursus eu tristique velit dapibus. Cras eu viverra neque.
+            .mws-panel-toolbar
+              .btn-toolbar
+                .btn-group.dropup
+                  %a.btn{:href => "#"}
+                    %i.icol-accept
+                    Accept
+                  %a.btn{:href => "#"}
+                    %i.icol-cross
+                    Reject
+                  %a.btn{:href => "#"}
+                    %i.icol-printer
+                    Print
+                  %a.btn{:href => "#"}
+                    %i.icol-arrow-refresh
+                    Renew
+                  %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    %span.caret
+                  %ul.dropdown-menu.pull-right
+                    %li
+                      %a{:href => "#"}
+                        %i.icol-disconnect
+                        Disconnect From Server
+                    %li.divider
+                    %li.dropdown-submenu
+                      %a{:href => "#"} More Options
+                      %ul.dropdown-menu
+                        %li
+                          %a{:href => "#"} Contact Administrator
+                        %li
+                          %a{:href => "#"} Destroy Table
+          / Panels End
+        / Inner Container End
+        / Footer
+        #mws-footer
+          Copyright Your Website 2012. All Rights Reserved.
+      / Main Container End
+    / JavaScript Plugins
+    %script{:src => "/assets/libs/jquery-1.8.3.min.js"}
+    %script{:src => "/assets/libs/jquery.mousewheel.min.js"}
+    %script{:src => "/assets/libs/jquery.placeholder.min.js"}
+    %script{:src => "/assets/custom-plugins/fileinput.js"}
+    %script{:src => "/assets/jui/js/jquery-ui-1.9.2.min.js"}
+    %script{:src => "/assets/jui/jquery-ui.custom.min.js"}
+    %script{:src => "/assets/jui/js/jquery.ui.touch-punch.js"}
+    %script{:src => "/assets/jui/js/timepicker/jquery-ui-timepicker.min.js"}
+    %script{:src => "/assets/plugins/imgareaselect/jquery.imgareaselect.min.js"}
+    %script{:src => "/assets/plugins/jgrowl/jquery.jgrowl-min.js"}
+    %script{:src => "/assets/plugins/validate/jquery.validate-min.js"}
+    %script{:src => "/assets/plugins/colorpicker/colorpicker-min.js"}
+    %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{:src => "/assets/core/mws.js"}
+    %script{:src => "/assets/demo/demo.widget.js"}
