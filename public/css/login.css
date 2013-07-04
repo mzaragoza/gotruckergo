@@ -50,7 +50,7 @@ body {
 ================================================== */
 
 #mws-login {
-    background-image: url(../images/core/mws-dark-bg.png);
+    background-image: url(/assets/core/mws-dark-bg.png);
     position: relative;
     padding: 12px 16px;
     border: 1px solid #c0c0c0;

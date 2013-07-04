@@ -4,11 +4,11 @@ Feature: Admins should be able to create a driver
   Background:
     Given I am signed in as an admin
     And the following trucks:
-      | name |
-      | Kit  |
-      | Blue Moon  |
-      | Big Red  |
-      | Stan  |
+      | name      |
+      | Kit       |
+      | Blue Moon |
+      | Big Red   |
+      | Stan      |
 
   Scenario: Admin should be able to create a driver
     When I follow "Drivers"
