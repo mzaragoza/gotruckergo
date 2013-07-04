@@ -21,3 +21,5 @@ en:
   truck_was_successfully_updated: "Truck was successfully updated"
   repair_was_successfully_created: "Repair was successfully created"
   repair_was_successfully_updated: "Repair was successfully updated"
+  user_was_successfully_created: "User was successfully created"
+  user_was_successfully_updated: "User was successfully updated"
