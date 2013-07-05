@@ -1,5 +1,5 @@
 class Admins::PlansController < AdminController
-  expose(:plans){ Plan.order("sort_order").scoped{} }
+  expose(:plans){ Plan.order("id DESC").scoped{} }
   expose(:plan)
 
   def create
