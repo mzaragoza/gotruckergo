@@ -16,6 +16,8 @@
   .container.main
     .sixteen.columns
       .row
+        All Plans come with 30 days free trial
+      .row
         .pricing-tables{ :class => "#{(plans.count + 1).to_words}" + '-tables' }
           -plans.each do |p|
             .pricing-table{:class => "#{('featured' if p.featured )}"}
