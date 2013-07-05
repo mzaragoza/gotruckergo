@@ -1,214 +1,112 @@
 !!!
-/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
-/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
-/[if IE 8] <html class="lt-ie9" lang="en">
-/ [if gt IE 8]><!
+/[if lt IE 7 ] <html class="lt-ie9 lt-ie8 lt-ie7 ie6" lang="en">
+/[if IE 7 ] <html class="lt-ie9 lt-ie8 ie7" lang="en">
+/[if IE 8 ] <html class="lt-ie9 ie8" lang="en">
+/[if IE 9 ] <html class="ie9" lang="en">
+/ [if (gt IE 9)|!(IE)]><!
 %html{:lang => "en"}
   / <![endif]
   %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    / @font-face Fonts
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600", :rel => "stylesheet"}/
+    / Stylesheets
+    %link{:href => "/assets/public/assets/css/normalize.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/css/skeleton.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/css/typography.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/css/layout.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/css/form.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/css/shortcodes.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/css/elements.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/css/ie.css", :rel => "stylesheet"}/
+    / Icons
+    %link{:href => "/assets/public/assets/icons/glyphicons/style.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/icons/zocial/zocial.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/public/assets/icons/social/social.css", :rel => "stylesheet"}/
+    / LayerSlider CSS
+    %link{:href => "/assets/public/plugins/layerslider/css/layerslider.css", :rel => "stylesheet"}/
+    / FlexSlider CSS
+    %link{:href => "/assets/public/plugins/flexslider/flexslider.css", :rel => "stylesheet"}/
+    / Magnific Popup
+    %link{:href => "/assets/public/plugins/magnificpopup/jquery.magnific-popup.css", :rel => "stylesheet"}/
+    / HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     %title 
       = yield :page_title
       | Go Trucker Go
-    %meta{:charset => "utf-8"}/
-    / Viewport Metatag
-    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
-    = csrf_meta_tags
-    =# stylesheet_link_tag "application", :media => "all"
-    <link rel="stylesheet" type="text/css" href="/css/plugins/colorpicker/colorpicker.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/plugins/imgareaselect/css/imgareaselect-default.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/plugins/jgrowl/jquery.jgrowl.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/fonts/ptsans/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/fonts/icomoon/style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/mws-style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/demo.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/jui/css/jquery.ui.all.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/jui/css/jquery.ui.timepicker.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/jui/jquery-ui.custom.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/mws-theme.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/themer.css" media="screen">
-    = stylesheet_link_tag "icons/icol32", :media => "all"
-    = stylesheet_link_tag "icons/icol16", :media => "all"
-    = stylesheet_link_tag "my_css", :media => "all"
-    = render '/shared/analytics'
   %body
-    / Header
-    #mws-header.clearfix
-      / Logo Container
-      #mws-logo-container
-        / Logo Wrapper, images put within this wrapper will always be vertically centered
-        #mws-logo-wrap
-          = image_tag 'logo.png', :alt => t(:company_name)
-      / User Tools (notifications, logout, profile, change password)
-      #mws-user-tools.clearfix
-        / Notifications
-        #mws-user-info.mws-inset
-          / User Photo
-          #mws-user-photo
-            - if current_admin.photo_url
-              = image_tag current_admin.photo_url, :alt => t(:company_name)
-            - else
-              = image_tag 'example/profile.jpg', :alt => t(:company_name)
-          / Username and Functions
-          #mws-user-functions
-            #mws-username
-              Hello,
-              = current_admin.full_name
-            %ul
-              %li
-                = link_to 'Profile', edit_admins_profile_path(current_admin)
-              %li
-                = link_to 'Logout', destroy_admin_session_path, :method => :delete
-    / Start Main Wrapper
-    #mws-wrapper
-      / Necessary markup, do not remove
-      #mws-sidebar-stitch
-      #mws-sidebar-bg
-      / Sidebar Wrapper
-      #mws-sidebar
-        / Hidden Nav Collapse Button
-        #mws-nav-collapse
-          %span
-          %span
-          %span
-        / Searchbox
-        / Main Navigation
-        #mws-navigation
-          %ul
-            %li{:class => "#{'active' if params[:controller] == 'admins/dashboards' }"}
-              = link_to root_path do
-                %i.icol32-dashboard
-                Dashboard
-            - if Rails.env != "production" or current_admin.email.downcase == 'mzaragoza@circletechfl.com' or current_admin.email.downcase == 'admin@test.com'
-              %li{:class => "#{'active' if params[:controller] == 'admins/admins' }"}
-                = link_to admins_admins_path do
-                  %i.icol32-admins
-                  Admins
-            %li{:class => "#{'active' if params[:controller] == 'admins/accounts' }"}
-              = link_to admins_accounts_path do
-                %i.icol32-accounts
-                Accounts
-            %li{:class => "#{'active' if params[:controller] == 'admins/users' }"}
-              = link_to admins_users_path do
-                %i.icol32-user
-                Users
-            %li{:class => "#{'active' if params[:controller] == 'admins/drivers' }"}
-              = link_to admins_drivers_path do
-                %i.icol32-drivers
-                Drivers
-            %li{:class => "#{'active' if params[:controller] == 'admins/trucks' }"}
-              = link_to admins_trucks_path do
-                %i.icol32-truck
-                Trucks
-            %li{:class => "#{'active' if params[:controller] == 'admins/trailers' }"}
-              = link_to admins_trailers_path do
-                %i.icol32-trailers
-                Trailers
-            %li{:class => "#{'active' if params[:controller] == 'admins/brokers' }"}
-              = link_to admins_brokers_path do
-                %i.icol32-brokers
-                Brokers 
-            %li{:class => "#{'active' if params[:controller] == 'admins/shipments' }"}
-              = link_to admins_shipments_path do
-                %i.icol32-shipments
-                Shipments
-            %li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
-              = link_to admins_receipts_path do
-                %i.icol32-credit-card
-                Receipts
-            %li{:class => "#{'active' if params[:controller] == 'admins/repairs' }"}
-              = link_to admins_repairs_path do
-                %i.icol32-repairs
-                Repairs
-      / Main Container Start
-      #mws-container.clearfix
-        / Inner Container Start
+    / Main Content Wrap (1024px wide by default)
+    .main-wrap
+      / Header
+      %header.header
         .container
-          / Statistics Button Container
-          .mws-stat-container.clearfix
-            / Statistic Item
-            = link_to admins_accounts_path, :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-accounts
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Accounts
-                %span.mws-stat-value
-                  = Account.count
-          .mws-stat-container.clearfix
-            / Statistic Item
-            = link_to admins_users_path, :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-user
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Users
-                %span.mws-stat-value
-                  = User.count
-            = link_to admins_drivers_path, :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-drivers
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Drivers
-                %span.mws-stat-value
-                  = Driver.count
-            = link_to admins_trucks_path, :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-truck
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Trucks
-                %span.mws-stat-value
-                  = Truck.count
-            = link_to admins_trailers_path, :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-trailers
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Trailer
-                %span.mws-stat-value
-                  = Trailer.count
-            = link_to admins_brokers_path, :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-brokers
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Total Brokers
-                %span.mws-stat-value
-                  = Broker.count
-            -#= link_to '#', :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-credit-card
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Weelly Receipts
-                %span.mws-stat-value $14531
-        .container
-          - unless flash[:notice].blank?
-            #notice
-              %h3= flash[:notice]
-            %br
-          - unless flash[:error].blank?
-            #error
-              %h3= flash[:error]
-            %br
-          - unless flash[:alert].blank?
-            #alert
-              %h3= flash[:alert]
-            %br
-          = yield :pageheader
-        .container
-          = yield
-        / Footer
-        #mws-footer
-          Copyright 
-          = t(:company_name) 
-          2013
-          All Rights Reserved.
-      / Main Container End
-    / JavaScript Plugins
-    /[if lt IE 9]
-      <script src="js/libs/excanvas.min.js"></script>
-    = javascript_include_tag "application"
-    = yield :page_footer
+          .sixteen.columns
+            .header-row
+              .header-col.brand
+                = link_to root_path do
+                  = image_tag '/assets/public/logo.png'
+                %span.tagline= t(:tag_line)
+              %nav.header-col.navigation
+                %ul
+                  %li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'index' }"}
+                    = link_to t(:home), root_path
+                  %li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'prices' }"}
+                    = link_to t(:prices), prices_path
+                  -#%li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'index' }"}
+                    = link_to t(:contact_us), root_path
+      / End Header
+      / Slider Wrap
+      = yield
+      / End Foooter
+      / Footer
+      %footer.footer
+        / Footer Top
+        .footer-top
+          .container
+            / Text
+            .column
+              .footer-logo
+                = image_tag '/assets/public/logo.png'
+              %p= t(:about_us_text)
+        / Footer Bottom
+        .footer-bottom
+          .container
+            .eight.columns
+              Copyright 2013.
+              = succeed "." do
+                = link_to t(:company_name), root_path
+              All Rights Reserved.
+            .eight.columns
+              %ul.footer-nav
+                %li
+                  = link_to t(:home), root_path
+                %li
+                  = link_to t(:prices), prices_path
+                %li
+                  = link_to t(:about_us), about_us_path
+                %li
+                  = link_to t(:contact_us), root_path
+    / jQuery
+    %script{:src => "/assets/public/assets/js/jquery-1.9.1.min.js"}
+    / Third Party Plugins
+    %script{:src => "/assets/public/plugins/jflickrfeed/jflickrfeed.min.js"}
+    %script{:src => "/assets/public/plugins/tweet/jquery.tweet.min.js"}
+    %script{:src => "/assets/public/plugins/fitvids/jquery.fitvids.min.js"}
+    %script{:src => "/assets/public/plugins/map/gmap3.min.js"}
+    %script{:src => "/assets/public/plugins/isotope/jquery.isotope.min.js"}
+    %script{:src => "/assets/public/plugins/caroufredsel/jquery.carouFredSel-6.2.0-packed.js"}
+    %script{:src => "/assets/public/plugins/flexslider/jquery.flexslider-min.js"}
+    %script{:src => "/assets/public/assets/js/jquery.timeline.min.js"}
+    %script{:src => "/assets/public/plugins/magnificpopup/jquery.magnific-popup.min.js"}
+    / LayerSlider Parallax 3D Slider
+    %script{:src => "/assets/public/plugins/layerslider/js/jquery-easing-1.3.js"}
+    %script{:src => "/assets/public/plugins/layerslider/js/jquerytransit.js"}
+    %script{:src => "/assets/public/plugins/layerslider/js/layerslider.transitions.js"}
+    %script{:src => "/assets/public/plugins/layerslider/js/layerslider.kreaturamedia.jquery.min.js"}
+    / Template Script
+    %script{:src => "/assets/public/assets/js/youxi.plugins.min.js"}
+    %script{:src => "/assets/public/assets/js/youxi.setup.js"}

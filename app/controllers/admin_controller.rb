@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  layout 'admin_application'
   before_filter :check_admin_active
   private
   def check_admin_active

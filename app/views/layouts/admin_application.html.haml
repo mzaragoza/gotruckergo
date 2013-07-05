@@ -1,0 +1,214 @@
+!!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    %title 
+      = yield :page_title
+      | Go Trucker Go
+    %meta{:charset => "utf-8"}/
+    / Viewport Metatag
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    = csrf_meta_tags
+    =# stylesheet_link_tag "application", :media => "all"
+    <link rel="stylesheet" type="text/css" href="/css/plugins/colorpicker/colorpicker.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/plugins/imgareaselect/css/imgareaselect-default.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/plugins/jgrowl/jquery.jgrowl.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/fonts/ptsans/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/fonts/icomoon/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/mws-style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/demo.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/jui/css/jquery.ui.all.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/jui/css/jquery.ui.timepicker.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/jui/jquery-ui.custom.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/mws-theme.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/themer.css" media="screen">
+    = stylesheet_link_tag "icons/icol32", :media => "all"
+    = stylesheet_link_tag "icons/icol16", :media => "all"
+    = stylesheet_link_tag "my_css", :media => "all"
+    = render '/shared/analytics'
+  %body
+    / Header
+    #mws-header.clearfix
+      / Logo Container
+      #mws-logo-container
+        / Logo Wrapper, images put within this wrapper will always be vertically centered
+        #mws-logo-wrap
+          = image_tag 'logo.png', :alt => t(:company_name)
+      / User Tools (notifications, logout, profile, change password)
+      #mws-user-tools.clearfix
+        / Notifications
+        #mws-user-info.mws-inset
+          / User Photo
+          #mws-user-photo
+            - if current_admin.photo_url
+              = image_tag current_admin.photo_url, :alt => t(:company_name)
+            - else
+              = image_tag 'example/profile.jpg', :alt => t(:company_name)
+          / Username and Functions
+          #mws-user-functions
+            #mws-username
+              Hello,
+              = current_admin.full_name
+            %ul
+              %li
+                = link_to 'Profile', edit_admins_profile_path(current_admin)
+              %li
+                = link_to 'Logout', destroy_admin_session_path, :method => :delete
+    / Start Main Wrapper
+    #mws-wrapper
+      / Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      / Sidebar Wrapper
+      #mws-sidebar
+        / Hidden Nav Collapse Button
+        #mws-nav-collapse
+          %span
+          %span
+          %span
+        / Searchbox
+        / Main Navigation
+        #mws-navigation
+          %ul
+            %li{:class => "#{'active' if params[:controller] == 'admins/dashboards' }"}
+              = link_to root_path do
+                %i.icol32-dashboard
+                Dashboard
+            - if Rails.env != "production" or current_admin.email.downcase == 'mzaragoza@circletechfl.com' or current_admin.email.downcase == 'admin@test.com'
+              %li{:class => "#{'active' if params[:controller] == 'admins/admins' }"}
+                = link_to admins_admins_path do
+                  %i.icol32-admins
+                  Admins
+            %li{:class => "#{'active' if params[:controller] == 'admins/accounts' }"}
+              = link_to admins_accounts_path do
+                %i.icol32-accounts
+                Accounts
+            %li{:class => "#{'active' if params[:controller] == 'admins/users' }"}
+              = link_to admins_users_path do
+                %i.icol32-user
+                Users
+            %li{:class => "#{'active' if params[:controller] == 'admins/drivers' }"}
+              = link_to admins_drivers_path do
+                %i.icol32-drivers
+                Drivers
+            %li{:class => "#{'active' if params[:controller] == 'admins/trucks' }"}
+              = link_to admins_trucks_path do
+                %i.icol32-truck
+                Trucks
+            %li{:class => "#{'active' if params[:controller] == 'admins/trailers' }"}
+              = link_to admins_trailers_path do
+                %i.icol32-trailers
+                Trailers
+            %li{:class => "#{'active' if params[:controller] == 'admins/brokers' }"}
+              = link_to admins_brokers_path do
+                %i.icol32-brokers
+                Brokers 
+            %li{:class => "#{'active' if params[:controller] == 'admins/shipments' }"}
+              = link_to admins_shipments_path do
+                %i.icol32-shipments
+                Shipments
+            %li{:class => "#{'active' if params[:controller] == 'admins/receipts' }"}
+              = link_to admins_receipts_path do
+                %i.icol32-credit-card
+                Receipts
+            %li{:class => "#{'active' if params[:controller] == 'admins/repairs' }"}
+              = link_to admins_repairs_path do
+                %i.icol32-repairs
+                Repairs
+      / Main Container Start
+      #mws-container.clearfix
+        / Inner Container Start
+        .container
+          / Statistics Button Container
+          .mws-stat-container.clearfix
+            / Statistic Item
+            = link_to admins_accounts_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-accounts
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Accounts
+                %span.mws-stat-value
+                  = Account.count
+          .mws-stat-container.clearfix
+            / Statistic Item
+            = link_to admins_users_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-user
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Users
+                %span.mws-stat-value
+                  = User.count
+            = link_to admins_drivers_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-drivers
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Drivers
+                %span.mws-stat-value
+                  = Driver.count
+            = link_to admins_trucks_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-truck
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Trucks
+                %span.mws-stat-value
+                  = Truck.count
+            = link_to admins_trailers_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-trailers
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Trailer
+                %span.mws-stat-value
+                  = Trailer.count
+            = link_to admins_brokers_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-brokers
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Total Brokers
+                %span.mws-stat-value
+                  = Broker.count
+            -#= link_to '#', :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-credit-card
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Weelly Receipts
+                %span.mws-stat-value $14531
+        .container
+          - unless flash[:notice].blank?
+            #notice
+              %h3= flash[:notice]
+            %br
+          - unless flash[:error].blank?
+            #error
+              %h3= flash[:error]
+            %br
+          - unless flash[:alert].blank?
+            #alert
+              %h3= flash[:alert]
+            %br
+          = yield :pageheader
+        .container
+          = yield
+        / Footer
+        #mws-footer
+          Copyright 
+          = t(:company_name) 
+          2013
+          All Rights Reserved.
+      / Main Container End
+    / JavaScript Plugins
+    /[if lt IE 9]
+      <script src="js/libs/excanvas.min.js"></script>
+    = javascript_include_tag "application"
+    = yield :page_footer
