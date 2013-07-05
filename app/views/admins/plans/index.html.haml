@@ -15,7 +15,6 @@
           %th=t(:active)
           %th=t(:licenses)
           %th=t(:susbcriptions)
-          %th=t(:sort_order)
           %th
       %tbody
         - plans.each do |p|
@@ -31,6 +30,5 @@
                 active
             %td= p.licenses
             %td= #p.susbcriptions.count
-            %td= p.sort_order
             %td= link_to 'Edit', edit_admins_plan_path(p), :class => 'btn btn-small btn-info'
 

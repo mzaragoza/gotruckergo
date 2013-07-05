@@ -5,6 +5,5 @@ Fabricator(:plan) do
   featured {false}
   active {true}
   licenses {rand(100)}
-  sort_order {rand(10)}
 end
 

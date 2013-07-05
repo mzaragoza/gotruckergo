@@ -7,7 +7,6 @@ class CreatePlans < ActiveRecord::Migration
       t.boolean :featured
       t.boolean :active, :default => true
       t.integer :licenses
-      t.integer :sort_order
 
       t.timestamps
     end

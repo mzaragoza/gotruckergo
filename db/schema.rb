@@ -116,7 +116,6 @@ ActiveRecord::Schema.define(:version => 20130705023602) do
     t.boolean  "featured"
     t.boolean  "active",     :default => true
     t.integer  "licenses"
-    t.integer  "sort_order"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end
