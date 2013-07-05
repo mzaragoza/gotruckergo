@@ -30,17 +30,18 @@ Gotruckergo::Application.routes.draw do
   authenticate :admin do
     namespace :admins do
       resources :ui
-      resources :users
       resources :accounts
       resources :admins
-      resources :drivers
-      resources :profile, :only => [:edit, :update]
-      resources :trucks
-      resources :trailers
       resources :brokers
-      resources :shipments
+      resources :drivers
+      resources :plans
+      resources :profile, :only => [:edit, :update]
       resources :receipts
       resources :repairs
+      resources :shipments
+      resources :trailers
+      resources :trucks
+      resources :users
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'
     end

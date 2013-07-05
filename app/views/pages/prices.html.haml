@@ -16,151 +16,42 @@
   .container.main
     .sixteen.columns
       .row
-        .pricing-tables.four-tables
-          / Pricing Table 1-4
+        .pricing-tables{ :class => "#{(plans.count + 1).to_words}" + '-tables' }
+          -plans.each do |p|
+            .pricing-table{:class => "#{('featured' if p.featured )}"}
+              - if p.featured
+                .ribbon
+                  .ribbon-label Featured
+
+              .table-header
+                .name= p.name.titleize
+              .table-price
+                .price
+                  %span>
+                  = number_to_currency(p.price)
+                .price-description
+                  per month
+              .table-features
+                %ul
+                  %li
+                    %strong Number of Users
+                    = p.licenses
+              .table-footer
+                %a.btn{:href => "#"} Sign Up
           .pricing-table
             .table-header
-              .name Personal
+              .name= t(:custume)
             .table-price
               .price
-                %span> $
-                99
+                %span
+                You Tell Us
               .price-description
                 per month
             .table-features
               %ul
-                %li Fully Responsive Layout
-                %li Retina Display Ready
-                %li Clean and Professional Design
-                %li W3C Compliant HTML5 & CSS3
-                %li Premium Plugins Included
+                %li
+                  %strong Number of Users
+                  Custum
             .table-footer
               %a.btn{:href => "#"} Sign Up
-          / End Pricing Table 1-4
-          / Pricing Table 1-4
-          .pricing-table.featured
-            .ribbon
-              .ribbon-label Featured
-            .table-header
-              .name Small Business
-            .table-price
-              .price
-                %span> $
-                299
-              .price-description
-                per month
-            .table-features
-              %ul
-                %li Fully Responsive Layout
-                %li Retina Display Ready
-                %li Clean and Professional Design
-                %li W3C Compliant HTML5 & CSS3
-                %li Premium Plugins Included
-            .table-footer
-              %a.btn{:href => "#"} Sign Up
-          / End Pricing Table 1-4
-          / Pricing Table 1-4
-          .pricing-table
-            .table-header
-              .name Professional
-            .table-price
-              .price
-                %span> $
-                699
-              .price-description
-                per month
-            .table-features
-              %ul
-                %li Fully Responsive Layout
-                %li Retina Display Ready
-                %li Clean and Professional Design
-                %li W3C Compliant HTML5 & CSS3
-                %li Premium Plugins Included
-            .table-footer
-              %a.btn{:href => "#"} Sign Up
-          / End Pricing Table 1-4
-          / Pricing Table 1-4
-          .pricing-table
-            .table-header
-              .name Enterprise
-            .table-price
-              .price
-                %span> $
-                1199
-              .price-description
-                per month
-            .table-features
-              %ul
-                %li Fully Responsive Layout
-                %li Retina Display Ready
-                %li Clean and Professional Design
-                %li W3C Compliant HTML5 & CSS3
-                %li Premium Plugins Included
-            .table-footer
-              %a.btn{:href => "#"} Sign Up
-          / End Pricing Table 1-4
-      .row
-        .pricing-tables.three-tables
-          / Pricing Table 1-3
-          .pricing-table
-            .table-header
-              .name Small Business
-            .table-price
-              .price
-                %span> $
-                299
-              .price-description
-                per month
-            .table-features
-              %ul
-                %li Fully Responsive Layout
-                %li Retina Display Ready
-                %li Clean and Professional Design
-                %li W3C Compliant HTML5 & CSS3
-                %li Premium Plugins Included
-            .table-footer
-              %a.btn{:href => "#"} Sign Up
-          / End Pricing Table 1-3
-          / Pricing Table 1-3
-          .pricing-table.featured
-            .ribbon
-              .ribbon-label Featured
-            .table-header
-              .name Professional
-            .table-price
-              .price
-                %span> $
-                699
-              .price-description
-                per month
-            .table-features
-              %ul
-                %li Fully Responsive Layout
-                %li Retina Display Ready
-                %li Clean and Professional Design
-                %li W3C Compliant HTML5 & CSS3
-                %li Premium Plugins Included
-            .table-footer
-              %a.btn{:href => "#"} Sign Up
-          / End Pricing Table 1-3
-          / Pricing Table 1-3
-          .pricing-table
-            .table-header
-              .name Enterprise
-            .table-price
-              .price
-                %span> $
-                1199
-              .price-description
-                per month
-            .table-features
-              %ul
-                %li Fully Responsive Layout
-                %li Retina Display Ready
-                %li Clean and Professional Design
-                %li W3C Compliant HTML5 & CSS3
-                %li Premium Plugins Included
-            .table-footer
-              %a.btn{:href => "#"} Sign Up
-          / End Pricing Table 1-3
-/ End Content
+

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  expose(:plans){Plan.where(:active =>true).order("price ASC")}
   #before_filter :redirect_if_logged_in
   def index
     #redirect_to "/users"
