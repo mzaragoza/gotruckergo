@@ -6,7 +6,7 @@
 %html{:lang => "en"}
   / <![endif]
   %head
-    %title 
+    %title
       = yield :page_title
       | Go Trucker Go
     %meta{:charset => "utf-8"}/
@@ -88,6 +88,10 @@
               = link_to admins_accounts_path do
                 %i.icol32-accounts
                 Accounts
+            %li{:class => "#{'active' if params[:controller] == 'admins/plans' }"}
+              = link_to admins_plans_path do
+                %i.icol32-plans
+                Plans
             %li{:class => "#{'active' if params[:controller] == 'admins/users' }"}
               = link_to admins_users_path do
                 %i.icol32-user
@@ -107,7 +111,7 @@
             %li{:class => "#{'active' if params[:controller] == 'admins/brokers' }"}
               = link_to admins_brokers_path do
                 %i.icol32-brokers
-                Brokers 
+                Brokers
             %li{:class => "#{'active' if params[:controller] == 'admins/shipments' }"}
               = link_to admins_shipments_path do
                 %i.icol32-shipments
@@ -177,13 +181,6 @@
                 %span.mws-stat-title Total Brokers
                 %span.mws-stat-value
                   = Broker.count
-            -#= link_to '#', :class => 'mws-stat' do
-              / Statistic Icon (edit to change icon)
-              %span.mws-stat-icon.icol32-credit-card
-              / Statistic Content
-              %span.mws-stat-content
-                %span.mws-stat-title Weelly Receipts
-                %span.mws-stat-value $14531
         .container
           - unless flash[:notice].blank?
             #notice
@@ -202,8 +199,8 @@
           = yield
         / Footer
         #mws-footer
-          Copyright 
-          = t(:company_name) 
+          Copyright
+          = t(:company_name)
           2013
           All Rights Reserved.
       / Main Container End

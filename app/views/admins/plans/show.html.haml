@@ -1,0 +1,48 @@
+.mws-panel.grid_12
+  .mws-panel-header
+    = link_to 'Edit', edit_admins_plan_path(plan), :class => 'btn btn-info pull-right'
+    %span
+      = plan.name.titleize
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          = t(:id)
+        %span.val
+          %span.text-nowrap= plan.id
+      %li
+        %span.key
+          = t(:name)
+        %span.val
+          %span.text-nowrap= plan.name
+      %li
+        %span.key
+          = t(:slug)
+        %span.val
+          %span.text-nowrap= plan.slug
+      %li
+        %span.key
+          = t(:price)
+        %span.val
+          %span.text-nowrap= plan.price
+      %li
+        %span.key
+          = t(:featured)
+        %span.val
+          %span.text-nowrap= plan.featured
+      %li
+        %span.key
+          = t(:active)
+        %span.val
+          %span.text-nowrap= plan.active
+      %li
+        %span.key
+          = t(:licenses)
+        %span.val
+          %span.text-nowrap= plan.licenses
+      %li
+        %span.key
+          = t(:sort_order)
+        %span.val
+          %span.text-nowrap= plan.sort_order
+

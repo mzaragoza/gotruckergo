@@ -1,0 +1,33 @@
+= simple_form_for([:admins, plan], :html => {:class => 'form-horizontal' }) do |f|
+  .mws-form-row
+    %label.mws-form-label= t(:name)
+    .mws-form-item
+    = f.input :name, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:slug)
+    .mws-form-item
+    = f.input :slug, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:price)
+    .mws-form-item
+    = f.input :price, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:featured)
+    .mws-form-item
+    = f.input :featured, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:active)
+    .mws-form-item
+    = f.input :active, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:licenses)
+    .mws-form-item
+    = f.input :licenses, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:sort_order)
+    .mws-form-item
+    = f.input :sort_order, :label => false
+  .mws-form-row
+    .mws-form-item
+    = f.button :submit, :class => 'pull-right btn btn-info'
+

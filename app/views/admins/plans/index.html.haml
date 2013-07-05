@@ -1,0 +1,36 @@
+= link_to t(:view), prices_path, :target => '_blank', :class => 'btn btn-info pull-left'
+= link_to t(:add_plan), new_admins_plan_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Plans
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:slug)
+          %th=t(:featured)
+          %th=t(:active)
+          %th=t(:licenses)
+          %th=t(:susbcriptions)
+          %th=t(:sort_order)
+          %th
+      %tbody
+        - plans.each do |p|
+          %tr
+            %td= link_to p.id, admins_plan_path(p)
+            %td= link_to p.name.titleize, admins_plan_path(p)
+            %td= p.slug
+            %td
+              -if p.featured
+                featured
+            %td
+              -if p.active
+                active
+            %td= p.licenses
+            %td= #p.susbcriptions.count
+            %td= p.sort_order
+            %td= link_to 'Edit', edit_admins_plan_path(p), :class => 'btn btn-small btn-info'
+
