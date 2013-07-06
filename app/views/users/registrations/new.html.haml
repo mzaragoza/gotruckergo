@@ -50,7 +50,7 @@
             .form-row
               %label.form-label= t(:state)
               .form-item
-                = f.input :state, :collection => us_states,  :as => :select, include_blank: true, :label => false
+                = account_form.input :state, :collection => us_states,  :as => :select, include_blank: true, :label => false
             .form-row
               %label.form-label= t(:zip)
               .form-item
