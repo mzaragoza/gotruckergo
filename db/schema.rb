@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706175249) do
+ActiveRecord::Schema.define(:version => 20130706220300) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",       :default => ""
@@ -113,13 +113,15 @@ ActiveRecord::Schema.define(:version => 20130706175249) do
 
   create_table "plans", :force => true do |t|
     t.decimal  "price"
-    t.string   "name",       :default => ""
-    t.string   "slug",       :default => ""
+    t.string   "name",         :default => ""
+    t.string   "slug",         :default => ""
     t.boolean  "featured"
-    t.boolean  "active",     :default => true
+    t.boolean  "active",       :default => true
     t.integer  "licenses"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.decimal  "anual_price"
+    t.decimal  "monthy_price"
   end
 
   create_table "receipts", :force => true do |t|

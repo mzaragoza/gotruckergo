@@ -30,9 +30,15 @@
               .table-price
                 .price
                   %span>
-                  = number_to_currency(p.price)
+                  = number_to_currency(p.anual_price)
                 .price-description
                   per month
+              .table-price
+                .price
+                  %span>
+                  = number_to_currency(p.monthy_price)
+                .price-description
+                  per year
               .table-features
                 %ul
                   %li
@@ -49,6 +55,12 @@
                 You Tell Us
               .price-description
                 per month
+            .table-price
+              .price
+                %span
+                You Tell Us
+              .price-description
+                per year
             .table-features
               %ul
                 %li
