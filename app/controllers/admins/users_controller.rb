@@ -20,6 +20,11 @@ class Admins::UsersController < AdminController
       render :edit
     end
   end
+  def login_as
+    sign_in(User.find(params[:id]), :bypass => true)
+    redirect_to users_dashboard_path
+  end
+
   private
   def check_password_submitted
     if params[:user][:password].blank?

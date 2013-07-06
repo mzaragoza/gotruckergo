@@ -42,6 +42,7 @@ Gotruckergo::Application.routes.draw do
       resources :trailers
       resources :trucks
       resources :users
+      post '/users/login_as' => 'users#login_as', as: :login_as_user
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'
     end
