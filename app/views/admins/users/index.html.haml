@@ -8,8 +8,8 @@
       %thead
         %tr
           %th=t(:id)
-          %th=t(:name)
           %th=t(:account_name)
+          %th=t(:name)
           %th=t(:email)
           %th=t(:phone)
           %th=t(:is_owner)
@@ -22,8 +22,9 @@
         - users.each do |u|
           %tr
             %td= link_to u.id, admins_user_path(u)
+            %td
+              = link_to u.account.name, admins_account_path(u.account) if u.account
             %td= link_to u.full_name, admins_user_path(u)
-            %td= link_to u.account.name, admins_account_path(u.account)
             %td= u.email
             %td= number_to_phone(u.phone)
             %td
