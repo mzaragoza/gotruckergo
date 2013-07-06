@@ -15,18 +15,15 @@
     %label.mws-form-label= t(:email)
     .mws-form-item
     = f.input :email, :label => false
-  .mws-form-row
-    %label.mws-form-label= t(:is_owner)
-    .mws-form-item
-    = f.input :is_owner, :label => false
-  .mws-form-row
-    %label.mws-form-label= t(:is_primary)
-    .mws-form-item
-    = f.input :is_primary, :label => false
-  .mws-form-row
-    %label.mws-form-label= t(:active)
-    .mws-form-item
-    = f.input :active, :label => false
+  -unless current_user.id == params[:id].to_i
+    .mws-form-row
+      %label.mws-form-label= t(:is_owner)
+      .mws-form-item
+      = f.input :is_owner, :label => false
+    .mws-form-row
+      %label.mws-form-label= t(:active)
+      .mws-form-item
+      = f.input :active, :label => false
   .mws-form-row
     %label.mws-form-label= t(:photo)
     .mws-form-item

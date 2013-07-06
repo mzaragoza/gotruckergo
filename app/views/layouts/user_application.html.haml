@@ -81,10 +81,11 @@
               = link_to root_path do
                 %i.icol32-dashboard
                 Dashboard
-            %li{:class => "#{'active' if params[:controller] == 'users/users' }"}
-              = link_to users_users_path do
-                %i.icol32-user
-                User
+            - if current_user.is_owner
+              %li{:class => "#{'active' if params[:controller] == 'users/users' }"}
+                = link_to users_users_path do
+                  %i.icol32-user
+                  User
             %li{:class => "#{'active' if params[:controller] == 'users/drivers' }"}
               = link_to users_drivers_path do
                 %i.icol32-drivers

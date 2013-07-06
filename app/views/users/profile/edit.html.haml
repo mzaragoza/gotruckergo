@@ -1,4 +1,4 @@
-= simple_form_for(admin, :url => admins_profile_path(admin), :html => {:class => 'form-horizontal' }) do |f|
+= simple_form_for(user, :url => users_profile_path(user), :html => {:class => 'form-horizontal' }) do |f|
   .mws-form-row
     %label.mws-form-label= t(:first_name)
     .mws-form-item
@@ -34,5 +34,3 @@
   .mws-form-row
     .mws-form-item
     = f.button :submit, :class => 'pull-right btn btn-info'
-
-

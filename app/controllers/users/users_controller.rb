@@ -4,12 +4,16 @@ class Users::UsersController < UserController
   expose(:user)
 
   def create
-    #if current_account.users.count <= current_account.users.count
-    if user.save
-      flash[:notice] = t(:user_was_successfully_created)
-      redirect_to(users_users_path)
+    if current_account.users.count <= current_account.subscription.licenses
+      if user.save
+        flash[:notice] = t(:user_was_successfully_created)
+        redirect_to(users_users_path)
+      else
+        render :new
+      end
     else
-      render :new
+      flash[:notice] = t(:excited_licenses)
+      redirect_to(users_users_path)
     end
   end
 
