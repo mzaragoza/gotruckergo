@@ -15,6 +15,7 @@ Fabricator(:truck) do
   vin { (0...18).map{(65+rand(26)).chr}.join }
   vehicle_identification_number { (0...18).map{(65+rand(26)).chr}.join }
   tag {(0...8).map{(65+rand(26)).chr}.join}
+  vehicle_tag {(0...8).map{(65+rand(26)).chr}.join}
   
   after_build do |t|
     t.trailer ||= Trailer.last || Fabricate(:trailer)

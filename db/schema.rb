@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706222708) do
+ActiveRecord::Schema.define(:version => 20130706231216) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",       :default => ""
@@ -248,6 +248,7 @@ ActiveRecord::Schema.define(:version => 20130706222708) do
     t.string   "photo",                         :default => ""
     t.integer  "account_id"
     t.string   "vehicle_identification_number", :default => ""
+    t.string   "vehicle_tag",                   :default => ""
   end
 
   create_table "trucks", :force => true do |t|
@@ -272,6 +273,7 @@ ActiveRecord::Schema.define(:version => 20130706222708) do
     t.string   "photo",                         :default => ""
     t.integer  "account_id"
     t.string   "vehicle_identification_number", :default => ""
+    t.string   "vehicle_tag",                   :default => ""
   end
 
   create_table "users", :force => true do |t|
