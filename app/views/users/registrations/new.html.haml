@@ -65,7 +65,9 @@
                 = account_form.input :website, :error => false, :label => false, :class => 'small'
           .form-row
             %label.form-label
+              By Pressing the Create Account button you agree to the 
+              = link_to 'terms and conditions', '#'
             .form-item
-              = f.button :submit, :class => 'pull-right btn btn-info'
+              = f.button :submit, :class => 'pull-right btn btn-info', :value => 'Create Account'
 
 

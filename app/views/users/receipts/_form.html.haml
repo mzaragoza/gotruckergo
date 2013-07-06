@@ -2,11 +2,11 @@
   .mws-form-row
     %label.mws-form-label= t(:truck)
     .mws-form-item
-    = f.association :truck, :label => false
+    = f.association :truck, collection: current_account.trucks.all(order: 'name'), prompt: "Choose a Trailer", :label => false
   .mws-form-row
     %label.mws-form-label= t(:driver)
     .mws-form-item
-    = f.association :driver, :label => false
+    = f.association :driver, collection: current_account.drivers.all(order: 'first_name'), prompt: "Choose a Driver", :label => false
   .mws-form-row
     %label.mws-form-label= t(:receipt_date)
     .mws-form-item
