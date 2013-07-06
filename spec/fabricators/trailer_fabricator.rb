@@ -9,6 +9,7 @@ Fabricator(:trailer) do
   wheels {'Steel' }
   tires {'22.5 '}
   vin { (0...18).map{(65+rand(26)).chr}.join }
+  vehicle_identification_number { (0...18).map{(65+rand(26)).chr}.join }
   tag {(0...8).map{(65+rand(26)).chr}.join}
 
 

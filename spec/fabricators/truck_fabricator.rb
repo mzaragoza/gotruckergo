@@ -13,6 +13,7 @@ Fabricator(:truck) do
   tires {'295/75R22.5G'}
   odometer {rand(1000000000)}
   vin { (0...18).map{(65+rand(26)).chr}.join }
+  vehicle_identification_number { (0...18).map{(65+rand(26)).chr}.join }
   tag {(0...8).map{(65+rand(26)).chr}.join}
   
   after_build do |t|
