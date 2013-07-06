@@ -4,6 +4,7 @@ class Users::UsersController < UserController
   expose(:user)
 
   def create
+    #if current_account.users.count <= current_account.users.count
     if user.save
       flash[:notice] = t(:user_was_successfully_created)
       redirect_to(users_users_path)
