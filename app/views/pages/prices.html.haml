@@ -39,10 +39,10 @@
                     %strong Number of Users
                     = p.licenses
               .table-footer
-                %a.btn{:href => "#"} Sign Up
+                = link_to t(:sing_up), new_user_registration_path(:plan => p.slug), :class => 'btn'
           .pricing-table
             .table-header
-              .name= t(:custume)
+              .name= t(:custom)
             .table-price
               .price
                 %span
@@ -53,7 +53,7 @@
               %ul
                 %li
                   %strong Number of Users
-                  Custum
+                  Custom
             .table-footer
               %a.btn{:href => "#"} Sign Up
 

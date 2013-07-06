@@ -3,9 +3,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name, :photo, :phone, :active, :is_owner, :is_primary, :account_id
+  attr_accessible :first_name, :last_name, :photo, :phone, :active, :is_owner, :is_primary, :account_id, :plan_slug, :account_attributes
 
   attr_accessor :updating_password
+  attr_accessor :plan_slug
+  accepts_nested_attributes_for :account
   mount_uploader :photo, PhotoUploader
 
   def name

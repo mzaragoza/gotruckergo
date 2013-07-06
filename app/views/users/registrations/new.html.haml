@@ -1,0 +1,67 @@
+/ Content
+.content
+  / Page Header
+  .page-header
+    .container
+      .sixteen.columns
+        %h1.page-title
+          Create your account
+          %span Give us your basic information
+        %ul.breadcrumb
+          %li
+            =link_to t(:home), root_path
+            %span.divider »
+          %li.active Create A Plan
+  / Start Content
+  .container.main
+    .sixteen.columns
+      .row
+        = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal' } ) do |f|
+          = f.input :plan_slug, as: :hidden
+          .form-row
+            %label.form-label= t(:email)
+            .form-item
+              = f.input :email, :error => false, :label => false, :class => 'small'
+          .form-row
+            %label.form-label= t(:password)
+            .form-item
+              = f.input :password, :required => true, :error => false, :label => false, :class => 'small'
+          .form-row
+            %label.form-label= t(:password_confirmation)
+            .form-item
+              = f.input :password_confirmation, :required => true, :error => false, :label => false, :class => 'small'
+          = f.simple_fields_for :account do |account_form|
+            .form-row
+              %label.form-label= t(:business_name)
+              .form-item
+                = account_form.input :name, :required => true, :error => false, :label => false, :class => 'small'
+            .form-row
+              %label.form-label= t(:address2)
+              .form-item
+                = account_form.input :address2, :error => false, :label => false, :class => 'small'
+            .form-row
+              %label.form-label= t(:city)
+              .form-item
+                = account_form.input :city, :error => false, :label => false, :class => 'small'
+            .form-row
+              %label.form-label= t(:state)
+              .form-item
+                = account_form.input :state, :error => false, :label => false, :class => 'small'
+            .form-row
+              %label.form-label= t(:zip)
+              .form-item
+                = account_form.input :zip, :error => false, :label => false, :class => 'small'
+            .form-row
+              %label.form-label= t(:phone)
+              .form-item
+                = account_form.input :phone, :error => false, :label => false, :class => 'small'
+            .form-row
+              %label.form-label= t(:website)
+              .form-item
+                = account_form.input :website, :error => false, :label => false, :class => 'small'
+          .form-row
+            %label.form-label
+            .form-item
+              = f.button :submit, :class => 'pull-right btn btn-info'
+
+
