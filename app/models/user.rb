@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :first_name, :last_name, :photo, :phone, :active, :is_owner, :is_primary, :account_id, :plan_slug, :account_attributes
 
+  validates_uniqueness_of :email
+  validates_presence_of :password, :if => :should_validate_password?
+
   attr_accessor :updating_password
   attr_accessor :plan_slug
   accepts_nested_attributes_for :account
