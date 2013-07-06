@@ -45,11 +45,10 @@
         #mws-user-info.mws-inset
           / User Photo
           #mws-user-photo
-            -# if current_user.photo_url
+            - if current_user.photo_url
               = image_tag current_user.photo_url, :alt => t(:company_name)
-            -# else
+            - else
               = image_tag 'example/profile.jpg', :alt => t(:company_name)
-            = image_tag 'example/profile.jpg', :alt => t(:company_name)
 
           / Username and Functions
           #mws-user-functions
