@@ -8,6 +8,7 @@
       %thead
         %tr
           %th=t(:id)
+          %th=t(:nccount_ame)
           %th=t(:name)
           %th=t(:tractor)
           %th=t(:driver)
@@ -17,6 +18,8 @@
         - trailers.each do |t|
           %tr
             %td= link_to t.id, admins_trailer_path(t)
+            %td
+              = link_to t.account.name, admins_account_path(t.account) if t.account
             %td= link_to t.name, admins_trailer_path(t)
             %td= link_to t.truck.name, admins_truck_path(t.truck) if t.truck
             %td= link_to t.truck.driver.full_name, admins_driver_path(t.truck.driver) if t.truck and t.truck.driver

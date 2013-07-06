@@ -8,6 +8,7 @@
       %thead
         %tr
           %th=t(:id)
+          %th=t(:account_name)
           %th=t(:broker)
           %th=t(:truck)
           %th=t(:trailer)
@@ -23,6 +24,8 @@
         - shipments.each do |s|
           %tr
             %td= link_to s.id, admins_shipment_path(s)
+            %td
+              = link_to s.account.name, admins_account_path(s.account) if s.account
             %td= link_to s.broker.name, admins_broker_path(s.broker) if s.broker
             %td= link_to s.truck.name, admins_truck_path(s.truck) if s.truck
             %td= link_to s.trailer.name, admins_truck_path(s.trailer) if s.trailer

@@ -12,6 +12,7 @@
           %th=t(:primary_user)
           %th=t(:phone)
           %th=t(:users)
+          %th=t(:lisences)
           %th=t(:created_at)
           %th
           %th
@@ -24,6 +25,7 @@
               = a.users.where(:is_primary => true).first.full_name if a.users.where(:is_primary => true).first
             %td= number_to_phone(a.phone)
             %td= a.users.count
+            %td= a.subscription.licenses if a.subscription
             %td= a.created_at
             %td
               - if a.photo?

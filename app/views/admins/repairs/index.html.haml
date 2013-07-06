@@ -8,6 +8,7 @@
       %thead
         %tr
           %th=t(:id)
+          %th=t(:account_name)
           %th=t(:service_provider_name)
           %th=t(:truck)
           %th=t(:trailer)
@@ -23,6 +24,8 @@
         - repairs.each do |r|
           %tr
             %td= link_to r.id, admins_repair_path(r)
+            %td
+              = link_to r.account.name, admins_account_path(r.account) if r.account
             %td= link_to r.service_provider_name, admins_repair_path(r)
             %td= link_to r.truck.name, admins_truck_path(r.truck) if r.truck
             %td= link_to r.trailer.name, admins_trailer_path(r.trailer) if  r.trailer

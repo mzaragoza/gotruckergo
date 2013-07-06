@@ -8,6 +8,7 @@
       %thead
         %tr
           %th= t(:id)
+          %th= t(:account_name)
           %th= t(:truck)
           %th= t(:driver)
           %th= t(:receipt_date)
@@ -21,6 +22,8 @@
         - receipts.each do |r|
           %tr
             %td= link_to r.id, admins_receipt_path(r)
+            %td
+              = link_to r.account.name, admins_account_path(r.account) if r.account
             %td= r.truck.name if r.truck
             %td= r.driver.full_name if r.driver
             %td= r.receipt_date

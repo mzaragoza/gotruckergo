@@ -8,6 +8,7 @@
       %thead
         %tr
           %th= t(:id)
+          %th= t(:account_name)
           %th= t(:name)
           %th= t(:phone)
           %th= t(:fax)
@@ -19,6 +20,8 @@
         - brokers.each do |b|
           %tr
             %td= link_to b.id, admins_broker_path(b)
+            %td
+              = link_to b.account.name, admins_account_path(b.account) if b.account
             %td= link_to b.name, admins_broker_path(b)
             %td= number_to_phone(b.phone)
             %td= number_to_phone(b.fax)
