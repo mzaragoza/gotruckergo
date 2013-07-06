@@ -1,6 +1,6 @@
 class Users::UsersController < UserController
   before_filter :check_password_submitted, :only => :update
-  expose(:users){ User.order("id DESC").scoped{} }
+  expose(:users){ current_account.users.order("id DESC").scoped{} }
   expose(:user)
 
   def create
