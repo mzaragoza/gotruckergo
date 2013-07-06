@@ -1,5 +1,5 @@
-class Users::ReceiptsController < AdminController
-  expose(:receipts){ Receipt.order("id DESC").scoped{} }
+class Users::ReceiptsController < UserController
+  expose(:receipts){ current_account.receipts.order("id DESC").scoped{} }
   expose(:receipt)
 
   def create

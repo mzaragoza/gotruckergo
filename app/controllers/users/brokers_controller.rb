@@ -1,5 +1,5 @@
-class Users::BrokersController < AdminController
-  expose(:brokers){ Broker.order("id DESC").scoped{} }
+class Users::BrokersController < UserController
+  expose(:brokers){ current_account.brokers.order("id DESC").scoped{} }
   expose(:broker)
 
   def create

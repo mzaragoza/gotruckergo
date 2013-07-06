@@ -1,5 +1,5 @@
-class Users::RepairsController < AdminController
-  expose(:repairs){ Repair.order("id DESC").scoped{} }
+class Users::RepairsController < UserController
+  expose(:repairs){ current_account.repairs.order("id DESC").scoped{} }
   expose(:repair)
 
   def create

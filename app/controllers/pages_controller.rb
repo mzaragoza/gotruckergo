@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   expose(:plans){Plan.where(:active =>true).order("price ASC")}
-  #before_filter :redirect_if_logged_in
+  before_filter :redirect_if_logged_in
   def index
     #redirect_to "/users"
   end
@@ -16,10 +16,10 @@ class PagesController < ApplicationController
     render :layout => false
   end
   private
-#  def redirect_if_logged_in
-#    if user_signed_in?
-#      flash[:notice] = 'You must sign out first!'
-#      redirect_to users_dashboard_path
-#    end
-#  end
+  def redirect_if_logged_in
+    if user_signed_in?
+      flash[:notice] = 'You must sign out first!'
+      redirect_to users_dashboard_path
+    end
+  end
 end

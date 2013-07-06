@@ -1,4 +1,4 @@
-= link_to t(:add_repair), new_admins_repair_path, :class => 'btn btn-info pull-right'
+= link_to t(:add_repair), new_users_repair_path, :class => 'btn btn-info pull-right'
 .mws-panel.grid_8.mws-collapsible
   .mws-panel-header
     %span
@@ -22,10 +22,10 @@
       %tbody
         - repairs.each do |r|
           %tr
-            %td= link_to r.id, admins_repair_path(r)
-            %td= link_to r.service_provider_name, admins_repair_path(r)
-            %td= link_to r.truck.name, admins_truck_path(r.truck) if r.truck
-            %td= link_to r.trailer.name, admins_trailer_path(r.trailer) if  r.trailer
+            %td= link_to r.id, users_repair_path(r)
+            %td= link_to r.service_provider_name, users_repair_path(r)
+            %td= link_to r.truck.name, users_truck_path(r.truck) if r.truck
+            %td= link_to r.trailer.name, users_trailer_path(r.trailer) if  r.trailer
             %td= r.service_provider_city
             %td= r.service_provider_state
             %td= r.service_provider_phone
@@ -33,5 +33,5 @@
             %td= r.delivery_date
             %td= r.return_date
             %td= r.total
-            %td= link_to 'Edit', edit_admins_repair_path(r), :class => 'btn btn-small btn-info'
+            %td= link_to 'Edit', edit_users_repair_path(r), :class => 'btn btn-small btn-info'
 

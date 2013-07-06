@@ -1,4 +1,4 @@
-= simple_form_for([:admins, driver], :html => {:class => 'form-horizontal' }) do |f|
+= simple_form_for([:users, driver], :html => {:class => 'form-horizontal' }) do |f|
   .mws-form-row
     %label.mws-form-label= t(:first_name)
     .mws-form-item
@@ -10,7 +10,7 @@
   .mws-form-row
     %label.mws-form-label= t(:truck)
     .mws-form-item
-    = f.association :truck, :label => false
+    = f.association :truck, collection: current_account.trucks.all(order: 'name'), prompt: "Choose a Truck", :label => false
   .mws-form-row
     %label.mws-form-label= t(:address)
     .mws-form-item

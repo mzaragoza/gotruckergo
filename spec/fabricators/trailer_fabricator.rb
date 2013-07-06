@@ -12,6 +12,9 @@ Fabricator(:trailer) do
   tag {(0...8).map{(65+rand(26)).chr}.join}
 
 
+  after_build do |t|
+    t.account ||= Account.last || Fabricate(:account)
+  end
   # trailer_id
 end
 

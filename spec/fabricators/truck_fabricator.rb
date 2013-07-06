@@ -17,5 +17,6 @@ Fabricator(:truck) do
   
   after_build do |t|
     t.trailer ||= Trailer.last || Fabricate(:trailer)
+    t.account ||= Account.last || Fabricate(:account)
   end  
 end

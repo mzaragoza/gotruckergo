@@ -1,6 +1,6 @@
 .mws-panel.grid_12
   .mws-panel-header
-    = link_to 'Edit', edit_admins_shipment_path(shipment), :class => 'btn btn-info pull-right'
+    = link_to 'Edit', edit_users_shipment_path(shipment), :class => 'btn btn-info pull-right'
     %span
       = shipment.broker.name.titleize if shipment.broker
       = shipment.load_number

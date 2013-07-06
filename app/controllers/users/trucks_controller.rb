@@ -1,5 +1,5 @@
-class Users::TrucksController < AdminController
-  expose(:trucks){ Truck.order("id DESC").scoped{} }
+class Users::TrucksController < UserController
+  expose(:trucks){ current_account.trucks.order("id DESC").scoped{} }
   expose(:truck)
 
   def create

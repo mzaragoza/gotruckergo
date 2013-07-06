@@ -45,6 +45,7 @@ Fabricator(:shipment) do
   trailer_type {'Any'}
   
   after_build do |s|
+    s.account ||= Account.last || Fabricate(:account)
     s.broker ||= Broker.last || Fabricate(:broker)
     s.truck ||= Truck.last || Fabricate(:truck)
     s.trailer ||= Trailer.last || Fabricate(:trailer)

@@ -1,5 +1,5 @@
-class Users::TrailersController < AdminController
-  expose(:trailers){ Trailer.order("id DESC").scoped{} }
+class Users::TrailersController < UserController
+  expose(:trailers){ current_account.trailers.order("id DESC").scoped{} }
   expose(:trailer)
 
   def create

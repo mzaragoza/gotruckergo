@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706034610) do
+ActiveRecord::Schema.define(:version => 20130706053847) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",       :default => ""
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20130706034610) do
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
     t.string   "carreir_packet_pdf",   :default => ""
+    t.integer  "account_id"
   end
 
   create_table "drivers", :force => true do |t|
@@ -107,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20130706034610) do
     t.datetime "created_at",                                                             :null => false
     t.datetime "updated_at",                                                             :null => false
     t.string   "drivers_license_photo",                               :default => ""
+    t.integer  "account_id"
   end
 
   create_table "plans", :force => true do |t|
@@ -131,6 +133,7 @@ ActiveRecord::Schema.define(:version => 20130706034610) do
     t.string   "credit_card_number", :default => "", :null => false
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+    t.integer  "account_id"
   end
 
   create_table "repairs", :force => true do |t|
@@ -156,6 +159,7 @@ ActiveRecord::Schema.define(:version => 20130706034610) do
     t.string   "total",                     :default => "", :null => false
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.integer  "account_id"
   end
 
   create_table "shipments", :force => true do |t|
@@ -209,6 +213,7 @@ ActiveRecord::Schema.define(:version => 20130706034610) do
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
     t.string   "load_conformation_pdf",      :default => ""
+    t.integer  "account_id"
   end
 
   create_table "subscriptions", :force => true do |t|
@@ -238,6 +243,7 @@ ActiveRecord::Schema.define(:version => 20130706034610) do
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
     t.string   "photo",                       :default => ""
+    t.integer  "account_id"
   end
 
   create_table "trucks", :force => true do |t|
@@ -260,6 +266,7 @@ ActiveRecord::Schema.define(:version => 20130706034610) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "photo",                  :default => ""
+    t.integer  "account_id"
   end
 
   create_table "users", :force => true do |t|

@@ -1,5 +1,5 @@
-class Users::ShipmentsController < AdminController
-  expose(:shipments){ Shipment.order("id DESC").scoped{} }
+class Users::ShipmentsController < UserController
+  expose(:shipments){ current_account.shipments.order("id DESC").scoped{} }
   expose(:shipment)
 
   def create

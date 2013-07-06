@@ -23,6 +23,7 @@ Fabricator(:driver) do
   combination_of_tank_vehicle_and_hazardous_materials { true }
 
   after_build do |d|
+    d.account ||= Account.last || Fabricate(:account)
     d.truck ||= Truck.last || Fabricate(:truck)
   end
 end

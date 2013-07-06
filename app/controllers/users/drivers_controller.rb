@@ -1,5 +1,5 @@
-class Users::DriversController < AdminController
-  expose(:drivers){ Driver.order("id DESC").scoped{} }
+class Users::DriversController < UserController
+  expose(:drivers){ current_account.drivers.order("id DESC").scoped{} }
   expose(:driver)
 
   def create

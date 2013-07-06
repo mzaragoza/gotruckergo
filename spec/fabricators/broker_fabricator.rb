@@ -11,5 +11,8 @@ Fabricator(:broker) do
   website { Faker::Internet.url}
   motor_carrier_number {rand(999999999)}
 
+  after_build do |b|
+    b.account ||= Account.last || Fabricate(:account)
+  end
 end
 

@@ -18,6 +18,7 @@ Fabricator(:repair) do
   tax {rand(10000)}
 
   after_build do |t|
+    t.account ||= Account.last || Fabricate(:account)
     t.truck ||= Truck.last || Fabricate(:truck)
   end  
 end

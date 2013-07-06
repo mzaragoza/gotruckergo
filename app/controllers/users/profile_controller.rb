@@ -1,4 +1,4 @@
-class Users::ProfileController < AdminController
+class Users::ProfileController < UserController
   before_filter :check_password_submitted, :only => :update
   expose(:user){ current_user }
   def update
