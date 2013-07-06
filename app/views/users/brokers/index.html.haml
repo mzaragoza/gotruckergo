@@ -27,10 +27,10 @@
             %td= link_to b.website, b.website , :target => '_blank'
             %td= b.motor_carrier_number
             %td
-            - unless broker.carreir_packet_pdf.blank?
-              = link_to t(:carreir_packet), broker.carreir_packet_pdf_url, :target => '_blanl'
-            - else
-              %span{:style => 'color:#F00'}= t(:carreir_packet)
+              - unless broker.carreir_packet_pdf.blank?
+                = link_to t(:carreir_packet), broker.carreir_packet_pdf_url, :target => '_blank'
+              - else
+                %span{:style => 'color:#F00'}= t(:carreir_packet)
             %td= link_to 'Edit', edit_users_broker_path(b), :class => 'btn btn-small btn-info'
 
 
