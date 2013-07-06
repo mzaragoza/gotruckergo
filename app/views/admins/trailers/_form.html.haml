@@ -42,12 +42,11 @@
   .mws-form-row
     %label.mws-form-label= t(:tag)
     .mws-form-item
-    = f.input :tag, :label => false
-  -#.mws-form-row
+    = f.input :vehicle_tag, :label => false
+  .mws-form-row
     %label.mws-form-label= t(:photo)
     .mws-form-item
     = f.input :photo, :label => false
   .mws-form-row
     .mws-form-item
     = f.button :submit, :class => 'pull-right btn btn-info'
-
