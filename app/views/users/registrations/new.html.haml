@@ -36,6 +36,10 @@
               .form-item
                 = account_form.input :name, :required => true, :error => false, :label => false, :class => 'small'
             .form-row
+              %label.form-label= t(:address)
+              .form-item
+                = account_form.input :address, :error => false, :label => false, :class => 'small'
+            .form-row
               %label.form-label= t(:address2)
               .form-item
                 = account_form.input :address2, :error => false, :label => false, :class => 'small'
