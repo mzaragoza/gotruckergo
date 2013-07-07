@@ -86,6 +86,11 @@
                 = link_to users_users_path do
                   %i.icol32-user
                   User
+            - if current_user.is_owner
+              %li{:class => "#{'active' if params[:controller] == 'users/accounts' }"}
+                = link_to users_account_path(current_account) do
+                  %i.icol32-accounts
+                  Account
             %li{:class => "#{'active' if params[:controller] == 'users/drivers' }"}
               = link_to users_drivers_path do
                 %i.icol32-drivers

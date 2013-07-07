@@ -62,5 +62,11 @@ module ApplicationHelper
         ['Paid', 'paid'],
       ]
   end
+  def subscriptions_type_list
+      [
+        ['monthly', 'Monthly'],
+        ['yearly', 'Yearly'],
+      ]
+  end
     
 end

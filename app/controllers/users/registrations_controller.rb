@@ -29,7 +29,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
  def account_must_have_a_plan
    unless resource.new_record?
      plan = Plan.find_by_slug(params[:user][:plan_slug])
-     Subscription.new(:account_id => resource.account.id, :plan_id => plan.id, :name => plan.name, :price => plan.price, :slug => plan.slug, :licenses => plan.licenses  ).save
+     if params[:user][:subscriptions_type] == 'Monthly'
+       price = plan.monthy_price
+     else
+       price = plan.anual_price
+     end
+     Subscription.new(:account_id => resource.account.id, :plan_id => plan.id, :name => plan.name, :price => price, :slug => plan.slug, :licenses => plan.licenses, :subscriptions_type => params[:user][:subscriptions_type]  ).save
    end
  end
 
