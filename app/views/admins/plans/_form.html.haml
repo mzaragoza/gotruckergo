@@ -8,9 +8,13 @@
     .mws-form-item
     = f.input :slug, :label => false
   .mws-form-row
-    %label.mws-form-label= t(:price)
+    %label.mws-form-label= t(:anual_price)
     .mws-form-item
-    = f.input :price, :label => false
+    = f.input :anual_price, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:monthy_price)
+    .mws-form-item
+    = f.input :monthy_price, :label => false
   .mws-form-row
     %label.mws-form-label= t(:featured)
     .mws-form-item

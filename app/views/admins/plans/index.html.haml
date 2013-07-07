@@ -11,7 +11,8 @@
           %th=t(:id)
           %th=t(:name)
           %th=t(:slug)
-          %th=t(:price)
+          %th=t(:monthy_price)
+          %th=t(:anual_price)
           %th=t(:featured)
           %th=t(:active)
           %th=t(:licenses)
@@ -23,7 +24,8 @@
             %td= link_to p.id, admins_plan_path(p)
             %td= link_to p.name.titleize, admins_plan_path(p)
             %td= p.slug
-            %td= p.price
+            %td= p.monthy_price
+            %td= p.anual_price
             %td
               -if p.featured
                 featured
