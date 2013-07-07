@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706231216) do
+ActiveRecord::Schema.define(:version => 20130707014437) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",       :default => ""
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(:version => 20130706231216) do
     t.string   "name",                          :default => "", :null => false
     t.string   "annual_inspection_date"
     t.string   "engine"
-    t.string   "sleeper"
+    t.string   "sleeper_size"
     t.string   "transmission"
     t.string   "suspension"
     t.string   "front_axel_capacity"
@@ -274,6 +274,11 @@ ActiveRecord::Schema.define(:version => 20130706231216) do
     t.integer  "account_id"
     t.string   "vehicle_identification_number", :default => ""
     t.string   "vehicle_tag",                   :default => ""
+    t.string   "truck_year",                    :default => ""
+    t.string   "manufacturer",                  :default => ""
+    t.string   "truck_model",                   :default => ""
+    t.string   "engine_specs",                  :default => ""
+    t.string   "engine_type",                   :default => ""
   end
 
   create_table "users", :force => true do |t|
