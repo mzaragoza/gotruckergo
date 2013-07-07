@@ -23,5 +23,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_limit => [50, 50]
   end
+  version :large_thumb do
+    process :resize_to_limit => [500, 500]
+  end
 
 end
