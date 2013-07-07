@@ -7,16 +7,16 @@
     %table.mws-datatable-fn.mws-table
       %thead
         %tr
-          %th=t(:id)
-          %th=t(:name)
-          %th=t(:tractor)
-          %th=t(:driver)
+          %th
+          %th= t(:name)
+          %th= t(:tractor)
+          %th= t(:driver)
           %th
           %th
       %tbody
         - trailers.each do |t|
           %tr
-            %td= link_to t.id, users_trailer_path(t)
+            %td= link_to t(:show), users_trailer_path(t)
             %td= link_to t.name, users_trailer_path(t)
             %td= link_to t.truck.name, users_truck_path(t.truck) if t.truck
             %td= link_to t.truck.driver.full_name, users_driver_path(t.truck.driver) if t.truck and t.truck.driver

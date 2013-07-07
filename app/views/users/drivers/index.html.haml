@@ -7,7 +7,7 @@
     %table.mws-datatable-fn.mws-table
       %thead
         %tr
-          %th=t(:id)
+          %th
           %th=t(:name)
           %th=t(:truck)
           %th=t(:trailer)
@@ -18,7 +18,7 @@
       %tbody
         - drivers.each do |d|
           %tr
-            %td= link_to d.id, users_driver_path(d)
+            %td= link_to t(:show), users_driver_path(d)
             %td= link_to d.full_name, users_driver_path(d)
             %td
               = link_to d.truck.name, users_truck_path(d.truck) if d.truck

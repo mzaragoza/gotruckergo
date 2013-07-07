@@ -7,7 +7,7 @@
     %table.mws-datatable-fn.mws-table
       %thead
         %tr
-          %th= t(:id)
+          %th
           %th= t(:name)
           %th= t(:phone)
           %th= t(:fax)
@@ -19,7 +19,7 @@
       %tbody
         - brokers.each do |b|
           %tr
-            %td= link_to b.id, users_broker_path(b)
+            %td= link_to t(:show), users_broker_path(b)
             %td= link_to b.name, users_broker_path(b)
             %td= number_to_phone(b.phone)
             %td= number_to_phone(b.fax)

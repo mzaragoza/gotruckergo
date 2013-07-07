@@ -7,22 +7,22 @@
     %table.mws-datatable-fn.mws-table
       %thead
         %tr
-          %th=t(:id)
-          %th=t(:broker)
-          %th=t(:truck)
-          %th=t(:trailer)
-          %th=t(:pick_up_date)
-          %th=t(:deliver_date)
-          %th=t(:number_of_stops)
-          %th=t(:paid_status)
-          %th=t(:paid_date)
-          %th=t(:equipment_type)
-          %th=t(:load_conformation)
+          %th
+          %th= t(:broker)
+          %th= t(:truck)
+          %th= t(:trailer)
+          %th= t(:pick_up_date)
+          %th= t(:deliver_date)
+          %th= t(:number_of_stops)
+          %th= t(:paid_status)
+          %th= t(:paid_date)
+          %th= t(:equipment_type)
+          %th= t(:load_conformation)
           %th
       %tbody
         - shipments.each do |s|
           %tr
-            %td= link_to s.id, users_shipment_path(s)
+            %td= link_to t(:show), users_shipment_path(s)
             %td= link_to s.broker.name, users_broker_path(s.broker) if s.broker
             %td= link_to s.truck.name, users_truck_path(s.truck) if s.truck
             %td= link_to s.trailer.name, users_truck_path(s.trailer) if s.trailer

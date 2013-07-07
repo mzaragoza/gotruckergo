@@ -7,7 +7,7 @@
     %table.mws-datatable-fn.mws-table
       %thead
         %tr
-          %th= t(:id)
+          %th
           %th= t(:truck)
           %th= t(:driver)
           %th= t(:receipt_date)
@@ -20,7 +20,7 @@
       %tbody
         - receipts.each do |r|
           %tr
-            %td= link_to r.id, users_receipt_path(r)
+            %td= link_to t(:id), users_receipt_path(r)
             %td= r.truck.name if r.truck
             %td= r.driver.full_name if r.driver
             %td= r.receipt_date
