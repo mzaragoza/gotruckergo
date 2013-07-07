@@ -20,7 +20,7 @@
       %tbody
         - receipts.each do |r|
           %tr
-            %td= link_to t(:id), users_receipt_path(r)
+            %td= link_to t(:id), users_receipt_path(r), :class => 'btn btn-small btn-info'
             %td= r.truck.name if r.truck
             %td= r.driver.full_name if r.driver
             %td= r.receipt_date

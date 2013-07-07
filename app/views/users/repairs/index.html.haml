@@ -22,7 +22,7 @@
       %tbody
         - repairs.each do |r|
           %tr
-            %td= link_to t(:show), users_repair_path(r)
+            %td= link_to t(:show), users_repair_path(r), :class => 'btn btn-small btn-info'
             %td= link_to r.service_provider_name, users_repair_path(r)
             %td= link_to r.truck.name, users_truck_path(r.truck) if r.truck
             %td= link_to r.trailer.name, users_trailer_path(r.trailer) if  r.trailer

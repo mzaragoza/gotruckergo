@@ -19,7 +19,7 @@
       %tbody
         - brokers.each do |b|
           %tr
-            %td= link_to t(:show), users_broker_path(b)
+            %td= link_to t(:show), users_broker_path(b), :class => 'btn btn-small btn-info'
             %td= link_to b.name, users_broker_path(b)
             %td= number_to_phone(b.phone)
             %td= number_to_phone(b.fax)

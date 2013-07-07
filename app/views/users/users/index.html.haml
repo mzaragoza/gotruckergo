@@ -25,7 +25,7 @@
       %tbody
         - users.each do |u|
           %tr
-            %td= link_to t(:show), users_user_path(u)
+            %td= link_to t(:show), users_user_path(u), :class => 'btn btn-small btn-info'
             %td= link_to u.full_name, users_user_path(u)
             %td= u.email
             %td= number_to_phone(u.phone)
