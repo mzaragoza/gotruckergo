@@ -1,7 +1,7 @@
 .row-fluid
   .mws-panel.grid_2.pull-right
     - unless truck.photo.blank?
-      = image_tag truck.photo.large_thumb.url, :width => '500', :class => 'img-polaroid'
+      = image_tag truck.photo.large_thumb, :width => '500', :class => 'img-polaroid'
     - else
       = image_tag 'truck-icon.png', :width => '500', :class => 'img-polaroid'
   .mws-panel.grid_6
