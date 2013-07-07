@@ -17,8 +17,6 @@
           %th= t(:email)
           %th= t(:phone)
           %th= t(:is_owner)
-          %th= t(:is_primary)
-          %th= t(:account)
           %th= t(:active)
           %th
           %th
@@ -30,17 +28,10 @@
             %td= u.email
             %td= number_to_phone(u.phone)
             %td
-              = link_to u.account.name, users_account_path(u.account) if u.account
-            %td
               -if u.is_owner
                 .badge.badge-success Owner
               -else
                 .badge.badge-important User
-            %td
-              -if u.is_primary
-                .badge.badge-success Primary
-              -else
-                .badge.badge-important Regular
             %td
               -if u.active
                 .badge.badge-success Active
@@ -48,7 +39,7 @@
                 .badge.badge-important Inactive
             %td
               - if u.photo?
-                = image_tag u.photo, :width => '50'
+                = image_tag u.photo.thumb.url, :width => '50'
               - else
                 = image_tag 'icons/icol32/user.png', :width => '50'
             %td

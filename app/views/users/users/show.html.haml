@@ -18,15 +18,9 @@
             %span.text-nowrap= user.id
         %li
           %span.key
-            = t(:account)
-          %span.val
-            %span.text-nowrap
-              = user.account.name if user.account
-        %li
-          %span.key
             = t(:email)
           %span.val
-            %span.text-nowrap= user.email 
+            %span.text-nowrap= mail_to user.email
         %li
           %span.key
             = t(:name)
@@ -43,15 +37,6 @@
                 .badge.badge-important User
         %li
           %span.key
-            = t(:primary)
-          %span.val
-            %span.text-nowrap
-            -if user.is_primary
-              .badge.badge-success Primary
-            -else
-              .badge.badge-important Regular
-        %li
-          %span.key
             = t(:phone)
           %span.val
             %span.text-nowrap= user.phone
@@ -60,29 +45,4 @@
             = t(:active)
           %span.val
             %span.text-nowrap= user.active
-        %li
-          %span.key
-            = t(:sign_in_count)
-          %span.val
-            %span.text-nowrap= user.sign_in_count
-        %li
-          %span.key
-            = t(:current_sign_in_at)
-          %span.val
-            %span.text-nowrap= user.current_sign_in_at
-        %li
-          %span.key
-            = t(:last_sign_in_at)
-          %span.val
-            %span.text-nowrap= user.last_sign_in_at
-        %li
-          %span.key
-            = t(:current_sign_in_ip)
-          %span.val
-            %span.text-nowrap= user.current_sign_in_ip
-        %li
-          %span.key
-            = t(:last_sign_in_ip)
-          %span.val
-            %span.text-nowrap= user.last_sign_in_ip
 
