@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(:version => 20130707130122) do
     t.integer  "truck_id"
     t.integer  "driver_id"
     t.string   "receipt_date",       :default => "", :null => false
-    t.string   "fill_up_gallons",    :default => "", :null => false
+    t.string   "gallons",            :default => "", :null => false
     t.string   "state",              :default => "", :null => false
     t.string   "cost",               :default => "", :null => false
     t.string   "odometer",           :default => "", :null => false
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(:version => 20130707130122) do
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.integer  "account_id"
+    t.string   "fill_up_gallons",    :default => ""
   end
 
   create_table "repairs", :force => true do |t|
