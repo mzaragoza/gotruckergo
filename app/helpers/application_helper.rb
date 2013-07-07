@@ -58,8 +58,8 @@ module ApplicationHelper
 
   def pay_status_list
       [
+        ['Unpaid', 'unpaid'],
         ['Paid', 'paid'],
-        ['Unpaid', 'unpaid']
       ]
   end
     
