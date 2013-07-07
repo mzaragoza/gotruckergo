@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130707014437) do
+ActiveRecord::Schema.define(:version => 20130707025509) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",       :default => ""
@@ -217,6 +217,10 @@ ActiveRecord::Schema.define(:version => 20130707014437) do
     t.datetime "updated_at",                                    :null => false
     t.string   "load_conformation_pdf",      :default => ""
     t.integer  "account_id"
+    t.decimal  "price2"
+    t.integer  "miles2"
+    t.integer  "weight2"
+    t.integer  "testing"
   end
 
   create_table "subscriptions", :force => true do |t|

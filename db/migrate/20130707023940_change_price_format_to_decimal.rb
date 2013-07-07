@@ -1,13 +1,14 @@
 class ChangePriceFormatToDecimal < ActiveRecord::Migration
   def up
-     change_column :shipments, :price, :decimal
-     change_column :shipments, :miles, :integer
-     change_column :shipments, :weight, :integer
+     add_column :shipments, :price2, :decimal
+     add_column :shipments, :miles2, :integer
+     add_column :shipments, :weight2, :integer
   end
 
   def down
-     change_column :shipments, :price, :string
-     change_column :shipments, :miles, :string
-     change_column :shipments, :weight, :string
+     Shipment.delete_all
+     remove_column :shipments, :price2
+     remove_column :shipments, :miles2
+     remove_column :shipments, :weight2
   end
 end
