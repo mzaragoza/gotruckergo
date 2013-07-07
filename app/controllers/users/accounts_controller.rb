@@ -11,7 +11,7 @@ class Users::AccountsController < UserController
   end
 
   def update
-    if account.save
+    if account.update_attributes(params[:account])
       flash[:notice] = t(:account_was_successfully_updated)
       redirect_to(users_account_path(current_account))
     else

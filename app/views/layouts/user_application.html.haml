@@ -78,7 +78,7 @@
         #mws-navigation
           %ul
             %li{:class => "#{'active' if params[:controller] == 'users/dashboards' }"}
-              = link_to root_path do
+              = link_to users_dashboard_path do
                 %i.icol32-dashboard
                 Dashboard
             - if current_user.is_owner
@@ -91,18 +91,18 @@
                 = link_to users_account_path(current_account) do
                   %i.icol32-accounts
                   Account
-            %li{:class => "#{'active' if params[:controller] == 'users/drivers' }"}
-              = link_to users_drivers_path do
-                %i.icol32-drivers
-                Drivers
-            %li{:class => "#{'active' if params[:controller] == 'users/trucks' }"}
-              = link_to users_trucks_path do
-                %i.icol32-truck
-                Trucks
             %li{:class => "#{'active' if params[:controller] == 'users/trailers' }"}
               = link_to users_trailers_path do
                 %i.icol32-trailers
                 Trailers
+            %li{:class => "#{'active' if params[:controller] == 'users/trucks' }"}
+              = link_to users_trucks_path do
+                %i.icol32-truck
+                Trucks
+            %li{:class => "#{'active' if params[:controller] == 'users/drivers' }"}
+              = link_to users_drivers_path do
+                %i.icol32-drivers
+                Drivers
             %li{:class => "#{'active' if params[:controller] == 'users/brokers' }"}
               = link_to users_brokers_path do
                 %i.icol32-brokers

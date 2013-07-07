@@ -162,11 +162,11 @@
   .mws-form-row
     %label.mws-form-label= t(:pick_up_earlier_time)
     .mws-form-item
-    = f.input :pick_up_earlier_time, :label => false
+    = f.input :pick_up_earlier_time, :label => false, :input_html => { :class => 'timepicker'}
   .mws-form-row
     %label.mws-form-label= t(:pick_up_lateest_time)
     .mws-form-item
-    = f.input :pick_up_lateest_time, :label => false
+    = f.input :pick_up_lateest_time, :label => false, :input_html => { :class => 'timepicker'}
   .mws-form-row
     %label.mws-form-label= t(:pick_up_appointment)
     .mws-form-item
@@ -174,11 +174,11 @@
   .mws-form-row
     %label.mws-form-label= t(:delivery_earlier_time)
     .mws-form-item
-    = f.input :delivery_earlier_time, :label => false
+    = f.input :delivery_earlier_time, :label => false, :input_html => { :class => 'timepicker'}
   .mws-form-row
     %label.mws-form-label= t(:delivery_lateest_time)
     .mws-form-item
-    = f.input :delivery_lateest_time, :label => false
+    = f.input :delivery_lateest_time, :label => false, :input_html => { :class => 'timepicker'}
   .mws-form-row
     %label.mws-form-label= t(:trailer_type)
     .mws-form-item

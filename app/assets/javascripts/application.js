@@ -7,6 +7,7 @@
 //= require jui/js/jquery-ui-1.9.2.min
 //= require jui/jquery-ui.custom.min
 //= require jui/js/jquery.ui.touch-punch
+//= require jui/js/timepicker/jquery-ui-timepicker.min
 //= require plugins/datatables/jquery.dataTables.min
 //= require plugins/flot/jquery.flot.min
 //= require plugins/flot/plugins/jquery.flot.tooltip.min
@@ -21,3 +22,4 @@
 //= require demo/demo.table
 //= require demo/demo.widget
 $( ".datepicker" ).datepicker({  dateFormat: "yy-mm-dd" });
+$( ".timepicker" ).timepicker({});

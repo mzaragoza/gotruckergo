@@ -64,9 +64,16 @@ module ApplicationHelper
   end
   def subscriptions_type_list
       [
-        ['monthly', 'Monthly'],
-        ['yearly', 'Yearly'],
+        ['Monthly', 'monthly'],
+        ['Yearly', 'yearly'],
       ]
   end
-    
+  def payment_method_list
+      [
+        ['Cash', 'cash'],
+        ['Credit Card', 'credit_card'],
+        ['Check', 'check'],
+      ]
+  end
+
 end

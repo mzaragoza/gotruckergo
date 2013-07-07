@@ -50,7 +50,7 @@
   .mws-form-row
     %label.mws-form-label= t(:payment_info)
     .mws-form-item
-    = f.input :payment_info, :label => false
+    = f.input :payment_info, :collection => payment_method_list,  :as => :select, include_blank: false, :label => false
   .mws-form-row
     %label.mws-form-label= t(:invoice_date)
     .mws-form-item

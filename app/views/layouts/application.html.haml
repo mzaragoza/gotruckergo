@@ -62,6 +62,19 @@
                     = link_to t(:contact_us), root_path
       / End Header
       / Slider Wrap
+      .container
+        - unless flash[:notice].blank?
+          #notice
+            %h3= flash[:notice]
+          %br
+        - unless flash[:error].blank?
+          #error
+            %h3= flash[:error]
+          %br
+        - unless flash[:alert].blank?
+          #alert
+            %h3= flash[:alert]
+          %br
       = yield
       / End Foooter
       / Footer
