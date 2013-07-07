@@ -101,12 +101,12 @@
           %span.val
             %span.text-nowrap
               - if driver.double_triple_trailers
-                = t(:double_triple_trailers)
+                .badge.badge-success= t(:double_triple_trailers)
               - if driver.passenger
-                = t(:passenger)
+                .badge.badge-success= t(:passenger)
               - if driver.tank_vehicle
-                = t(:tank_vehicle)
+                .badge.badge-success= t(:tank_vehicle)
               - if driver.hazardous_materials
-                = t(:hazardous_materials)
+                .badge.badge-success= t(:hazardous_materials)
               - if driver.combination_of_tank_vehicle_and_hazardous_materials
-                = t(:combination_of_tank_vehicle_and_hazardous_materials)
+                .badge.badge-success= t(:combination_of_tank_vehicle_and_hazardous_materials)
