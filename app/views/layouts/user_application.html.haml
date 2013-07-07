@@ -46,7 +46,7 @@
           / User Photo
           #mws-user-photo
             - if current_user.photo_url
-              =# image_tag current_user.photo.thum.url, :alt => current_user.full_name
+              = image_tag current_user.photo.thum.url, :alt => current_user.full_name
             - else
               = image_tag 'example/profile.jpg', :alt => t(:company_name)
 
