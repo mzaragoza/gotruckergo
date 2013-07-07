@@ -90,7 +90,7 @@
   .mws-form-row
     %label.mws-form-label= t(:status)
     .mws-form-item
-    = f.input :status, :label => false
+    = f.input :status, :collection => pay_status_list,  :as => :select, include_blank: true, :label => false
   .mws-form-row
     %label.mws-form-label= t(:weight)
     .mws-form-item

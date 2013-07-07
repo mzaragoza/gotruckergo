@@ -55,4 +55,12 @@ module ApplicationHelper
         ['Wyoming', 'WY']
       ]
   end
+
+  def pay_status_list
+      [
+        ['Paid', 'paid'],
+        ['Unpaid', 'Unpaid']
+      ]
+  end
+    
 end

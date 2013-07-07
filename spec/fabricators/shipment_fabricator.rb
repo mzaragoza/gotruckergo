@@ -1,7 +1,7 @@
 Fabricator(:shipment) do
   load_number {rand(999999)}
-  price {rand(9999)}
-  miles {rand(7000)}
+  price2 {rand(9999)}
+  miles2 {rand(7000)}
   pick_up_location_address { Faker::Address.street_name }
   pick_up_location_address2 { Faker::Address.secondary_address}
   pick_up_location_city { Faker::Address.city}
@@ -19,7 +19,7 @@ Fabricator(:shipment) do
   pick_up_date {DateTime.now}
   deliver_date {DateTime.now + rand(10).days }
   status {'New'}
-  weight {rand(20000)}
+  weight2 {rand(20000)}
   drivers_notes { Faker::Lorem.sentence }
   packing {'palets'}
   seal_number {rand(20000)}
@@ -49,5 +49,6 @@ Fabricator(:shipment) do
     s.broker ||= Broker.last || Fabricate(:broker)
     s.truck ||= Truck.last || Fabricate(:truck)
     s.trailer ||= Trailer.last || Fabricate(:trailer)
+    s.testing ||= Trailer.last.id || Fabricate(:trailer).id
   end  
 end
