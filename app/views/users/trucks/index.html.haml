@@ -25,8 +25,6 @@
               = link_to t.trailer.name, users_trailer_path(t.trailer) if t.trailer
             %td
               = link_to t.driver.full_name, users_driver_path(t.driver) if t.driver
-            %td
-              = link_to t.driver.full_name, users_driver_path(t.driver) if t.driver
             %td= t.vehicle_tag
             %td= t.vehicle_identification_number
             %td= t.annual_inspection_date
