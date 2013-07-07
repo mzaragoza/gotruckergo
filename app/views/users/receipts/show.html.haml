@@ -36,7 +36,7 @@
         %span.key
           = t(:cost)
         %span.val
-          %span.text-nowrap= receipt.cost
+          %span.text-nowrap= number_to_currency(receipt.cost2)
       %li
         %span.key
           = t(:odometer)

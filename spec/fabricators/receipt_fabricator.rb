@@ -2,7 +2,7 @@ Fabricator(:receipt) do
   receipt_date { Date.today}
   fill_up_gallons {rand(100)}
   state {Faker::Address.state_abbr}
-  cost {rand(100) *123.321}
+  cost2 {rand(100) *123.32}
   odometer {rand(1000000)}
   credit_card_number {rand(9999999999999999)}
   after_build do |r|
