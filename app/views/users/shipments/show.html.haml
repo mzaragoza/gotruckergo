@@ -46,7 +46,7 @@
         %span.key
           = t(:price)
         %span.val
-          %span.text-nowrap= shipment.price
+          %span.text-nowrap= number_to_currency(shipment.price2)
       %li
         %span.key
           = t(:miles)

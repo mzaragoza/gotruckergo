@@ -10,8 +10,7 @@
   .mws-form-row
     %label.mws-form-label= t(:trailer)
     .mws-form-item
-    =# f.association :trailer, collection: current_account.trailers.all(order: 'name'), prompt: "Choose a Trailer", :label => false
-    = f.association :new_trailer
+    = f.association :new_trailer, collection: current_account.trailers.all(order: 'name'), prompt: "Choose a Trailer", :label => false
   .mws-form-row
     %label.mws-form-label= t(:load_number)
     .mws-form-item
@@ -19,11 +18,11 @@
   .mws-form-row
     %label.mws-form-label= t(:price)
     .mws-form-item
-    = f.input :price, :label => false
+    = f.input :prices, :label => false
   .mws-form-row
     %label.mws-form-label= t(:miles)
     .mws-form-item
-    = f.input :miles, :label => false
+    = f.input :miles2, :label => false
   .mws-form-row
     %label.mws-form-label= t(:pick_up_location_address)
     .mws-form-item
@@ -95,7 +94,7 @@
   .mws-form-row
     %label.mws-form-label= t(:weight)
     .mws-form-item
-    = f.input :weight, :label => false
+    = f.input :weight2, :label => false
   .mws-form-row
     %label.mws-form-label= t(:drivers_notes)
     .mws-form-item
