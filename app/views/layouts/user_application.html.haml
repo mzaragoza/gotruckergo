@@ -167,6 +167,7 @@
               %span.mws-stat-content
                 %span.mws-stat-title Unpaid Sales
                 %span.mws-stat-value
+                  = current_account.shipments.sum(:price2,:conditions=> "paid_status = 'unpaid'" ).to_sql 
                   = number_to_currency( current_account.shipments.sum(:price2,:conditions=> "paid_status = 'unpaid'" ) )
             -#= link_to '#', :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
