@@ -32,6 +32,12 @@
     .mws-form-item
     = f.input :website, :label => false
   .mws-form-row
+    %label.mws-form-label= t(:show_support)
+    .mws-form-item
+    .btn.btn-small.pull-left{"data-content" => "By Showing your support your company logo may be used in our public pages as one of our clients.", "data-original-title" => t(:show_support), "data-placement" => "top", "data-trigger" => "hover", :rel => "popover"} ? 
+    = f.input :show_support, :label => false
+    %br
+  .mws-form-row
     %label.mws-form-label= t(:photo)
     .mws-form-item
     = f.input :photo, :label => false

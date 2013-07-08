@@ -80,17 +80,17 @@
         %span.key
           = t(:labor)
         %span.val
-          %span.text-nowrap= repair.labor
+          %span.text-nowrap= number_to_currency(repair.labor)
       %li
         %span.key
           = t(:parts)
         %span.val
-          %span.text-nowrap= repair.parts
+          %span.text-nowrap= number_to_currency(repair.parts)
       %li
         %span.key
           = t(:tax)
         %span.val
-          %span.text-nowrap= repair.tax
+          %span.text-nowrap= number_to_currency(repair.tax)
       %li
         %span.key
           = t(:total)
