@@ -16,6 +16,7 @@
             %li
               = f.input :remember_me, :as => :boolean, :label => false if devise_mapping.rememberable?
               %label{:for => "remember"} Remember me
+              = link_to t(:home), root_path, :class => 'btn btn-primary btn-small pull-right'
         .mws-form-row
           = f.button :submit, "Login", :class => 'btn btn-success mws-login-button'
 

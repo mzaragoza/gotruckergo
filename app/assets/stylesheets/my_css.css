@@ -56,3 +56,11 @@ table a:hover {
 .row-fluid [class*="span"]:nth-child(3n+1) {
    margin-left: 0;
  }
+
+#mws-logo-container #mws-logo-wrap{
+  width: 380px;
+}
+#mws-logo-container{
+  width: 380px;
+
+}
