@@ -40,7 +40,7 @@
         #mws-logo-wrap
           = image_tag 'logo.png', :alt => t(:company_name), :class => 'pull-left'
           - if current_account.photo?
-            = image_tag current_account.photo, :alt => current_account.name.titleize:class => 'pull-left', :class => 'pull-right'
+            = image_tag current_account.photo, :alt => current_account.name.titleize, :class => 'pull-right'
       / User Tools (notifications, logout, profile, change password)
       #mws-user-tools.clearfix
         / Notifications
