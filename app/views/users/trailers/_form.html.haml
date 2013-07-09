@@ -4,6 +4,10 @@
     .mws-form-item
     = f.input :name, :label => false
   .mws-form-row
+    %label.mws-form-label= t(:trailer_type)
+    .mws-form-item
+    = f.input :trailer_type, :collection => trailer_type_list,  :as => :select, include_blank: false, :label => false, prompt: "Choose a Trailer Type"
+  .mws-form-row
     %label.mws-form-label= t(:length)
     .mws-form-item
     = f.input :length, :label => false
@@ -43,6 +47,14 @@
     %label.mws-form-label= t(:tag)
     .mws-form-item
     = f.input :vehicle_tag, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:annual_inspection)
+    .mws-form-item
+    = f.input :annual_inspection, :label => false, :input_html => { :class => 'datepicker'}
+  .mws-form-row
+    %label.mws-form-label= t(:vented)
+    .mws-form-item
+    = f.input :vented, :label => false
   .mws-form-row
     %label.mws-form-label= t(:photo)
     .mws-form-item

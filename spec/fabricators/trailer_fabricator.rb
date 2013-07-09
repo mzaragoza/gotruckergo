@@ -12,7 +12,8 @@ Fabricator(:trailer) do
   vehicle_identification_number { (0...18).map{(65+rand(26)).chr}.join }
   tag {(0...8).map{(65+rand(26)).chr}.join}
   vehicle_tag {(0...8).map{(65+rand(26)).chr}.join}
-
+  annual_inspection {Date.today}
+  vented {false}
 
   after_build do |t|
     t.account ||= Account.last || Fabricate(:account)

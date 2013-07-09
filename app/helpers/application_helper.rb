@@ -76,4 +76,25 @@ module ApplicationHelper
       ]
   end
 
+  def trailer_type_list
+    [
+      ['Box','Box'],
+      ['Bus', 'Bus'],
+      ['Car-carrying trailer', 'Car-carrying trailer'],
+      ['Curtain sider','Curtain sider'],
+      ['Drop-deck trailer', 'Drop-deck trailer'],
+      ['Double decker', 'Double decker'],
+      ['Dry bulk', 'Dry bulk'],
+      ['Flatbed', 'Flatbed'],
+      ['Hopper bottom', 'Hopper bottom'],
+      ['Live bottom', 'Live bottom'],
+      ['Livestock trailer', 'Livestock trailer'],
+      ['Lowboy', 'Lowboy'],
+      ['Reefer', 'Reefer'],
+      ['Sidelifter', 'Sidelifter'],
+      ['Tanker', 'Tanker'],
+      ['Frac','Frac'],
+    ]
+  end
+
 end

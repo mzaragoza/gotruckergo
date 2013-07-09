@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708032622) do
+ActiveRecord::Schema.define(:version => 20130709030310) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",         :default => ""
@@ -240,24 +240,27 @@ ActiveRecord::Schema.define(:version => 20130708032622) do
   end
 
   create_table "trailers", :force => true do |t|
-    t.string   "name",                          :default => "", :null => false
-    t.string   "length",                        :default => "", :null => false
-    t.string   "width",                         :default => "", :null => false
-    t.string   "height",                        :default => "", :null => false
-    t.string   "gross_vehicle_weight_rating",   :default => "", :null => false
-    t.string   "suspension",                    :default => "", :null => false
-    t.string   "axle_capacity",                 :default => "", :null => false
-    t.string   "wheels",                        :default => "", :null => false
-    t.string   "tires",                         :default => "", :null => false
-    t.string   "type",                          :default => "", :null => false
-    t.string   "vin",                           :default => "", :null => false
-    t.string   "tag",                           :default => "", :null => false
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.string   "name",                          :default => "",    :null => false
+    t.string   "length",                        :default => "",    :null => false
+    t.string   "width",                         :default => "",    :null => false
+    t.string   "height",                        :default => "",    :null => false
+    t.string   "gross_vehicle_weight_rating",   :default => "",    :null => false
+    t.string   "suspension",                    :default => "",    :null => false
+    t.string   "axle_capacity",                 :default => "",    :null => false
+    t.string   "wheels",                        :default => "",    :null => false
+    t.string   "tires",                         :default => "",    :null => false
+    t.string   "type",                          :default => "",    :null => false
+    t.string   "vin",                           :default => "",    :null => false
+    t.string   "tag",                           :default => "",    :null => false
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
     t.string   "photo",                         :default => ""
     t.integer  "account_id"
     t.string   "vehicle_identification_number", :default => ""
     t.string   "vehicle_tag",                   :default => ""
+    t.string   "trailer_type",                  :default => ""
+    t.string   "annual_inspection",             :default => ""
+    t.boolean  "vented",                        :default => false
   end
 
   create_table "trucks", :force => true do |t|
