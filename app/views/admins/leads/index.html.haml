@@ -1,0 +1,27 @@
+= link_to t(:add_leads), new_admins_lead_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      Leads
+  .mws-panel-body.no-padding
+    %table.mws-datatable.mws-table
+      %thead
+        %tr
+          %th=t(:lead_id)
+          %th=t(:name)
+          %th=t(:email)
+          %th=t(:phone)
+          %th=t(:status)
+          %th=t(:conversion_date)
+          %th
+      %tbody
+        - leads.each do |l|
+          %tr
+            %td= link_to l.id, admins_lead_path(l)
+            %td= l.full_name
+            %td= l.email
+            %td= number_to_phone(l.phone)
+            %td= l.status
+            %td= l.conversion_date
+            %td= link_to 'Edit', edit_admins_lead_path(l), :class => 'btn btn-small btn-info'
+

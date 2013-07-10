@@ -1,0 +1,59 @@
+.row-fluid
+  .mws-panel.grid_6
+    .mws-panel-header
+      = link_to 'Edit', edit_admins_lead_path(lead), :class => 'btn btn-info pull-right'
+      %span
+        = lead.full_name.titleize
+    .mws-panel-body.no-padding
+      %ul.mws-summary.clearfix
+        %li
+          %span.key
+            = t(:id)
+          %span.val
+            %span.text-nowrap= lead.id
+        %li
+          %span.key
+            = t(:name)
+          %span.val
+            %span.text-nowrap= lead.name.titleize
+        %li
+          %span.key
+            = t(:phone)
+          %span.val
+            %span.text-nowrap= number_to_phone(lead.phone)
+        %li
+          %span.key
+            = t(:email)
+          %span.val
+            %span.text-nowrap= lead.email
+        %li
+          %span.key
+            = t(:address)
+          %span.val
+            %span.text-nowrap
+              = lead.address
+              = lead.address2
+              = lead.city
+              = lead.state
+              = lead.zip
+        %li
+          %span.key
+            = t(:status)
+          %span.val
+            %span.text-nowrap= lead.status
+        %li
+          %span.key
+            = t(:message)
+          %span.val
+            %span.text-nowrap= lead.message
+        %li
+          %span.key
+            = t(:remoteip)
+          %span.val
+            %span.text-nowrap= lead.remoteip
+        %li
+          %span.key
+            = t(:newsletter)
+          %span.val
+            %span.text-nowrap= lead.newsletter
+

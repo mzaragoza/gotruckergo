@@ -34,6 +34,7 @@ Gotruckergo::Application.routes.draw do
       resources :admins
       resources :brokers
       resources :drivers
+      resources :leads
       resources :plans
       resources :profile, :only => [:edit, :update]
       resources :receipts

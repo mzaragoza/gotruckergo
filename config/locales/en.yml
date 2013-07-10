@@ -4,6 +4,7 @@
 en:
   hello: "Hello world"
   company_name: "Go Trucker Go"
+  contacts_thanks: "Thanks you. We will get back to you as soon as posible"
   login_as: "Login as"
   show_support: "Show Support"
   excited_licenses: "You have exceeded your user license limit. Please contact your account manager."

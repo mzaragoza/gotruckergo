@@ -97,4 +97,11 @@ module ApplicationHelper
     ]
   end
 
+  def lead_status_list
+      [
+        ['New', 'new'],
+        ['Contacted', 'contacted'],
+        ['Converted', 'converted'],
+      ]
+  end
 end

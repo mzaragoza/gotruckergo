@@ -96,6 +96,10 @@
               = link_to admins_users_path do
                 %i.icol32-user
                 Users
+            %li{:class => "#{'active' if params[:controller] == 'admins/leads' }"}
+              = link_to admins_leads_path do
+                %i.icol32-lead
+                Leads
             -#%li{:class => "#{'active' if params[:controller] == 'admins/drivers' }"}
               = link_to admins_drivers_path do
                 %i.icol32-drivers
@@ -149,6 +153,22 @@
                 %span.mws-stat-title Users
                 %span.mws-stat-value
                   = User.count
+            = link_to admins_leads_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-lead
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Total Lead
+                %span.mws-stat-value
+                  = Lead.count
+            = link_to admins_leads_path, :class => 'mws-stat' do
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-lead
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Converted Lead
+                %span.mws-stat-value
+                  = Lead.where("status = 'converted'").count
             = link_to admins_drivers_path, :class => 'mws-stat' do
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-drivers
