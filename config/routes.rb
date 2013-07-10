@@ -47,6 +47,10 @@ Gotruckergo::Application.routes.draw do
       get '/' => 'dashboards#index'
     end
   end
+
+  resources :leads, :only => [:new, :create]
+  match '/contact_us' => 'leads#new', :as => :contact_us
+  match '/thanks' => 'leads#thanks', :as => :thanks
   match "/prices" => "pages#prices", :as => :prices
   match "/about_us" => "pages#about_us", :as => :about_us
   match "/test" => "pages#test", :as => :test

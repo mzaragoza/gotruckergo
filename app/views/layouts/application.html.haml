@@ -56,10 +56,10 @@
                     = link_to t(:home), root_path
                   %li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'prices' }"}
                     = link_to t(:prices), prices_path
+                  %li{:class => "#{'active' if params[:controller] == 'leads' and params[:action] == 'new' }"}
+                    = link_to t(:contact_us), contact_us_path
                   %li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'prices' }"}
                     = link_to t(:login), users_dashboard_path
-                  -#%li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'index' }"}
-                    = link_to t(:contact_us), root_path
       / End Header
       / Slider Wrap
       .container
@@ -85,7 +85,7 @@
             / Text
             .column
               .footer-logo
-                = image_tag '/assets/public/logo.png'
+                = image_tag '/assets/logo.png'
               %p= t(:about_us_text)
         / Footer Bottom
         .footer-bottom

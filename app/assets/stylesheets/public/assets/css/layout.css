@@ -108,7 +108,7 @@ only screen and (                min-resolution: 2dppx)
 
 .header {
 	border-bottom: 1px solid #e6e6e6;
-	background-color: #cdcdcd;
+	background-color: #ffffff;
 }
 
 .header .header-row {
