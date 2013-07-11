@@ -13,7 +13,9 @@ Gotruckergo::Application.routes.draw do
       resources :profile, :only => [:edit, :update]
       resources :trucks
       resources :trailers
-      resources :brokers
+      resources :brokers do
+        collection { post :import }
+      end
       resources :shipments
       resources :receipts
       resources :repairs

@@ -252,6 +252,10 @@ GEM
       rufus-scheduler
     reveal_rails (1.0.0)
     rmagick (2.13.2)
+    roo (1.11.2)
+      nokogiri
+      rubyzip
+      spreadsheet (> 0.6.4)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -265,6 +269,7 @@ GEM
       rspec-mocks (~> 2.13.0)
     ruby-graphviz (1.0.9)
     ruby-hmac (0.4.0)
+    ruby-ole (1.2.11.7)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     rubyzip (0.9.9)
@@ -292,6 +297,8 @@ GEM
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
     slop (3.4.5)
+    spreadsheet (0.8.5)
+      ruby-ole (>= 1.0)
     spreewald (0.5.16)
       capybara
       cucumber
@@ -398,6 +405,7 @@ DEPENDENCIES
   resque-scheduler
   reveal_rails
   rmagick
+  roo
   rspec-rails
   ruby_parser
   sass-rails (~> 3.2.3)
