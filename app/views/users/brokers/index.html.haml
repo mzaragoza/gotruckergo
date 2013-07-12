@@ -33,20 +33,20 @@
               - else
                 %span{:style => 'color:#F00'}= t(:carreir_packet)
             %td= link_to 'Edit', edit_users_broker_path(b), :class => 'btn btn-small btn-info'
-%h2 Import Brokers
-To import brokers create a csv file with the following columns:
-%ul
-  %li name
-  %li phone
-  %li address
-  %li address2
-  %li city
-  %li state
-  %li zip
-  %li fax
-  %li email
-  %li website
-  %li motor_carrier_number
-= form_tag import_users_brokers_path, multipart: true do
-  = file_field_tag :file
-  = submit_tag "Import"
+-#  %h2 Import Brokers
+  To import brokers create a csv file with the following columns:
+  %ul
+    %li name
+    %li phone
+    %li address
+    %li address2
+    %li city
+    %li state
+    %li zip
+    %li fax
+    %li email
+    %li website
+    %li motor_carrier_number
+  = form_tag import_users_brokers_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Import"
