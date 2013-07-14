@@ -28,4 +28,4 @@ public/mobile
 public/assets
 public/assets/*
 app/assets/videos/*
-
+*.log
