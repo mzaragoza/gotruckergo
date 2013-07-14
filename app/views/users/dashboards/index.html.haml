@@ -52,6 +52,7 @@
   = ",  :engine_specs =>  '" + t.engine_specs + "'"
   = ",  :engine_type =>  '" + t.engine_type + "'"
   )
+  %br
 %h1 Trailers
 - Trailer.all.each do |t|
   Fabricate(:trailer
@@ -72,6 +73,7 @@
   = ",  :annual_inspection => '" + t.annual_inspection + "'"
   = ",  :vented => '" + t.vented.to_s + "'"
   )
+  %br
 %h1 Brokers
 - Broker.all.each do |b|
   Fabricate(:broker
@@ -88,6 +90,7 @@
   = ",  :motor_carrier_number => '" + b.motor_carrier_number + "'"
   = ",  :account_id => '" + b.account_id.to_s + "'"
   )
+  %br
 %h1 Receipt
 - Receipt.all.each do |r|
   Fabricate(:receipt
@@ -99,3 +102,4 @@
   = ",  :credit_card_number => '" + r.credit_card_number + "'"
   = ",  :account_id => '" + r.account_id.to_s + "'"
   )
+  %br
