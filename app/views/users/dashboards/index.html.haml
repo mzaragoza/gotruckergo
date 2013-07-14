@@ -1,1 +1,101 @@
-Yes you are in
+%h1 Drivers
+- Driver.all.each do |d|
+  Fabricate(
+  = ":driver, :first_name => '" + d.first_name + "'"
+  = ", :first_name => '" + d.first_name + "'"
+  = ", :last_name => '" + d.last_name + "'"
+  = ", :address => '" + d.address + "'"
+  = ", :address2 => '" + d.address2 + "'"
+  = ", :city => '" + d.city + "'"
+  = ", :state => '" + d.state + "'"
+  = ", :zip => '" + d.zip + "'"
+  = ", :cell => '" + d.cell + "'"
+  = ", :email => '" + d.email + "'"
+  = ", :ssn => '" + d.ssn + "'"
+  = ", :drivers_license => '" + d.drivers_license + "'"
+  = ", :pay_rate => '" + d.pay_rate + "'"
+  = ", :hire_date => '" + d.hire_date + "'"
+  = ", :active => '" + d.active.to_s + "'"
+  = ", :bank_name => '" + d.bank_name + "'"
+  = ", :bank_account_number => '" + d.bank_account_number + "'"
+  = ", :bank_rauting_number => '" + d.bank_rauting_number + "'"
+  = ", :double_triple_trailers => '" + d.double_triple_trailers.to_s + "'"
+  = ", :passenger => '" + d.passenger.to_s + "'"
+  = ", :tank_vehicle => '" + d.tank_vehicle.to_s + "'"
+  = ", :hazardous_materials => '" + d.hazardous_materials.to_s + "'"
+  = ", :combination_of_tank_vehicle_and_hazardous_materials => '" + d.combination_of_tank_vehicle_and_hazardous_materials.to_s + "'"
+  = ", :account_id => '" + d.account_id.to_s + "'"
+  )
+  %br
+%h1 Trucks
+- Truck.all.each do |t|
+  Fabricate(:truck
+  = ",  :name => '" + t.name + "'"
+  = ",  :annual_inspection_date =>  '" + t.annual_inspection_date + "'"
+  = ",  :engine =>  '" + t.engine + "'"
+  = ",  :sleeper_size =>  '" + t.sleeper_size + "'"
+  = ",  :transmission =>  '" + t.transmission + "'"
+  = ",  :suspension =>  '" + t.suspension + "'"
+  = ",  :front_axel_capacity =>  '" + t.front_axel_capacity + "'"
+  = ",  :rear_axle_capacity =>  '" + t.rear_axle_capacity + "'"
+  = ",  :rear_end_ratio =>  '" + t.rear_end_ratio + "'"
+  = ",  :wheelbase =>  '" + t.wheelbase + "'"
+  = ",  :wheels =>  '" + t.wheels + "'"
+  = ",  :tires =>  '" + t.tires + "'"
+  = ",  :odometer =>  '" + t.odometer + "'"
+  = ",  :account_id =>  '" + t.account_id.to_s + "'"
+  = ",  :vehicle_identification_number =>  '" + t.vehicle_identification_number + "'"
+  = ",  :vehicle_tag =>  '" + t.vehicle_tag + "'"
+  = ",  :truck_year =>  '" + t.truck_year + "'"
+  = ",  :manufacturer =>  '" + t.manufacturer + "'"
+  = ",  :truck_model =>  '" + t.truck_model + "'"
+  = ",  :engine_specs =>  '" + t.engine_specs + "'"
+  = ",  :engine_type =>  '" + t.engine_type + "'"
+  )
+%h1 Trailers
+- Trailer.all.each do |t|
+  Fabricate(:trailer
+  = ",  :name => '" + t.name + "'"
+  = ",  :length => '" + t.length + "'"
+  = ",  :width => '" + t.width + "'"
+  = ",  :height => '" + t.height + "'"
+  = ",  :gross_vehicle_weight_rating => '" + t.gross_vehicle_weight_rating + "'"
+  = ",  :suspension => '" + t.suspension + "'"
+  = ",  :axle_capacity => '" + t.axle_capacity + "'"
+  = ",  :wheels => '" + t.wheels + "'"
+  = ",  :tires => '" + t.tires + "'"
+  = ",  :type => '" + t.type + "'"
+  = ",  :account_id => '" + t.account_id.to_s + "'"
+  = ",  :vehicle_identification_number => '" + t.vehicle_identification_number + "'"
+  = ",  :vehicle_tag => '" + t.vehicle_tag + "'"
+  = ",  :trailer_type => '" + t.trailer_type + "'"
+  = ",  :annual_inspection => '" + t.annual_inspection + "'"
+  = ",  :vented => '" + t.vented.to_s + "'"
+  )
+%h1 Brokers
+- Broker.all.each do |b|
+  Fabricate(:broker
+  = ",  :name => '" + b.name + "'"
+  = ",  :phone => '" + b.phone + "'"
+  = ",  :address => '" + b.address + "'"
+  = ",  :address2 => '" + b.address2 + "'"
+  = ",  :city => '" + b.city + "'"
+  = ",  :state => '" + b.state + "'"
+  = ",  :zip => '" + b.zip + "'"
+  = ",  :fax => '" + b.fax + "'"
+  = ",  :email => '" + b.email + "'"
+  = ",  :website => '" + b.website + "'"
+  = ",  :motor_carrier_number => '" + b.motor_carrier_number + "'"
+  = ",  :account_id => '" + b.account_id.to_s + "'"
+  )
+%h1 Receipt
+- Receipt.all.each do |r|
+  Fabricate(:receipt
+  = ",  :receipt_date => '" + r.receipt_date + "'"
+  = ",  :gallons => '" + r.fill_up_gallons + "'"
+  = ",  :state => '" + r.state + "'"
+  = ",  :cost => '" + r.cost2.to_s + "'"
+  = ",  :odometer => '" + r.odometer + "'"
+  = ",  :credit_card_number => '" + r.credit_card_number + "'"
+  = ",  :account_id => '" + r.account_id.to_s + "'"
+  )
